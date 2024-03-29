@@ -56,7 +56,7 @@ export const Hero = () => {
               <Link href="mailto:partners@tum-ai.com">Become a Partner</Link>
             </Button>
             <Button asChild>
-              <Link href="https://join-us.tum-ai.com/">Become a Member</Link>
+              <Link href="https://join.tum-ai.com/">Become a Member</Link>
             </Button>
           </div>
         </div>

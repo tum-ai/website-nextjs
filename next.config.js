@@ -19,7 +19,7 @@ const nextConfig = {
     return [
       {
         source: "/join-us",
-        destination: "https://join-us.tum-ai.com",
+        destination: "https://join.tum-ai.com",
         permanent: false,
       },
       {

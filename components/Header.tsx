@@ -87,7 +87,7 @@ const Navigation = ({ open, setOpen }: NavigationProps) => {
                   </Link>
                 </div>
 
-                <Link href="https://join-us.tum-ai.com/">
+                <Link href="https://join.tum-ai.com/">
                   <Button>Join us</Button>
                 </Link>
               </div>

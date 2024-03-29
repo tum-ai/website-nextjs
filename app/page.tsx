@@ -220,7 +220,7 @@ function Content2() {
             <Link href="/members">Meet our Members</Link>
           </Button>
           <Button asChild intent="tertiary">
-            <Link href="https://join-us.tum-ai.com/">Learn more!</Link>
+            <Link href="https://join.tum-ai.com/">Learn more!</Link>
           </Button>
         </div>
       </div>
@@ -263,7 +263,7 @@ function Content3() {
 
           <div className="flex w-fit flex-col items-start space-y-4 pt-8 lg:flex-row lg:items-center lg:space-x-2 lg:space-y-0">
             <Button asChild>
-              <Link href="https://join-us.tum-ai.com/">Apply as a partner</Link>
+              <Link href="https://join.tum-ai.com/">Apply as a partner</Link>
             </Button>
             <Button asChild intent="tertiary">
               <Link href="/partners">Partner&apos;s of TUM.ai</Link>
