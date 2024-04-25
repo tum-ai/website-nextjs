@@ -61,7 +61,7 @@ export default function Index() {
             bitter.className
           )}
         >
-          Partners Initiatives
+          Partner Initiatives
         </h2>
         <Logos logos={initiatives_collabrated_with} />
       </Section>
