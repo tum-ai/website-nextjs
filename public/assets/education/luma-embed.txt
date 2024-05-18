@@ -1,0 +1,25 @@
+Embed Events
+Have your own site? Embed your calendar to easily share a live view of your upcoming events.
+Paste the following HTML code snippet to your page:
+
+<iframe
+  src="https://lu.ma/embed/calendar/cal-GyF9L9O3ULx9C66/events"
+  width="600"
+  height="450"
+  frameborder="0"
+  style="border: 1px solid #bfcbda88; border-radius: 4px;"
+  allowfullscreen=""
+  aria-hidden="false"
+  tabindex="0"
+></iframe>
+
+
+Appearance
+By default, the widget uses the system appearance of the browser. If you would like to force a light or dark appearance, you can append lt=light or lt=dark to the end of the URL, like:
+
+<iframe
+  src="https://lu.ma/embed/calendar/cal-GyF9L9O3ULx9C66/events?lt=light"
+  ...other attributes
+></iframe>
+Compact Mode
+
