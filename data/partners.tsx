@@ -1,4 +1,4 @@
-import { partners_ip4 } from "./industry";
+import { partners_ip4, partners_ip5 } from "./industry";
 
 export const partners_collabrated_with = [
   {
@@ -349,4 +349,7 @@ export const project_partners = [
     src: "/assets/partners_sponsors/avi_medical_logo.png",
     alt: "Avi Medical",
   },
-].concat(partners_ip4);
+]
+  .concat(partners_ip4)
+  .concat(partners_ip5)
+  .filter((element) => element.alt != "HVB");
