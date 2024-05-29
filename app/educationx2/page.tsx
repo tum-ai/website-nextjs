@@ -15,6 +15,8 @@ import { faq, testimonials } from "data/e-lab";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
+import locationIcon from "@public/assets/education/locationIcon.png"
+import calendarIcon from "@public/assets/education/calendarIcon.png"
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
@@ -46,47 +48,54 @@ export default function Page() {
         </h2>
 
         <div className="flex flex-col items-center justify-center gap-y-8">
-            <h1 className="text-center text-3xl "> 8 workshops in May and June 2024</h1>
+            <h3 className="text-center text-3xl "> 8 workshops in May and June 2024</h3>
             <iframe
               src="https://lu.ma/embed/calendar/cal-GyF9L9O3ULx9C66/events?lt=dark"
               className="rounded-xl border-grey border-2"
               width="600"
               height="450"
-              // style="border: 1px solid #bfcbda88; border-radius: 4px;"
-              // allowfullscreen=""
               aria-hidden="false"
               // tabindex="0"
             ></iframe>
         </div>
       </Section>
       <Section className="bg-purple-950 text-white">
-        <div className="mb-8 sm:mb-16 md:w-3/5 lg:mb-32">
-          <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-semibold uppercase text-transparent">
-            What is the AI E-Lab?
+        <div className="mb-8 sm:mb-16 lg:mb-32">
+          <div className="md:w-3/5">
+            <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-bold uppercase text-transparent">
+              What is the AI Academy?
+            </h2>
+          </div>
+          <h2 className="mb-5 bg-yellow-500 bg-clip-text text-3xl font-semibold uppercase text-transparent"> 
+            AI Academy is a series of interactive AI workshops focusing on the real-world applications of AI.
           </h2>
-          <p className="text-2xl">
-            <span className="text-yellow-500">
-              The AI Entrepreneurship Lab is the Launchpad for your AI ventures,
-            </span>{" "}
-            a 3-months founding journey for curious and driven individuals. We
-            provide you with relevant know-how, a team, and support to lay the
-            foundation for your own AI startup.
-          </p>
-        </div>
-
-        <div className="flex items-end justify-end">
-          <div className="flex w-full flex-col items-center md:w-3/5">
-            <h3 className="mb-4 text-4xl font-semibold text-yellow-500">
-              Inside the E-Lab: A Founder&apos;s Journey
+          <div className="md:w-3/5">
+            <h3 className="text-2xl font-light">
+              We invite industry experts to share their insights on practical AI uses-cases in beginner-friendly and interactive workshops.
             </h3>
-            <iframe
-              src="https://www.youtube.com/embed/DPJGAG9blO8?si=jDCtCvf6sVZRX69X"
-              style={{ aspectRatio: 16 / 9 }}
-              className="w-full"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
+          </div>
+        </div>
+        <div className="flex items-end justify-end">
+          <div className="flex w-full flex-col items-end md:w-3/5">
+            <div className="Ai-academy-details flex flex-col gap-y-4 mb-4">
+                <div className="flex items-center gap-x-4 ">
+                  <img src={calendarIcon.src} className="w-[50px]"></img>
+                  <div className="text-2xl font-light">
+                    <h3>May and June 2024</h3>
+                    <h3> <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-bold text-transparent">Wednesday 18:30</span>, 90 min.</h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-x-4 ">
+                  <img src={locationIcon.src} className="w-[50px]"></img>
+                  <div className="text-2xl font-light">
+                    <h3>TUM Main Campus</h3>
+                    <h3> <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-bold text-transparent"> Room 2760</span>, 2nd Floor</h3>
+                  </div>
+                </div>
+            </div>
+            <h3 className="mb-4 text-4xl font-semibold text-yellow-500">
+              Beginner-friendly and interactive!
+            </h3>
           </div>
         </div>
       </Section>
