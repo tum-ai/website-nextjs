@@ -20,6 +20,17 @@ import calendarIcon from "@public/assets/education/calendarIcon.png"
 import discussion_image from "public/assets/education/discussion_image.jpg"
 import interactive_image from  "public/assets/education/interactive_image.jpg"
 import presentation_image from "public/assets/education/presentation_image.jpg"
+//TODO IMPORT NVIDIA
+import nvidia_logo from "public/assets/education/nvidia_logo.svg"
+import microsoft_logo from "public/assets/education/microsoft_logo.png"
+import accenture_logo from "public/assets/education/accenture_logo.svg"
+import celonis_logo from "public/assets/education/celonis_logo.svg"
+import airbus_logo from "public/assets/education/airbus_logo.png"
+import deepset_logo from "public/assets/education/deepset_logo.svg"
+import ryverai_logo from "public/assets/education/ryverai_logo.png"
+import dps_logo from "public/assets/education/dps_logo.png"
+import ibm_logo from "public/assets/education/ibm-logo.svg"
+import appliedAI_logo from "public/assets/education/appliedAI_logo.svg"
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
@@ -130,6 +141,76 @@ export default function Page() {
             ]}
           />
         </div>
+      </Section>
+      <Section className="bg-purple-950 text-white">
+        <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
+          Our Workshop Partners
+        </h2>
+
+        <Logos
+          logos={[
+            {
+              src: nvidia_logo.src,
+              alt: "nvidia",
+              href: "https://www.nvidia.com/de-de/",
+              width: 200,
+            },
+            {
+              href: "https://www.microsoft.com/de-de/",
+              src: microsoft_logo.src,
+              alt: "Microsoft",
+              width: 200,
+            },
+            {
+              href: "https://www.accenture.com/de-de",
+              src: accenture_logo.src,
+              alt: "Accenture",
+              width: 200,
+            },
+            {
+              src: celonis_logo.src,
+              alt: "celonis",
+              href: "https://www.celonis.com/",
+              width: 200,
+            },
+            {
+              href: "https://www.airbus.com/en",
+              src: airbus_logo.src,
+              alt: "AIRBUS",
+              width: 200,
+            },
+            {
+              href: "https://www.deepset.ai/",
+              src: deepset_logo.src,
+              alt: "deepset",
+              width: 200,
+            },
+            {
+              src: ryverai_logo.src,
+              alt: "RYVER AI",
+              href: "https://ryver.ai/",
+              width: 200,
+            },
+            {
+              href: "https://www.digitalproductschool.io/",
+              src: dps_logo.src,
+              alt: "DIGITAL PRODUCT SCHOOl",
+              width: 200,
+            },
+            {
+              href: "https://www.ibm.com/de-de",
+              src: ibm_logo.src,
+              alt: "IBM",
+              width: 200,
+            },
+            {
+              src: appliedAI_logo.src,
+              alt: "appliedAI",
+              href: "https://www.appliedai.de/en/",
+              width: 200,
+            },
+          ]}
+        />
       </Section>
       <Section className="bg-purple-950 text-white">
         <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
@@ -247,72 +328,6 @@ export default function Page() {
             },
           ]}
           color="yellow"
-        />
-      </Section>
-
-      <Section className="bg-purple-950 text-white">
-        <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
-          Meet our Partners and Sponsors
-        </h2>
-
-        <div className="mb-24">
-          {/*     <h3 className="text-uppercase mb-12 w-full text-center text-2xl font-bold">
-            Partners
-          </h3> */}
-          <Logos
-            logos={[
-              {
-                src: "/assets/e-lab/partners/ai_munich_w.png",
-                alt: "AI+Munich",
-                href: "https://www.must-munich.com/aimunich/",
-              },
-              {
-                src: "/assets/e-lab/partners/ewor_w.png",
-                alt: "Ewor",
-                href: "https://ewor.io/",
-                width: 120,
-              },
-              {
-                src: "/assets/e-lab/partners/campus_founders_w.png",
-                alt: "Campus Founders",
-                href: "https://campusfounders.de/",
-              },
-              {
-                src: "/assets/e-lab/partners/merantix.svg",
-                alt: "Merantix",
-                href: "https://www.merantix.com/",
-                width: 200,
-              },
-              {
-                src: "/assets/e-lab/partners/hubert_burda_media.png",
-                alt: "Burda",
-                href: "https://www.burda.com/",
-                width: 300,
-              },
-            ]}
-          />
-        </div>
-        <Logos
-          logos={[
-            {
-              src: "/assets/e-lab/partners/uvc_w.svg",
-              alt: "UVC Partners",
-              href: "https://www.uvcpartners.com/",
-              width: 140,
-            },
-            {
-              href: "https://www.cherry.vc/",
-              src: "/assets/e-lab/partners/cherry_w.png",
-              alt: "Cherry VC",
-              width: 140,
-            },
-            {
-              href: "https://ananda.vc/",
-              src: "/assets/e-lab/partners/anandavc.png",
-              alt: "Ananda Impact Ventures",
-              width: 200,
-            },
-          ]}
         />
       </Section>
 
