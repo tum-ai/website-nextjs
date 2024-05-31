@@ -3,7 +3,7 @@ import FAQ from "@components/FAQ";
 import Logos from "@components/Logos";
 import Stat from "@components/Stat";
 import Testimonials from "@components/Testimonials";
-import Timeline from "@components/Timeline";
+import Timeline from "@components/TimelineOneSided";
 import Section from "@components/ui/Section";
 import {
   faBook,
@@ -15,6 +15,11 @@ import { faq, testimonials } from "data/e-lab";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
+import locationIcon from "@public/assets/education/locationIcon.png"
+import calendarIcon from "@public/assets/education/calendarIcon.png"
+import discussion_image from "public/assets/education/discussion_image.jpg"
+import interactive_image from  "public/assets/education/interactive_image.jpg"
+import presentation_image from "public/assets/education/presentation_image.jpg"
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
@@ -36,67 +41,96 @@ export const metadata: Metadata = {
   },
 };
 
+const textWithBold = (
+  <span>
+    This is a <strong>bold</strong> text.
+  </span>
+);
+
 export default function Page() {
   return (
     <>
       <Hero />
       <Section className="items-center justify-center bg-purple-950 text-white">
         <h2 className="mb-8 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
-          AI E-Lab Final Pitch Event
+          Upcoming Workshops
         </h2>
 
-        <div className="flex items-center justify-center ">
-          <div className="flex max-w-xl flex-col gap-8">
-            <p className="text-center">
-              Come around to see new and exciting ideas in the world of AI at
-              our AI E-Lab Final Pitch Event Friday, January 19th. An evening
-              where our top startups showcase their exciting developments.
-              It&apos;s a great chance to see fresh ideas in action and meet
-              some of the key players in the industry.{" "}
-            </p>
-            <div className="flex flex-col justify-center gap-6 ">
-              <Link
-                className="min-w-[300px] rounded-full border-none bg-gradient-to-b from-yellow-500 to-red-500 p-4 text-center sm:min-w-[400px]"
-                href="https://www.eventbrite.de/e/ai-e-lab-final-pitch-competition-tickets-784536669297?aff=oddtdtcreator"
-              >
-                Sign up now
-              </Link>
+        <div className="flex flex-col items-center justify-center gap-y-8">
+            <h3 className="text-center text-3xl "> 8 workshops in May and June 2024</h3>
+            <iframe
+              src="https://lu.ma/embed/calendar/cal-GyF9L9O3ULx9C66/events?lt=dark"
+              className="rounded-xl border-grey border-2 md:w-[500px] md:h-[250px] lg:w-[600px] lg:h-[450px]"
+              aria-hidden="false"
+            ></iframe>
+        </div>
+      </Section>
+      <Section className="bg-purple-950 text-white">
+        <div className="mb-8 sm:mb-16 lg:mb-32">
+          <div className="md:w-3/5">
+            <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-bold uppercase text-transparent">
+              What is the AI Academy?
+            </h2>
+          </div>
+          <h2 className="mb-5 bg-yellow-500 bg-clip-text text-3xl font-semibold uppercase text-transparent"> 
+            AI Academy is a series of interactive AI workshops focusing on the real-world applications of AI.
+          </h2>
+          <div className="md:w-3/5">
+            <h3 className="text-2xl font-light">
+              We invite industry experts to share their insights on practical AI uses-cases in beginner-friendly and interactive workshops.
+            </h3>
+          </div>
+        </div>
+        <div className="flex items-end justify-end">
+          <div className="flex w-full flex-col items-end md:w-3/5">
+            <div className="Ai-academy-details flex flex-col gap-y-4 mb-4">
+                <div className="flex items-center gap-x-4 ">
+                  <img src={calendarIcon.src} className="w-[50px]"></img>
+                  <div className="text-2xl font-light">
+                    <h3>May and June 2024</h3>
+                    <h3> <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-bold text-transparent">Wednesday 18:30</span>, 90 min.</h3>
+                  </div>
+                </div>
+                <div className="flex items-center gap-x-4 ">
+                  <img src={locationIcon.src} className="w-[50px]"></img>
+                  <div className="text-2xl font-light">
+                    <h3>TUM Main Campus</h3>
+                    <h3> <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-bold text-transparent"> Room 2760</span>, 2nd Floor</h3>
+                  </div>
+                </div>
             </div>
+            <h3 className="mb-4 text-4xl font-semibold text-yellow-500">
+              Beginner-friendly and interactive!
+            </h3>
           </div>
         </div>
       </Section>
       <Section className="bg-purple-950 text-white">
-        <div className="mb-8 sm:mb-16 md:w-3/5 lg:mb-32">
-          <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-semibold uppercase text-transparent">
-            What is the AI E-Lab?
-          </h2>
-          <p className="text-2xl">
-            <span className="text-yellow-500">
-              The AI Entrepreneurship Lab is the Launchpad for your AI ventures,
-            </span>{" "}
-            a 3-months founding journey for curious and driven individuals. We
-            provide you with relevant know-how, a team, and support to lay the
-            foundation for your own AI startup.
-          </p>
-        </div>
-
-        <div className="flex items-end justify-end">
-          <div className="flex w-full flex-col items-center md:w-3/5">
-            <h3 className="mb-4 text-4xl font-semibold text-yellow-500">
-              Inside the E-Lab: A Founder&apos;s Journey
-            </h3>
-            <iframe
-              src="https://www.youtube.com/embed/DPJGAG9blO8?si=jDCtCvf6sVZRX69X"
-              style={{ aspectRatio: 16 / 9 }}
-              className="w-full"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
+        <h2 className="mb-12 ml-16 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl md:ml-0">
+          Example Workshop Structure
+        </h2>
+        <div className="">
+          <Timeline
+            workshopParts={[
+              {
+                title: "Presentation",
+                text: <h4 className="text-md sm:text-xl"> <b>35 minutes</b> of introduction to the topic and relevant real-world examples </h4>,
+                image: presentation_image.src
+              },
+              {
+                title: "Discussion / Q&A",
+                text: <h4 className="text-md sm:text-xl"> <b> 5-10 minutes </b> of discussion or Q&A between the presentation and the interactive part</h4>,
+                image: discussion_image.src
+              },
+              {
+                title: "Interactive Part",
+                text: <h4 className="text-md sm:text-xl"> <b> 45 minutes </b> of hands-on interactive individual or group work/discussion/coding/quizzes</h4>,
+                image: interactive_image.src
+              },
+            ]}
+          />
         </div>
       </Section>
-
       <Section className="bg-purple-950 text-white">
         <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
           How founders experience the E-Lab
@@ -213,40 +247,6 @@ export default function Page() {
             },
           ]}
           color="yellow"
-        />
-      </Section>
-
-      <Section className="bg-purple-950 text-white">
-        <h2 className="mb-12 ml-16 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl md:ml-0">
-          Timeline
-        </h2>
-        <Timeline
-          events={[
-            {
-              title: "Formation & Ideation",
-              duration: "4 Weeks",
-              date: "October 2023",
-              text: "You will interact with potential co-founders, explore ideas, and form teams through the AI E-Lab onboarding, co-founder matching/team building, and ideation activities. This phase will end with a relaxed informal event where you and your team will share your ideas and concepts.",
-            },
-            {
-              title: "Idea validation",
-              duration: "2 Weeks",
-              date: "November 2023",
-              text: "You will focus on validating and shaping your startup idea from the previous phase through market research and developing robust business models that will undergo evaluation in the first pitch event, a Litmus Test to a jury.",
-            },
-            {
-              title: "Build-measure learn",
-              duration: "4 Weeks",
-              date: "Nov - Dec 2023",
-              text: "If your team can make it through the Litmus Test with validated ideas you will start to build prototypes, measure performance, gather valuable feedback from mentors, industry experts, and customers, and continuously iterate towards achieving product-market fit. This phase will end with a Stress test (second pitch event) where a more experienced jury will rigorously test the product market fit and prototypes of your startup and determine who is fit enough to make it to the final pitch to pitch to investors in Phase 4.",
-            },
-            {
-              title: "Refinement & Final pitch",
-              duration: "4 Weeks",
-              date: "Dec - Jan 2024",
-              text: "Should your team successfully pass the Stress Test, you will continue to refine your prototypes into Minimum Viable Products (MVPs) and further refine your business models, and pitches based on the valuable feedback received from customers, mentors, industry experts, and the jury during the Stress Test. The goal of your startup in this phase will be to prepare to showcase your polished startups to real investors and a public audience in the AI E-Lab final pitch event. ",
-            },
-          ]}
         />
       </Section>
 
@@ -369,7 +369,7 @@ export default function Page() {
       return (
           <div className="min-w-sm relative h-full w-full overflow-hidden rounded-lg grayscale saturate-200">
             <Image src={imgSrc} alt={name} fill objectFit="cover"/>
-            <div className="h-3/8 absolute bottom-0 w-full bg-black bg-opacity-80 p-2 text-white backdrop-blur">
+            <div className="h-8 absolute bottom-0 w-full bg-black bg-opacity-80 p-2 text-white backdrop-blur">
               <h3 className="font-bold">{name}</h3>
               <p>{text}</p>
             </div>
