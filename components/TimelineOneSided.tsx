@@ -62,11 +62,11 @@ const EventComponent = ({ workshopPart, step }: workshopProps) => {
           )}
         />
       </div>
-      <div className="relative w-3/5 flex flex-row items-center gap-4 pb-32 pl-20 gap-x-10">
+      <div className=" w-3/5 flex flex-row items-center gap-4 pb-32 pl-20 gap-x-10">
         <img src={workshopPart.image} className="rounded-xl h-[20vh] hidden sm:block "></img>
         <div>
           <h3
-            className={cx("text-2xl uppercase sm:text-4xl mb-10", stepText[step - 1])}
+            className={cx("text-2xl uppercase md:text-4xl mb-10", stepText[step - 1])}
           >
             {workshopPart.title}
           </h3>

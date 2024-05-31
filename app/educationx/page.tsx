@@ -125,17 +125,17 @@ export default function Page() {
             workshopParts={[
               {
                 title: "Presentation",
-                text: <h4 className="text-md sm:text-xl"> <b>35 minutes</b> of introduction to the topic and relevant real-world examples </h4>,
+                text: <h4 className="text-md lg:text-xl"> <b>35 minutes</b> of introduction to the topic and relevant real-world examples </h4>,
                 image: presentation_image.src
               },
               {
                 title: "Discussion / Q&A",
-                text: <h4 className="text-md sm:text-xl"> <b> 5-10 minutes </b> of discussion or Q&A between the presentation and the interactive part</h4>,
+                text: <h4 className="text-md lg:text-xl"> <b> 5-10 minutes </b> of discussion or Q&A between the presentation and the interactive part</h4>,
                 image: discussion_image.src
               },
               {
                 title: "Interactive Part",
-                text: <h4 className="text-md sm:text-xl"> <b> 45 minutes </b> of hands-on interactive individual or group work/discussion/coding/quizzes</h4>,
+                text: <h4 className="text-md lg:text-xl"> <b> 45 minutes </b> of hands-on interactive individual or group work/discussion/coding/quizzes</h4>,
                 image: interactive_image.src
               },
             ]}
