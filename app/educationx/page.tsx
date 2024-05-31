@@ -1,3 +1,4 @@
+"use client"
 import Benefits from "@components/Benefit";
 import FAQ from "@components/FAQ";
 import Logos from "@components/Logos";
@@ -14,13 +15,11 @@ import {
 import { faq, testimonials } from "data/e-lab";
 import Link from "next/link";
 import { Hero } from "./hero";
-import type { Metadata } from "next";
 import locationIcon from "@public/assets/education/locationIcon.png"
 import calendarIcon from "@public/assets/education/calendarIcon.png"
 import discussion_image from "public/assets/education/discussion_image.jpg"
 import interactive_image from  "public/assets/education/interactive_image.jpg"
 import presentation_image from "public/assets/education/presentation_image.jpg"
-//TODO IMPORT NVIDIA
 import nvidia_logo from "public/assets/education/nvidia_logo.svg"
 import microsoft_logo from "public/assets/education/microsoft_logo.png"
 import accenture_logo from "public/assets/education/accenture_logo.svg"
@@ -31,42 +30,23 @@ import ryverai_logo from "public/assets/education/ryverai_logo.png"
 import dps_logo from "public/assets/education/dps_logo.png"
 import ibm_logo from "public/assets/education/ibm-logo.svg"
 import appliedAI_logo from "public/assets/education/appliedAI_logo.svg"
+import { useRef } from "react";
 
-export const metadata: Metadata = {
-  title: "TUM.ai - AI Entrepreneurship Lab",
-  description:
-    "Join the AI Entrepreneurship Lab if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
-  openGraph: {
-    title:
-      "TUM.ai's AI Entrepreneurship Lab: A Founding Journey in Artificial Intelligence",
-    description:
-      "A 3-months founding journey for curious and driven individuals. We provide relevant know-how, a team, and support to lay the foundation for AI startups.",
-    images: [
-      {
-        url: "https://timonschramm.com/sm-preview.jpg", // Must be an absolute URL
-        width: 1200,
-        height: 630,
-        alt: "AI E-Lab Sphere",
-      },
-    ],
-  },
-};
-
-const textWithBold = (
-  <span>
-    This is a <strong>bold</strong> text.
-  </span>
-);
 
 export default function Page() {
+  const upcomingWorkshops = useRef(null)
+
+  const scrollToSection = (ref: React.RefObject<HTMLElement | HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
-      <Hero />
+      <Hero ref={upcomingWorkshops} scrollToSection={scrollToSection} />
       <Section className="items-center justify-center bg-purple-950 text-white">
-        <h2 className="mb-8 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
+        <h2 ref={upcomingWorkshops} className="mb-8 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
           Upcoming Workshops
         </h2>
-
         <div className="flex flex-col items-center justify-center gap-y-8">
             <h3 className="text-center text-3xl "> 8 workshops in May and June 2024</h3>
             <iframe

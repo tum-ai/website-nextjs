@@ -4,9 +4,13 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import logo from "@public/assets/education/ai-academy-4-logo.png"
+import React from "react";
 
-export const Hero = () => {
-  return (
+interface HeroProps {
+  scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
+}
+
+export const Hero = React.forwardRef<HTMLElement, HeroProps>(({ scrollToSection }, ref) => (
     <section className="relative h-screen bg-purple-950">
       <div className="flex h-full items-center">
         <img src={logo.src} className="absolute right-[5vw] w-[50vw] max-w-[600px] brightness-[70%]"></img>
@@ -31,12 +35,12 @@ export const Hero = () => {
             >
               Sign Up
             </Link>
-            <Link
+            <button
               className="min-w-[100px] max-w-lg rounded-full border-none bg-gradient-to-b from-yellow-500 to-red-500 p-3 text-center sm:min-w-[200px]"
-              href="https://www.eventbrite.de/e/ai-e-lab-final-pitch-competition-tickets-784536669297?aff=oddtdtcreator"
+              onClick={() => scrollToSection(ref as React.RefObject<HTMLElement>)}
             >
               Upcoming Workshops
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -52,5 +56,4 @@ export const Hero = () => {
         />
       </button>
     </section>
-  );
-};
+  ));
