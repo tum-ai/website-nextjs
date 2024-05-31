@@ -3,7 +3,7 @@ import FAQ from "@components/FAQ";
 import Logos from "@components/Logos";
 import Stat from "@components/Stat";
 import Testimonials from "@components/Testimonials";
-import Timeline from "@components/Timeline";
+import Timeline from "@components/TimelineOneSided";
 import Section from "@components/ui/Section";
 import {
   faBook,
@@ -17,6 +17,9 @@ import { Hero } from "./hero";
 import type { Metadata } from "next";
 import locationIcon from "@public/assets/education/locationIcon.png"
 import calendarIcon from "@public/assets/education/calendarIcon.png"
+import discussion_image from "public/assets/education/discussion_image.jpg"
+import interactive_image from  "public/assets/education/interactive_image.jpg"
+import presentation_image from "public/assets/education/presentation_image.jpg"
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
@@ -38,6 +41,12 @@ export const metadata: Metadata = {
   },
 };
 
+const textWithBold = (
+  <span>
+    This is a <strong>bold</strong> text.
+  </span>
+);
+
 export default function Page() {
   return (
     <>
@@ -51,11 +60,8 @@ export default function Page() {
             <h3 className="text-center text-3xl "> 8 workshops in May and June 2024</h3>
             <iframe
               src="https://lu.ma/embed/calendar/cal-GyF9L9O3ULx9C66/events?lt=dark"
-              className="rounded-xl border-grey border-2"
-              width="600"
-              height="450"
+              className="rounded-xl border-grey border-2 md:w-[500px] md:h-[250px] lg:w-[600px] lg:h-[450px]"
               aria-hidden="false"
-              // tabindex="0"
             ></iframe>
         </div>
       </Section>
@@ -99,7 +105,32 @@ export default function Page() {
           </div>
         </div>
       </Section>
-
+      <Section className="bg-purple-950 text-white">
+        <h2 className="mb-12 ml-16 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl md:ml-0">
+          Example Workshop Structure
+        </h2>
+        <div className="">
+          <Timeline
+            workshopParts={[
+              {
+                title: "Presentation",
+                text: <h4 className="text-md sm:text-xl"> <b>35 minutes</b> of introduction to the topic and relevant real-world examples </h4>,
+                image: presentation_image.src
+              },
+              {
+                title: "Discussion / Q&A",
+                text: <h4 className="text-md sm:text-xl"> <b> 5-10 minutes </b> of discussion or Q&A between the presentation and the interactive part</h4>,
+                image: discussion_image.src
+              },
+              {
+                title: "Interactive Part",
+                text: <h4 className="text-md sm:text-xl"> <b> 45 minutes </b> of hands-on interactive individual or group work/discussion/coding/quizzes</h4>,
+                image: interactive_image.src
+              },
+            ]}
+          />
+        </div>
+      </Section>
       <Section className="bg-purple-950 text-white">
         <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
           How founders experience the E-Lab
@@ -216,40 +247,6 @@ export default function Page() {
             },
           ]}
           color="yellow"
-        />
-      </Section>
-
-      <Section className="bg-purple-950 text-white">
-        <h2 className="mb-12 ml-16 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl md:ml-0">
-          Timeline
-        </h2>
-        <Timeline
-          events={[
-            {
-              title: "Formation & Ideation",
-              duration: "4 Weeks",
-              date: "October 2023",
-              text: "You will interact with potential co-founders, explore ideas, and form teams through the AI E-Lab onboarding, co-founder matching/team building, and ideation activities. This phase will end with a relaxed informal event where you and your team will share your ideas and concepts.",
-            },
-            {
-              title: "Idea validation",
-              duration: "2 Weeks",
-              date: "November 2023",
-              text: "You will focus on validating and shaping your startup idea from the previous phase through market research and developing robust business models that will undergo evaluation in the first pitch event, a Litmus Test to a jury.",
-            },
-            {
-              title: "Build-measure learn",
-              duration: "4 Weeks",
-              date: "Nov - Dec 2023",
-              text: "If your team can make it through the Litmus Test with validated ideas you will start to build prototypes, measure performance, gather valuable feedback from mentors, industry experts, and customers, and continuously iterate towards achieving product-market fit. This phase will end with a Stress test (second pitch event) where a more experienced jury will rigorously test the product market fit and prototypes of your startup and determine who is fit enough to make it to the final pitch to pitch to investors in Phase 4.",
-            },
-            {
-              title: "Refinement & Final pitch",
-              duration: "4 Weeks",
-              date: "Dec - Jan 2024",
-              text: "Should your team successfully pass the Stress Test, you will continue to refine your prototypes into Minimum Viable Products (MVPs) and further refine your business models, and pitches based on the valuable feedback received from customers, mentors, industry experts, and the jury during the Stress Test. The goal of your startup in this phase will be to prepare to showcase your polished startups to real investors and a public audience in the AI E-Lab final pitch event. ",
-            },
-          ]}
         />
       </Section>
 
@@ -372,7 +369,7 @@ export default function Page() {
       return (
           <div className="min-w-sm relative h-full w-full overflow-hidden rounded-lg grayscale saturate-200">
             <Image src={imgSrc} alt={name} fill objectFit="cover"/>
-            <div className="h-3/8 absolute bottom-0 w-full bg-black bg-opacity-80 p-2 text-white backdrop-blur">
+            <div className="h-8 absolute bottom-0 w-full bg-black bg-opacity-80 p-2 text-white backdrop-blur">
               <h3 className="font-bold">{name}</h3>
               <p>{text}</p>
             </div>
