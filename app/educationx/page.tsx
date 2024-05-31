@@ -105,11 +105,11 @@ export default function Page() {
           </div>
         </div>
       </Section>
-      <Section className="bg-purple-950 text-white">
-        <h2 className="mb-12 ml-16 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl md:ml-0">
+      <Section className="bg-purple-950 text-white flex justify-center">
+        <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl md:ml-0">
           Example Workshop Structure
         </h2>
-        <div className="">
+        <div>
           <Timeline
             workshopParts={[
               {
