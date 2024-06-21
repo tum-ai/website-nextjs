@@ -149,8 +149,8 @@ export default function Page() {
           </h3>
           <div className="flex flex-wrap justify-center gap-8 md:gap-24">
             <Stat description={"B2B customers"} value={"50+"} />
-            <Stat description={"Funding"} value={"1m+"} />
-            <Stat description={"ARR"} value={"200k+"} />
+            <Stat description={"Funding"} value={"1M+"} />
+            <Stat description={"ARR"} value={"200K+"} />
             <Stat description={"Hired employees"} value={"30+"} />
           </div>
         </div>
