@@ -148,10 +148,10 @@ export default function Page() {
             Top 3 Startups have
           </h3>
           <div className="flex flex-wrap justify-center gap-8 md:gap-24">
-            <Stat description={"B2B customers"} value={"8"} />
-            <Stat description={"Funding"} value={"165K"} />
-            <Stat description={"Revenue"} value={"26K"} />
-            <Stat description={"Hired employees"} value={"15"} />
+            <Stat description={"B2B customers"} value={"50+"} />
+            <Stat description={"Funding"} value={"1m+"} />
+            <Stat description={"ARR"} value={"200k+"} />
+            <Stat description={"Hired employees"} value={"30+"} />
           </div>
         </div>
       </Section>
