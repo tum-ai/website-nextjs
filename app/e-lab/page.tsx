@@ -355,6 +355,8 @@ export default function Page() {
       text: string;
       logoSrc: string;
       logoAlt: string;
+      link: string;
+      company: string;
     }[];
   }
 

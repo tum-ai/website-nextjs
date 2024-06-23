@@ -48,18 +48,13 @@ export const partners = [
 
 export const testimonials = [
   {
-    imgSrc: "/assets/e-lab/testimonials/tom_doerr.jpeg",
-    name: "Tom Dörr",
-    text: "I gained real, usable insights into the world of start-ups, including the ins and outs of fundraising. The feedback of others added layers to my understanding and helped refine my ideas. The interactive nature of the sessions, were great, the one on product-market fit really stood out for me. One of the best parts was connecting with people who share a passion for AI. Working on projects with them has been a unique and rewarding experience.",
-    logoSrc: "/assets/e-lab/testimonials/conic_w.png",
-    logoAlt: "conic",
-  },
-  {
     imgSrc: "/assets/e-lab/testimonials/ikigai_team.png",
     name: "Team ikigai",
     text: 'The AI E Lab was one of the few "non-bullshit" sources during our journey. It was a sandbox full of other really cool people truly wanting to challenge themselves and their idea. Through those interactions could we understand our own business better, share insights and give back to the community and feel like every single one of the people there will walk out of the AI E Lab with a new perspective!',
     logoSrc: "/assets/e-lab/testimonials/ikigai.png",
     logoAlt: "ikigai",
+    link: "https://www.linkedin.com/company/get-ikigai/",
+    company: "https://www.get-ikigai.com/"
   },
   {
     imgSrc: "/assets/e-lab/testimonials/florian_scherl.jpg",
@@ -67,6 +62,17 @@ export const testimonials = [
     text: "I really loved the abundance of pitch events. It not only immensely improved my pitching but I also received priceless feedback for my idea and even found my NLP team lead at the final pitch. I definitely recommend applying to the AI E-Lab and using the provided knowledge and resources to the fullest. They offer great advice and guidance. Lastly, I greatly appreciated the peer-to-peer exchange. They absolutely brought the brightest minds together to start new thriving ventures.",
     logoSrc: "/assets/e-lab/testimonials/fast_ai_movies.png",
     logoAlt: "FAST AI Movies",
+    link: "https://www.linkedin.com/in/florian-scherl/",
+    company: "https://fast-ai-movies.de/"
+  },
+  {
+    imgSrc: "/assets/e-lab/testimonials/tom_doerr.jpeg",
+    name: "Tom Dörr",
+    text: "I gained real, usable insights into the world of start-ups, including the ins and outs of fundraising. The feedback of others added layers to my understanding and helped refine my ideas. The interactive nature of the sessions, were great, the one on product-market fit really stood out for me. One of the best parts was connecting with people who share a passion for AI. Working on projects with them has been a unique and rewarding experience.",
+    logoSrc: "/assets/e-lab/testimonials/conic_w.png",
+    logoAlt: "conic",
+    link: "https://www.linkedin.com/in/tom-d%C3%B6rr-912607126/",
+    company: "https://github.com/tom-doerr"
   },
   {
     imgSrc: "/assets/e-lab/testimonials/marc_alexander_kuehn.jpg",
@@ -74,6 +80,8 @@ export const testimonials = [
     text: "Participating in AI E-Lab's final pitch event as a jury member was an enriching experience. It was great to see so many young people driving change in Artificial Intelligence. Also, it was thrilling to see some of the teams making significant progress after the incubation program. Above all, I believe what TUM.ai E-Lab is doing for the Munich ecosystem is of significant value. They're cultivating a vibrant environment for young, talented students and graduates to kick-start their entrepreneurial journey. Their dedication to unleashing the future of AI innovation in Munich is remarkable and I'm excited to see where their efforts will lead.",
     logoSrc: "/assets/e-lab/partners/uvc_w.svg",
     logoAlt: "UVC Partners",
+    link: "https://www.linkedin.com/in/marc-alexander-kuehn/",
+    company: "https://www.uvcpartners.com/"
   },
   {
     imgSrc: "/assets/e-lab/testimonials/maximilian_jesch.png",
@@ -81,6 +89,8 @@ export const testimonials = [
     text: "Being a jury member at the AI Startup Contest was an exhilarating experience! The passion and innovation displayed by the participating teams left me truly impressed. Their groundbreaking ideas and impeccably delivered pitches showcased the immense potential of the next generation of AI-driven entrepreneurship. I have no doubt that these teams are on the cusp of revolutionizing the industry and driving us into an exciting AI-powered future. It's an honor to be part of their journey, and I eagerly anticipate witnessing their continued success and impact on the world.",
     logoSrc: "",
     logoAlt: "",
+    link: "https://www.linkedin.com/in/maximilian-jesch/",
+    company: ""
   },
 
   // {
