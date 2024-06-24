@@ -1,13 +1,6 @@
-import type {Metadata} from "next";
 import Section from "@ui/Section";
 import {team} from "../data/e-lab";
 import Person from "@components/Person";
-
-export const metadata: Metadata = {
-    title: "Team - AI E-LAB | TUM.ai",
-    description:
-        "Meet the Team behind the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
-};
 
 export default function VentureTeam() {
     return (
@@ -27,7 +20,7 @@ export default function VentureTeam() {
                 <div
                     className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8">
                     {team?.map((person) => (
-                        <Person person={person} key={person.firstName + "-" + person.lastName}/>
+                        <Person person={person} key={person.id}/>
                     ))}
                 </div>
             </Section>
