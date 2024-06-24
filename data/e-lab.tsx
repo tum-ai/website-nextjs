@@ -105,6 +105,7 @@ export const testimonials = [
 
 export const team = [
   {
+    id: "laurenz-sommerlad",
     firstName: "Laurenz",
     lastName: "Sommerlad",
     role: "Head of Venture",

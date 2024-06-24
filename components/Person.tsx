@@ -5,6 +5,7 @@ import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
 
 interface PersonProps {
     person: {
+        id: string;
         firstName: string;
         lastName: string;
         role: string;
@@ -23,7 +24,7 @@ interface PersonProps {
 export default function Person ({person}:PersonProps) {
   return (
       <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
-          <Link href={`/e-lab/${person.firstName.toLowerCase() + "-" + person.lastName.toLowerCase()}`}>
+          <Link href={`/e-lab/${person.id}`}>
               <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
                   <img
                       src={person?.imgSrc}
