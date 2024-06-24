@@ -145,3 +145,21 @@ export const faq = [
       "The AI E-Lab is a part-time program. Keep in mind that the more you commit, the more you get out of this program.",
   },
 ];
+
+export interface Founder {
+  name: string;
+  role: string;
+}
+
+export type Metrics = Record<string, string>;
+
+export interface Startup {
+  id: string;
+  name: string;
+  description: string;
+  founders: Founder[];
+  metrics: Metrics;
+  website: string;
+  logo: string;
+  about?: string;
+}

@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Startup } from '@data/e-lab';
 
-const StartupDetails = ({ startup }: { startup: any }) => {
+const StartupDetails = ({ startup }: { startup: Startup }) => {
   return (
     <div className="bg-purple-950 text-white min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
@@ -20,7 +21,7 @@ const StartupDetails = ({ startup }: { startup: any }) => {
 
         <h2 className="text-2xl font-semibold mb-4">Founders</h2>
         <ul className="mb-8">
-          {startup.founders.map((founder: any) => (
+          {startup.founders.map((founder) => (
             <li key={founder.name} className="mb-2">
               <span className="font-bold">{founder.name}</span> - {founder.role}
             </li>
