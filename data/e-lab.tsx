@@ -103,6 +103,24 @@ export const testimonials = [
   // {
 ];
 
+export const team = [
+  {
+    firstName: "Laurenz",
+    lastName: "Sommerlad",
+    role: "Head of Venture",
+    description: "",
+    imgSrc: "/assets/e-lab/team/laurenz_sommerlad.jpg",
+    imgAlt: "Laurenz Sommerlad",
+    linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
+    x: "https://x.com/Lauros_World",
+    instagram: "https://www.instagram.com/LaurenzSommerlad/",
+    youtube: "https://www.youtube.com/@LaurenzSommerlad",
+    website: "https://linktr.ee/LaurenzSommerlad",
+    email: "laurenz.sommerlad@tum-ai.com"
+  },
+];
+
+
 export const faq = [
   {
     question: "I don’t feel experienced yet. Should I still apply?",
