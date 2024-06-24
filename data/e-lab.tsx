@@ -130,7 +130,7 @@ export const faq = [
   {
     question: "Do I need to be enrolled at a university?",
     answer:
-      "No. We want to make founding accessible to everyone and fair. Regardless of your background, we would like to help you with founding your AI startup.",
+      "No. It doesn't matter whether you are are enrolled at TUM, LMU or a student in Munich at all. We want to make founding accessible to everyone and fair. Regardless of your background, we would like to help you with founding your AI startup. You only have to be present in Munich during the program.",
   },
   {
     question: "My idea is not AI related. Can I still apply?",

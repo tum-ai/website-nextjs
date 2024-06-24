@@ -17,6 +17,7 @@ import {startups} from "data/e-lab-startups";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
+import VentureTeam from "@components/VentureTeam";
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
@@ -52,7 +53,7 @@ export default function Page() {
           <div className="flex max-w-xl flex-col gap-8">
             <p className="text-center">
               Come around to see new and exciting ideas in the world of AI at
-              our AI E-Lab Final Pitch Event Friday, January 19th. An evening
+              our AI E-Lab Final Pitch Event Friday, January 19th in Munich. An evening
               where our top startups showcase their exciting developments.
               It&apos;s a great chance to see fresh ideas in action and meet
               some of the key players in the industry.{" "}
@@ -61,6 +62,7 @@ export default function Page() {
               <Link
                 className="min-w-[300px] rounded-full border-none bg-gradient-to-b from-yellow-500 to-red-500 p-4 text-center sm:min-w-[400px]"
                 href="https://www.eventbrite.de/e/ai-e-lab-final-pitch-competition-tickets-784536669297?aff=oddtdtcreator"
+                target="_blank"
               >
                 Sign up now
               </Link>
@@ -352,6 +354,8 @@ export default function Page() {
           Become a partner
         </Link>
       </Section>
+
+      <VentureTeam />
 
       <Section className="bg-purple-950 text-white">
         <h3 className="text-primary mb-2 block text-center text-lg font-semibold">
