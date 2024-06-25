@@ -36,10 +36,8 @@ export default function Person ({person}:PersonProps) {
           <div className="flex-1 p-4 space-y-2 flex flex-col">
               <div className="flex flex-row justify-between">
                   <h3 className="text-m font-medium text-gray-900">
-                      <Link href={`/e-lab/${person.firstName.toLowerCase() + "-" + person.lastName.toLowerCase()}`}>
-                         {person.firstName} {person.lastName}
-                      </Link>
-                      </h3>
+                     {person.firstName} {person.lastName}
+                  </h3>
                   <div className="space-x-4">
                       <Link href={person.linkedin} target="_blank">
                           <FontAwesomeIcon
