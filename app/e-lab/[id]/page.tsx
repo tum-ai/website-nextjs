@@ -1,10 +1,10 @@
-import {type Metadata} from 'next';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInstagram, faLinkedin, faXTwitter} from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
+import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
+import {faArrowLeft, faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
 import {team} from "../../../data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
+import Section from "@components/ui/Section";
 
 interface PersonProps {
     id: string;
@@ -82,31 +82,138 @@ export default function Page({params: {id}}: { params: { id: string } }) {
         return <NotFound />;
     }
     return(
-        <>
-            <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
-                <Link href={`/e-lab/${id}`}>
-                    <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
-                        <img
-                            src={person?.imgSrc}
-                            alt={person?.imgAlt}
-                            className="w-full h-full object-center object-cover sm:w-full sm:h-full"
-                        />
+        <Section className="bg-purple-950 text-white">
+            <div>
+                <div className="mt-4 sm:mt-0 max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+                    <div className="lg:max-w-lg lg:self-end">
+                        <Link href={"/e-lab/team"}>
+                            <button
+                                type="button"
+                                className="flex flex-row items-center text-center w-fit pr-2 h-7 bg-orange-500 border border-transparent rounded-md text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-orange-500"
+                            >
+                                <FontAwesomeIcon icon={faArrowLeft}
+                                                 size="lg"
+                                                 className="w-5 h-5 text-white m-2"
+                                />
+                                <p>Back</p>
+                            </button>
+                        </Link>
+                        <div className="mt-4">
+                            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+                                {person.firstName} {person.lastName}
+                            </h1>
+                        </div>
+
+                        <section aria-labelledby="information-heading" className="mt-4">
+                            <h2 id="information-heading" className="sr-only">
+                                Role
+                            </h2>
+
+                            <div className="flex items-center">
+                                <p className="text-lg sm:text-2xl font-semibold bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-transparent">
+                                    {person?.role}
+                                </p>
+
+                                <div className="ml-20 pl-4 border-l border-gray-300">
+                                    <h2 className="sr-only">Social Media Links</h2>
+                                    <div className="flex items-center">
+                                        <div className="space-x-4">
+                                            <Link href={person?.linkedin} target="_blank">
+                                                <FontAwesomeIcon
+                                                    icon={faLinkedin}
+                                                    size="lg"
+                                                    className="duration-500 hover:text-yellow-500"
+                                                />
+                                            </Link>
+                                            {person.x ? (
+                                                <Link href={person.x} target="_blank">
+                                                    <FontAwesomeIcon
+                                                        icon={faXTwitter}
+                                                        size="lg"
+                                                        className="duration-500 hover:text-yellow-500"
+                                                    />
+                                                </Link>
+                                            ) : null}
+                                            {person.instagram ? (
+                                                <Link href={person.instagram} target="_blank">
+                                                    <FontAwesomeIcon
+                                                        icon={faInstagram}
+                                                        size="lg"
+                                                        className="duration-500 hover:text-yellow-500"
+                                                    />
+                                                </Link>
+                                            ) : null}
+                                            {person.website ? (
+                                                <Link href={person.website} target="_blank">
+                                                    <FontAwesomeIcon
+                                                        icon={faLink}
+                                                        size="lg"
+                                                        className="duration-500 hover:text-yellow-500"
+                                                    />
+                                                </Link>
+                                            ) : null}
+                                            {person.email ? (
+                                                <Link href={`mailto:${person.email}`}>
+                                                    <FontAwesomeIcon
+                                                        icon={faEnvelope}
+                                                        size="lg"
+                                                        className="duration-500 hover:text-yellow-500"
+                                                    />
+                                                </Link>
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-4 space-y-6">
+                                <p className="text-base whitespace-pre-wrap">
+                                    {person?.description}
+                                </p>
+                            </div>
+
+                            <div className="mt-6">
+                                <h3 className="text-sm font-medium">
+                                    {person.role}
+                                </h3>
+                                <p className="text-sm">
+                                    {person.role}
+                                </p>
+                            </div>
+                        </section>
                     </div>
-                </Link>
+
+                    {/* Product image */}
+                    <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
+                        <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
+                            <img
+                                src={person?.imgSrc}
+                                alt={person?.imgAlt}
+                                className="w-full h-full object-center object-cover"
+                            />
+                        </div>
+                    </div>
+                    <div className="mt-10 lg:max-w-lg lg:col-start-1 lg:row-start-2 lg:self-start">
+                        <section aria-labelledby="options-heading">
+                            <h2 id="options-heading" className="sr-only">
+                                Product quantity
+                            </h2>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
                 <div className="flex-1 p-4 space-y-2 flex flex-col">
                     <div className="flex flex-row justify-between">
                         <h3 className="text-m font-medium text-gray-900">
-                            <Link
-                                href={`/e-lab/${person?.firstName.toLowerCase() + "-" + person.lastName.toLowerCase()}`}>
-                                {person?.firstName} {person?.lastName}
-                            </Link>
+                          {person?.firstName} {person?.lastName}
                         </h3>
                         <div className="space-x-4">
                             <Link href={person?.linkedin} target="_blank">
                                 <FontAwesomeIcon
                                     icon={faLinkedin}
                                     size="lg"
-                                    className="text-black duration-500 hover:text-purple-300"
+                                    className="text-black duration-500 hover:text-yellow-500"
                                 />
                             </Link>
                             {person.x ? (
@@ -114,7 +221,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     <FontAwesomeIcon
                                         icon={faXTwitter}
                                         size="lg"
-                                        className="text-black duration-500 hover:text-purple-300"
+                                        className="text-black duration-500 hover:text-yellow-500"
                                     />
                                 </Link>
                             ) : null}
@@ -123,7 +230,16 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     <FontAwesomeIcon
                                         icon={faInstagram}
                                         size="lg"
-                                        className="text-black duration-500 hover:text-purple-300"
+                                        className="text-black duration-500 hover:text-yellow-500"
+                                    />
+                                </Link>
+                            ) : null}
+                            {person.youtube ? (
+                                <Link href={person.youtube} target="_blank">
+                                    <FontAwesomeIcon
+                                        icon={faYoutube}
+                                        size="lg"
+                                        className="text-black duration-500 hover:text-yellow-500"
                                     />
                                 </Link>
                             ) : null}
@@ -132,7 +248,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     <FontAwesomeIcon
                                         icon={faLink}
                                         size="lg"
-                                        className="text-black duration-500 hover:text-purple-300"
+                                        className="text-black duration-500 hover:text-yellow-500"
                                     />
                                 </Link>
                             ) : null}
@@ -141,7 +257,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     <FontAwesomeIcon
                                         icon={faEnvelope}
                                         size="lg"
-                                        className="text-black duration-500 hover:text-purple-300"
+                                        className="text-black duration-500 hover:text-yellow-500"
                                     />
                                 </Link>
                             ) : null}
@@ -169,7 +285,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                     }
                 </div>
             </div>
-        </>
+        </Section>
     );
 }
 
