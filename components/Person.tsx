@@ -2,23 +2,10 @@ import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInstagram, faLinkedin, faXTwitter} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
+import {Person} from "../data/e-lab";
 
 interface PersonProps {
-    person: {
-        id: string;
-        firstName: string;
-        lastName: string;
-        role: string;
-        description?: string;
-        imgSrc: string;
-        imgAlt: string;
-        linkedin: string;
-        x?: string;
-        instagram?: string;
-        youtube?: string;
-        website?: string;
-        email?: string;
-    };
+    person: Person;
 }
 
 export default function Person ({person}:PersonProps) {

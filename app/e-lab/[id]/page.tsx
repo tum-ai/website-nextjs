@@ -1,26 +1,10 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faArrowLeft, faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
-import {team} from "../../../data/e-lab";
+import {Person, team} from "../../../data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";
-
-interface PersonProps {
-    id: string;
-    firstName: string;
-    lastName: string;
-    role: string;
-    description?: string;
-    imgSrc: string;
-    imgAlt: string;
-    linkedin: string;
-    x?: string;
-    instagram?: string;
-    youtube?: string;
-    website?: string;
-    email?: string;
-}
 /*
 export const getStaticProps: GetStaticProps = (context) => {
     console.warn("context", context.params);
@@ -66,7 +50,7 @@ export const metadata: Metadata = {
 
  */
 export function generateMetadata({params: {id}}: { params: { id: string } }) {
-    const person = team.find((person: PersonProps) => id === person.id);
+    const person = team.find((person: Person) => id === person.id);
 
     return {
         title: person?.firstName + " " + person?.lastName + " - AI E-LAB | TUM.ai",
@@ -76,7 +60,7 @@ export function generateMetadata({params: {id}}: { params: { id: string } }) {
 }
 
 export default function Page({params: {id}}: { params: { id: string } }) {
-    const person = team.find((person: PersonProps) => id === person.id);
+    const person = team.find((person: Person) => id === person.id);
     console.log("person", person);
     if (!person) {
         return <NotFound />;
