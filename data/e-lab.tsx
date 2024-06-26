@@ -103,7 +103,23 @@ export const testimonials = [
   // {
 ];
 
-export const team = [
+export interface Person {
+    id: string;
+    firstName: string;
+    lastName: string;
+    role: string;
+    description?: string;
+    imgSrc: string;
+    imgAlt: string;
+    linkedin: string;
+    x?: string;
+    instagram?: string;
+    youtube?: string;
+    website?: string;
+    email?: string;
+}
+
+export const team: Person[] = [
   {
     id: "laurenz-sommerlad",
     firstName: "Laurenz",
