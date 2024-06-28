@@ -1,17 +1,17 @@
-import startups from '@data/e-lab-startups.json';
+import { startups, Startup} from '@data/e-lab-startups';
 import StartupDetails from '@components/StartupDetails';
 
-export async function generateStaticParams() {
-    return await Promise.resolve(startups.map((startup) => ({
-        id: startup.id,
-    })));
-}
-
 export default function StartupPage({ params }: { params: { id: string } }) {
-    const startup = startups.find((s) => s.id === params.id);
+
+    const startup: Startup | undefined = startups.find((startup: Startup) => {
+        if (startup && startup.id === params.id) {
+            return startup;
+        }
+        return undefined;
+    });
 
     if (!startup) {
-        return <div>Startup not found</div>;
+        return <div>Startup Not Found</div>;
     }
 
     return <StartupDetails startup={startup} />;
