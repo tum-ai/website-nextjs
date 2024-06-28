@@ -1,4 +1,22 @@
-[
+export interface Startup {
+    id: string;
+    name: string;
+    description: string;
+    founders: Founder[];
+    metrics: Metrics;
+    website: string;
+    logo: string;
+    about?: string;
+}
+
+export interface Founder {
+    name: string;
+    role: string;
+}
+
+export type Metrics = Record<string, string>;
+
+export const startups: Startup[] = [
     {
         "id": "airbnb",
         "name": "Airbnb",
@@ -27,4 +45,4 @@
         "website": "https://www.airbnb.com",
         "logo": "/assets/e-lab/startups/airbnb-logo.png"
     }
-]
+];
