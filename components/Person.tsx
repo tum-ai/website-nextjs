@@ -21,11 +21,16 @@ export default function Person ({person}:PersonProps) {
               </div>
           </Link>
           <div className="flex-1 p-4 space-y-2 flex flex-col">
-              <div className="flex flex-row justify-between">
-                  <h3 className="text-m font-medium text-gray-900">
-                     {person.firstName} {person.lastName}
-                  </h3>
-                  <div className="space-x-4">
+              <div className="flex flex-col xl:flex-row xl:justify-between">
+                  <div>
+                      <h3 className="text-m font-medium text-gray-900">
+                          {person.firstName} {person.lastName}
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                          {person.role}
+                      </p>
+                  </div>
+                  <div className="space-x-4 mt-2 xl:mt-0">
                       <Link href={person.linkedin} target="_blank">
                           <FontAwesomeIcon
                               icon={faLinkedin}
@@ -43,13 +48,13 @@ export default function Person ({person}:PersonProps) {
                           </Link>
                       ) : null}
                       {person.instagram ? (
-                      <Link href={person.instagram} target="_blank">
-                          <FontAwesomeIcon
-                              icon={faInstagram}
-                              size="lg"
-                              className="text-black duration-500 hover:text-purple-300"
-                          />
-                      </Link>
+                          <Link href={person.instagram} target="_blank">
+                              <FontAwesomeIcon
+                                  icon={faInstagram}
+                                  size="lg"
+                                  className="text-black duration-500 hover:text-purple-300"
+                              />
+                          </Link>
                       ) : null}
                       {person.website ? (
                           <Link href={person.website} target="_blank">
@@ -71,9 +76,6 @@ export default function Person ({person}:PersonProps) {
                       ) : null}
                   </div>
               </div>
-              <p className="text-sm text-gray-500">
-                  {person.role}
-              </p>
 
               {
                   /*
