@@ -155,15 +155,6 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     {person?.description}
                                 </p>
                             </div>
-
-                            <div className="mt-6">
-                                <h3 className="text-sm font-medium">
-                                    {person.role}
-                                </h3>
-                                <p className="text-sm">
-                                    {person.role}
-                                </p>
-                            </div>
                         </section>
                     </div>
 
