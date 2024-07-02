@@ -93,12 +93,12 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                 Role
                             </h2>
 
-                            <div className="flex items-center">
+                            <div className="flex flex-col sm:flex-row sm:items-center">
                                 <p className="text-lg sm:text-2xl font-semibold bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-transparent">
                                     {person?.role}
                                 </p>
 
-                                <div className="ml-20 pl-4 border-l border-gray-300">
+                                <div className="sm:ml-20 sm:pl-4 sm:border-l sm:border-gray-300 mt-4 sm:mt-0">
                                     <h2 className="sr-only">Social Media Links</h2>
                                     <div className="flex items-center">
                                         <div className="space-x-4">
@@ -179,11 +179,16 @@ export default function Page({params: {id}}: { params: { id: string } }) {
             </div>
             <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
                 <div className="flex-1 p-4 space-y-2 flex flex-col">
-                    <div className="flex flex-row justify-between">
-                        <h3 className="text-m font-medium text-gray-900">
-                          {person?.firstName} {person?.lastName}
-                        </h3>
-                        <div className="space-x-4">
+                    <div className="flex flex-col md:flex-row md:justify-between">
+                        <div>
+                            <h3 className="text-m font-medium text-gray-900">
+                                {person.firstName} {person.lastName}
+                            </h3>
+                            <p className="text-sm text-gray-500">
+                                {person.role}
+                            </p>
+                        </div>
+                        <div className="space-x-4 mt-2 md:mt-0">
                             <Link href={person?.linkedin} target="_blank">
                                 <FontAwesomeIcon
                                     icon={faLinkedin}
@@ -238,9 +243,6 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                             ) : null}
                         </div>
                     </div>
-                    <p className="text-sm text-gray-500">
-                        {person.role}
-                    </p>
 
                     {
                         /*
