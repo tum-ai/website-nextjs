@@ -8,7 +8,7 @@ import VentureTeam from "@components/VentureTeam";
 export const metadata: Metadata = {
     title: "Team - AI E-LAB | TUM.ai",
     description:
-        "Meet the Team behind the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
+        "Meet the Team behind the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding journey designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup in Munich.",
 };
 
 export default function Page() {

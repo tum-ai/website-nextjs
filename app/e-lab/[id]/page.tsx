@@ -18,7 +18,7 @@ export function generateMetadata({params: {id}}: { params: { id: string } }) {
     return {
         title: name + " - AI E-LAB | TUM.ai",
         description:
-            "Meet " + name + " from the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup in Munich.",
+            "Meet " + name + " from the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding journey designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup in Munich.",
     };
 }
 
