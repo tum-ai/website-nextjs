@@ -85,23 +85,6 @@ export default function Person ({person}:PersonProps) {
                       ) : null}
                   </div>
               </div>
-
-              {
-                  /*
-                  <div className="flex-1 flex flex-col justify-end">
-                  {person.description ? (
-                      <p className="text-sm italic text-red-500">
-                          Should we add short description here?
-                      </p>
-                  ) : (
-                      <p className="text-sm italic text-gray-500">
-                          Placeholder for shortDescription
-                      </p>
-                  )}
-              </div>
-
-                   */
-              }
           </div>
       </div>
   );
