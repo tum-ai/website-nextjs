@@ -5,57 +5,20 @@ import {Person, team} from "../../../data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";
-/*
-export const getStaticProps: GetStaticProps = (context) => {
-    console.warn("context", context.params);
-    const id = context.params?.personID;
-    const person = team.find((person: PersonProps) => id === person.id);
 
-    if (!person) {
-        return {
-            props: { hasError: true },
-        }
-    }
-
-    return {
-        props: {
-            person: person
-        }
-    }
-}
-
-export const getStaticPaths: GetStaticPaths = () => {
-    const pathsWithParams = team.map((person: PersonProps) => ({ params: { person: person.id }}))
-    console.warn("paths", pathsWithParams);
-    return {
-        paths: pathsWithParams,
-        fallback: false
-    }
-}
-
- */
 export function generateStaticParams() {
-    //console.warn("team", team);
     return team.map((person) => ({
         id: person.id,
     }));
 }
 
-/*
-export const metadata: Metadata = {
-    title: {id}+" - AI E-LAB | TUM.ai",
-    description:
-        "Meet the Team behind the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
-};
-
- */
 export function generateMetadata({params: {id}}: { params: { id: string } }) {
     const person = team.find((person: Person) => id === person.id);
-
+    const name = person?.firstName + " " + person?.lastName;
     return {
-        title: person?.firstName + " " + person?.lastName + " - AI E-LAB | TUM.ai",
+        title: name + " - AI E-LAB | TUM.ai",
         description:
-            "Meet the Team behind the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
+            "Meet " + name + " from the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup in Munich.",
     };
 }
 
@@ -167,7 +130,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                         </section>
                     </div>
 
-                    {/* Product image */}
+                    {/* Person image */}
                     <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
                         <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
                             <img
@@ -176,13 +139,6 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                 className="w-full h-full object-center object-cover"
                             />
                         </div>
-                    </div>
-                    <div className="mt-10 lg:max-w-lg lg:col-start-1 lg:row-start-2 lg:self-start">
-                        <section aria-labelledby="options-heading">
-                            <h2 id="options-heading" className="sr-only">
-                                Product quantity
-                            </h2>
-                        </section>
                     </div>
                 </div>
             </div>
@@ -252,23 +208,6 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                             ) : null}
                         </div>
                     </div>
-
-                    {
-                        /*
-                        <div className="flex-1 flex flex-col justify-end">
-                        {person.description ? (
-                            <p className="text-sm italic text-red-500">
-                                Should we add short description here?
-                            </p>
-                        ) : (
-                            <p className="text-sm italic text-gray-500">
-                                Placeholder for shortDescription
-                            </p>
-                        )}
-                    </div>
-
-                         */
-                    }
                 </div>
             </div>
         </Section>
