@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInstagram, faLinkedin, faXTwitter} from "@fortawesome/free-brands-svg-icons";
+import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
 import {Person} from "../data/e-lab";
 
@@ -51,6 +51,15 @@ export default function Person ({person}:PersonProps) {
                           <Link href={person.instagram} target="_blank">
                               <FontAwesomeIcon
                                   icon={faInstagram}
+                                  size="lg"
+                                  className="text-black duration-500 hover:text-purple-300"
+                              />
+                          </Link>
+                      ) : null}
+                      {person.youtube ? (
+                          <Link href={person.youtube} target="_blank">
+                              <FontAwesomeIcon
+                                  icon={faYoutube}
                                   size="lg"
                                   className="text-black duration-500 hover:text-purple-300"
                               />

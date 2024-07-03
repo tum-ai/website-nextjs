@@ -94,11 +94,11 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                             </h2>
 
                             <div className="flex flex-col sm:flex-row sm:items-center">
-                                <p className="text-lg sm:text-2xl font-semibold bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-transparent">
+                                <p className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-transparent">
                                     {person?.role}
                                 </p>
 
-                                <div className="sm:ml-20 sm:pl-4 sm:border-l sm:border-gray-300 mt-4 sm:mt-0">
+                                <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-300 mt-4 sm:mt-0">
                                     <h2 className="sr-only">Social Media Links</h2>
                                     <div className="flex items-center">
                                         <div className="space-x-4">
@@ -122,6 +122,15 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                 <Link href={person.instagram} target="_blank">
                                                     <FontAwesomeIcon
                                                         icon={faInstagram}
+                                                        size="lg"
+                                                        className="duration-500 hover:text-yellow-500"
+                                                    />
+                                                </Link>
+                                            ) : null}
+                                            {person.youtube ? (
+                                                <Link href={person.youtube} target="_blank">
+                                                    <FontAwesomeIcon
+                                                        icon={faYoutube}
                                                         size="lg"
                                                         className="duration-500 hover:text-yellow-500"
                                                     />
