@@ -20,12 +20,12 @@ import VentureTeam from "@components/VentureTeam";
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
   description:
-    "Join the AI Entrepreneurship Lab if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
+    "Join the AI Entrepreneurship Lab if you are up for a 3-month startup incubator designed to ignite your innovative spirit and equip you with the relevant know-how to build the next AI unicorn in Munich.",
   openGraph: {
     title:
       "TUM.ai's AI Entrepreneurship Lab: A Founding Journey in Artificial Intelligence",
     description:
-      "A 3-months founding journey for curious and driven individuals. We provide relevant know-how, a team, and support to lay the foundation for AI startups.",
+      "A 3-month startup incubator for curious and driven individuals. We provide relevant know-how, a team, and support to lay the foundation for AI startups in Munich.",
     images: [
       {
         url: "https://timonschramm.com/sm-preview.jpg", // Must be an absolute URL
