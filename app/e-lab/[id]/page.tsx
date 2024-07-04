@@ -142,7 +142,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                     </div>
                 </div>
             </div>
-            <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
+            <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden mt-4 max-w-2xl mx-auto lg:max-w-7xl">
                 <div className="flex-1 p-4 space-y-2 flex flex-col">
                     <div className="flex flex-col md:flex-row md:justify-between">
                         <div>
