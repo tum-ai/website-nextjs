@@ -254,6 +254,31 @@ export default function Page() {
 
       <Section className="bg-purple-950 text-white">
         <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
+          E-Lab Startup Directory
+        </h2>
+        <p className="mb-8 text-center text-4xl">
+          Since <span className="text-yellow-500">2022</span>, we have founded{" "} 
+          <span className="text-yellow-500">16 startups</span> within the{" "}
+          {" "}
+          <span className="text-yellow-500">E-LAB</span>
+        </p>
+        <div className="flex flex-col gap-8 lg:px-24 xl:px-44">
+          <p className="px-8 text-center">
+          We are proud to present the startups that have emerged from the AI
+          E-Lab program. Each of them has a unique story and a vision to
+          change the world with their AI-based solutions. We invite you to
+          explore the startups and their founders, get inspired by their
+          innovative ideas, and discover exciting job opportunities available
+          with these pioneering companies.
+          </p>
+        </div>
+      
+      
+
+      </Section>
+
+      <Section className="bg-purple-950 text-white">
+        <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
           Meet our Partners and Sponsors
         </h2>
 
