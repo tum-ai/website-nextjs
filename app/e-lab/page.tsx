@@ -5,6 +5,7 @@ import Stat from "@components/Stat";
 import Testimonials from "@components/Testimonials";
 import Timeline from "@components/Timeline";
 import Section from "@components/ui/Section";
+import StartupsDictionary from "@components/ELabStartupDict";
 import {
   faBook,
   faCircleNodes,
@@ -12,6 +13,7 @@ import {
   faHandsHoldingCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faq, testimonials } from "data/e-lab";
+import { startups_until24 } from "data/startups";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
@@ -272,9 +274,8 @@ export default function Page() {
           with these pioneering companies.
           </p>
         </div>
-      
-      
-
+        <ul style={{ marginTop: '20px' }}></ul>
+        <StartupsDictionary startups={startups_until24} />
       </Section>
 
       <Section className="bg-purple-950 text-white">

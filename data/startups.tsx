@@ -1,4 +1,4 @@
-interface Startup {
+export interface Startup {
   href: string;
   src: string;
   alt: string;
