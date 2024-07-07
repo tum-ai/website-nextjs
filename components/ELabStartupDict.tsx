@@ -46,7 +46,14 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
   useEffect(() => {
     const applyFilters = () => {
       const filtered = startups.filter((startup) => {
-        return Object.entries(selectedFilters).every(([key, values]) => {
+        // Check if startup matches search query
+        const matchesSearchQuery = searchQuery
+          ? startup.alt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            startup.about.toLowerCase().includes(searchQuery.toLowerCase())
+          : true;
+
+        // Check if startup matches selected filters
+        const matchesFilters = Object.entries(selectedFilters).every(([key, values]) => {
           if (!values.length) return true; // No filter selected for this category
           if (key === 'industryKey') {
             return values.some(value => startup.industry.hasOwnProperty(value));
@@ -56,12 +63,14 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
             return values.includes(startup[key as keyof Startup] as string);
           }
         });
+
+        return matchesSearchQuery && matchesFilters;
       });
       setFilteredStartups(filtered);
     };
 
     applyFilters();
-  }, [selectedFilters, startups]);
+  }, [selectedFilters, searchQuery, startups]);
 
   const handleFilterChange = (category: string, value: string, isChecked: boolean) => {
     setSelectedFilters((prevFilters) => {
@@ -83,6 +92,7 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
 
   const resetFilters = () => {
     setSelectedFilters({});
+    setSearchQuery('');
   };
 
   return (
@@ -109,6 +119,16 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
         <button onClick={resetFilters}>Reset Filters</button>
       </aside>
       <main style={{ flex: 1 }}>
+        {/* Search input */}
+        <div>
+          <input
+            type="text"
+            placeholder="Search startups..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{ marginBottom: '20px', width: '100%' , color: 'black'}}
+          />
+        </div>
         {/* Search and filtered startups display */}
         <h4>E-Lab Startups</h4>
         {filteredStartups.map((startup) => (
