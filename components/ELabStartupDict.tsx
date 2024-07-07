@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Startup } from '../data/startups'; // Adjust the import path as necessary
+// import { Startup } from '../data/startups'; // Adjust the import path as necessary
+import {Startup} from '../data/e-lab-startups';
 
 interface StartupsDictionaryProps {
   startups: Startup[];
@@ -17,31 +18,18 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
   const [filteredStartups, setFilteredStartups] = useState<Startup[]>(startups);
 
   // Assuming each startup has the following fields to filter by
-  const filterCategories: Array<keyof Startup | 'industryKey' | 'industryValue'> = ['tag', 'batch', 'region', 'industryKey', 'industryValue'];
+  const filterCategories: (keyof Startup)[] = ['tag', 'batch', 'industry'];
 
   // Dynamically generate filter options based on startups data
   const filterOptions = startups.reduce((acc, startup) => {
     filterCategories.forEach((category) => {
-      if (category === 'industryKey') {
-        Object.keys(startup.industry).forEach((key) => {
-          if (!acc[category]?.includes(key)) {
-            acc[category]?.push(key);
-          }
-        });
-      } else if (category === 'industryValue') {
-        Object.values(startup.industry).forEach((value) => {
-          if (!acc[category]?.includes(value)) {
-            acc[category]?.push(value);
-          }
-        });
-      } else {
-        if (startup[category as keyof Startup] && !acc[category]?.includes(startup[category as keyof Startup] as string)) {
-          acc[category]?.push(startup[category as keyof Startup] as string);
+        if (startup[category] && !acc[category]?.includes(startup[category] as string)) {
+          acc[category]?.push(startup[category] as string);
         }
-      }
     });
     return acc;
   }, filterCategories.reduce((acc, category) => ({ ...acc, [category]: [] as string[] }), {} as Record<string, string[]>));
+  console.log(filterOptions)
 
   useEffect(() => {
     const applyFilters = () => {
@@ -55,13 +43,7 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
         // Check if startup matches selected filters
         const matchesFilters = Object.entries(selectedFilters).every(([key, values]) => {
           if (!values.length) return true; // No filter selected for this category
-          if (key === 'industryKey') {
-            return values.some(value => startup.industry.hasOwnProperty(value));
-          } else if (key === 'industryValue') {
-            return values.some(value => Object.values(startup.industry).includes(value));
-          } else {
-            return values.includes(startup[key as keyof Startup] as string);
-          }
+          return values.includes(startup[key as keyof Startup] as string);
         });
 
         return matchesSearchQuery && matchesFilters;
@@ -76,7 +58,7 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
     setSelectedFilters((prevFilters) => {
       const updatedFilters = { ...prevFilters };
       if (isChecked) {
-        if (updatedFilters[category]) {
+        if (category in updatedFilters) {
           updatedFilters[category].push(value);
         } else {
           updatedFilters[category] = [value];
@@ -132,9 +114,9 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
         {/* Search and filtered startups display */}
         <h4>E-Lab Startups</h4>
         {filteredStartups.map((startup) => (
-          <div key={startup.href} style={{ marginBottom: '20px' }}>
-            <h5>{startup.alt}</h5>
-            <p>{startup.about}</p>
+          <div key={startup.website} style={{ marginBottom: '20px' }}>
+            <h5>{startup.name}</h5>
+            <p>{startup.description}</p>
           </div>
         ))}
       </main>

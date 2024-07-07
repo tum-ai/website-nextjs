@@ -13,7 +13,7 @@ import {
   faHandsHoldingCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faq, testimonials } from "data/e-lab";
-import { startups_until24 } from "data/startups";
+import {startups} from "data/e-lab-startups";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
@@ -275,7 +275,7 @@ export default function Page() {
           </p>
         </div>
         <ul style={{ marginTop: '20px' }}></ul>
-        <StartupsDictionary startups={startups_until24} />
+        <StartupsDictionary startups={startups} />
       </Section>
 
       <Section className="bg-purple-950 text-white">
