@@ -1,52 +1,49 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-// import { Startup } from '../data/startups'; // Adjust the import path as necessary
-import {Startup} from '../data/e-lab-startups';
+import React, { useState, useEffect, useRef } from 'react';
+import { Startup } from '../data/e-lab-startups';
 
 interface StartupsDictionaryProps {
   startups: Startup[];
+  height: string; // Adding height prop
 }
 
 interface FilterOptions {
   [key: string]: string[];
 }
 
-export default function StartupsDictionary({ startups }: StartupsDictionaryProps) {
+export default function StartupsDictionary({ startups, height }: StartupsDictionaryProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFilters, setSelectedFilters] = useState<FilterOptions>({});
   const [filteredStartups, setFilteredStartups] = useState<Startup[]>(startups);
 
-  // Assuming each startup has the following fields to filter by
+  const checkboxesRef = useRef<Record<string, HTMLInputElement>>({});
+
   const filterCategories: (keyof Startup)[] = ['tag', 'batch', 'industry'];
 
-  // Dynamically generate filter options based on startups data
   const filterOptions = startups.reduce((acc, startup) => {
     filterCategories.forEach((category) => {
-        if (startup[category] && !acc[category]?.includes(startup[category] as string)) {
-          acc[category]?.push(startup[category] as string);
-        }
+      if (startup[category] && !acc[category]?.includes(startup[category] as string)) {
+        acc[category]?.push(startup[category] as string);
+      }
     });
     return acc;
   }, filterCategories.reduce((acc, category) => ({ ...acc, [category]: [] as string[] }), {} as Record<string, string[]>));
-  console.log(filterOptions)
 
   useEffect(() => {
     const applyFilters = () => {
       const filtered = startups.filter((startup) => {
-        // Check if startup matches search query
         const matchesSearchQuery = searchQuery
           ? startup.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             startup.description.toLowerCase().includes(searchQuery.toLowerCase())
           : true;
 
-        // Check if startup matches selected filters
         const matchesFilters = Object.entries(selectedFilters).every(([key, values]) => {
-          if (!values.length) return true; // No filter selected for this category
+          if (!values.length) return true;
           return values.includes(startup[key as keyof Startup] as string);
         });
 
-        return matchesSearchQuery && matchesFilters;
+        return matchesFilters && matchesSearchQuery;
       });
       setFilteredStartups(filtered);
     };
@@ -58,11 +55,10 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
     setSelectedFilters((prevFilters) => {
       const updatedFilters = { ...prevFilters };
       if (isChecked) {
-        if (category in updatedFilters) {
-          updatedFilters[category].push(value);
-        } else {
-          updatedFilters[category] = [value];
+        if (!updatedFilters[category]) {
+          updatedFilters[category] = [];
         }
+        updatedFilters[category].push(value);
       } else {
         if (updatedFilters[category]) {
           updatedFilters[category] = updatedFilters[category].filter((v) => v !== value);
@@ -75,50 +71,63 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
   const resetFilters = () => {
     setSelectedFilters({});
     setSearchQuery('');
+
+    Object.values(checkboxesRef.current).forEach((checkbox) => {
+      if (checkbox) {
+        checkbox.checked = false;
+      }
+    });
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-      <aside style={{ width: '250px', paddingRight: '20px' }}>
-        <h4>Filters</h4>
+    <div className="flex">
+      <aside className="w-64 p-4 bg-purple-950 border border-white rounded text-white">
+        <h4 className="text-lg font-semibold mb-4">Filters</h4>
         {filterCategories.map((category) => (
-          <div key={category}>
-            <h5>{category.charAt(0).toUpperCase() + category.slice(1)}</h5>
+          <div key={category} className="mb-4">
+            <h5 className="font-medium mb-2">{category.charAt(0).toUpperCase() + category.slice(1)}</h5>
             {filterOptions[category]?.map((option) => (
-              <div key={option}>
+              <div key={option} className="flex items-center mb-1">
                 <input
                   type="checkbox"
                   id={`${category}-${option}`}
                   name={`${category}-${option}`}
                   value={option}
+                  ref={(el) => {
+                    if (el) checkboxesRef.current[`${category}-${option}`] = el;
+                  }}
                   onChange={(e) => handleFilterChange(category, option, e.target.checked)}
+                  className="mr-2"
                 />
-                <label htmlFor={`${category}-${option}`}>{option}</label>
+                <label htmlFor={`${category}-${option}`} className="text-sm">{option}</label>
               </div>
             ))}
           </div>
         ))}
-        <button onClick={resetFilters}>Reset Filters</button>
+        <button onClick={resetFilters} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Reset Filters</button>
       </aside>
-      <main style={{ flex: 1 }}>
-        {/* Search input */}
-        <div>
+      <main className="flex-1 p-4 overflow-auto" style={{ height: height }}>
+        <div className="mb-4">
           <input
             type="text"
-            placeholder="Search startups..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            style={{ marginBottom: '20px', width: '100%' , color: 'black'}}
+            placeholder="Search startups..."
+            className="w-full px-4 py-2 border rounded text-black"
           />
         </div>
-        {/* Search and filtered startups display */}
-        <h4>E-Lab Startups</h4>
-        {filteredStartups.map((startup) => (
-          <div key={startup.website} style={{ marginBottom: '20px' }}>
-            <h5>{startup.name}</h5>
-            <p>{startup.description}</p>
-          </div>
-        ))}
+        <h4 className="text-lg font-semibold mb-4">E-Lab Startups</h4>
+        <div className="overflow-y-auto" style={{ maxHeight: height }}>
+          {filteredStartups.map((startup) => (
+            <div key={startup.website} className="mb-4 p-4 border rounded-lg shadow flex items-center">
+              <img src={startup.logo} alt={`${startup.name} logo`} className="w-16 h-16 object-contain mr-4"/>
+              <div>
+                <h5 className="text-md font-medium">{startup.name}</h5>
+                <p className="text-sm text-gray-300">{startup.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </main>
     </div>
   );

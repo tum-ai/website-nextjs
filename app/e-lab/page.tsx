@@ -275,7 +275,7 @@ export default function Page() {
           </p>
         </div>
         <ul style={{ marginTop: '20px' }}></ul>
-        <StartupsDictionary startups={startups} />
+        <StartupsDictionary startups={startups} height="400px" />
       </Section>
 
       <Section className="bg-purple-950 text-white">
