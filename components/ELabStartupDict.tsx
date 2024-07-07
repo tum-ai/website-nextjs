@@ -36,8 +36,8 @@ export default function StartupsDictionary({ startups }: StartupsDictionaryProps
       const filtered = startups.filter((startup) => {
         // Check if startup matches search query
         const matchesSearchQuery = searchQuery
-          ? startup.alt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            startup.about.toLowerCase().includes(searchQuery.toLowerCase())
+          ? startup.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            startup.description.toLowerCase().includes(searchQuery.toLowerCase())
           : true;
 
         // Check if startup matches selected filters
