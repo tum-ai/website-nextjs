@@ -106,8 +106,8 @@ export default function StartupsDictionary({ startups, height }: StartupsDiction
         ))}
         <button onClick={resetFilters} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Reset Filters</button>
       </aside>
-      <main className="flex-1 p-4 overflow-auto" style={{ height: height }}>
-        <div className="mb-4">
+      <main className="flex-1 p-4 overflow-hidden" style={{ height }}>
+        <div className="mb-4 sticky top-0 bg-white z-10">
           <input
             type="text"
             value={searchQuery}
@@ -117,7 +117,7 @@ export default function StartupsDictionary({ startups, height }: StartupsDiction
           />
         </div>
         <h4 className="text-lg font-semibold mb-4">E-Lab Startups</h4>
-        <div className="overflow-y-auto" style={{ maxHeight: height }}>
+        <div className="overflow-y-auto" style={{ maxHeight: `calc(${height} - 50px)` }}>
           {filteredStartups.map((startup) => (
             <div key={startup.website} className="mb-4 p-4 border rounded-lg shadow flex items-center">
               <img src={startup.logo} alt={`${startup.name} logo`} className="w-16 h-16 object-contain mr-4"/>

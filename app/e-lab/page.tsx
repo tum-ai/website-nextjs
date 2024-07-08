@@ -264,7 +264,7 @@ export default function Page() {
           {" "}
           <span className="text-yellow-500">E-LAB</span>
         </p>
-        <div className="flex flex-col gap-8 lg:px-24 xl:px-44">
+        <div className="flex flex-col gap-8 lg:px-24 xl:px-44"> 
           <p className="px-8 text-center">
           We are proud to present the startups that have emerged from the AI
           E-Lab program. Each of them has a unique story and a vision to
