@@ -5,7 +5,7 @@ import Stat from "@components/Stat";
 import Testimonials from "@components/Testimonials";
 import Timeline from "@components/Timeline";
 import Section from "@components/ui/Section";
-import StartupsDictionary from "@components/ELabStartupDict";
+import StartupList from "@components/ELabStartupList";
 import {
   faBook,
   faCircleNodes,
@@ -275,7 +275,7 @@ export default function Page() {
           </p>
         </div>
         <ul style={{ marginTop: '20px' }}></ul>
-        <StartupsDictionary startups={startups} height="400px" />
+        <StartupList startups={startups} maxHeight="400px" />
       </Section>
 
       <Section className="bg-purple-950 text-white">

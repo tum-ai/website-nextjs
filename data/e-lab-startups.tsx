@@ -122,8 +122,8 @@ export const startups: Startup[] = [
     },
 
     {
-        id: "tesla",
-        name: "Tesla",
+        id: "tesla1",
+        name: "Tesla1",
         description: "Tesla, Inc. is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses. Founded in 2003 by a group of engineers who wanted to prove that people didn’t need to compromise to drive electric – that electric vehicles can be better, quicker and more fun to drive than gasoline cars.",
         founders: [
             {
@@ -137,7 +137,7 @@ export const startups: Startup[] = [
             "Funding Raised": "$6.4 billion",
             "Employees": "6,132"
         },
-        website: "http://tesla.com",
+        website: "http://tesla1.com",
         logo: "/assets/e-lab/startups/Tesla_Motors.svg.png",
         industry: "Automotive",
         batch: "S10",
@@ -160,8 +160,8 @@ export const startups: Startup[] = [
     },
 
     {
-        id: "tesla",
-        name: "Tesla",
+        id: "tesla2",
+        name: "Tesla2",
         description: "Tesla, Inc. is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses. Founded in 2003 by a group of engineers who wanted to prove that people didn’t need to compromise to drive electric – that electric vehicles can be better, quicker and more fun to drive than gasoline cars.",
         founders: [
             {
@@ -175,7 +175,7 @@ export const startups: Startup[] = [
             "Funding Raised": "$6.4 billion",
             "Employees": "6,132"
         },
-        website: "http://tesla.com",
+        website: "http://tesla2.com",
         logo: "/assets/e-lab/startups/Tesla_Motors.svg.png",
         industry: "Automotive",
         batch: "S10",
