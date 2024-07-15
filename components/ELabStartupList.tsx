@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Startup } from '../data/e-lab-startups';
 import Link from "next/link";
+import '../styles/tags.css';
 
 interface StartupListProps {
   startups: Startup[];
@@ -163,6 +164,11 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
                 <div>
                   <h5 className="text-md font-medium">{startup.name}</h5>
                   <p className="text-sm text-gray-300">{startup.description}</p>
+                  <div className="flex space-x-2 mt-2">
+                    <span className="tag">{startup.batch}</span>
+                    <span className="tag">{startup.industry}</span>
+                    <span className="tag">{startup.tag}</span>
+                  </div>
                 </div>
               </div>
             </Link>
