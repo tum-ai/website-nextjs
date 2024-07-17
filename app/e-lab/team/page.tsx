@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import Section from "@ui/Section";
 import Link from "next/link";
-import {alumni, faq, team} from "../../../data/e-lab";
+import {alumni, faq} from "../../../data/e-lab";
 import FAQ from "@components/FAQ";
 import VentureTeam from "@components/VentureTeam";
 import Person from "@components/Person";

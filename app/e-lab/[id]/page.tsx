@@ -5,6 +5,7 @@ import {alumni, Person, team} from "../../../data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";
+import Image from "next/image";
 
 export function generateStaticParams() {
     return team.map((person) => ({
@@ -70,7 +71,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     <h2 className="sr-only">Social Media Links</h2>
                                     <div className="flex items-center">
                                         <div className="space-x-4">
-                                            <Link href={person?.linkedin} target="_blank">
+                                            <Link href={person?.linkedin} target="_blank" rel="me">
                                                 <FontAwesomeIcon
                                                     icon={faLinkedin}
                                                     size="lg"
@@ -78,7 +79,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                 />
                                             </Link>
                                             {person.x ? (
-                                                <Link href={person.x} target="_blank">
+                                                <Link href={person.x} target="_blank" rel="me">
                                                     <FontAwesomeIcon
                                                         icon={faXTwitter}
                                                         size="lg"
@@ -87,7 +88,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                 </Link>
                                             ) : null}
                                             {person.instagram ? (
-                                                <Link href={person.instagram} target="_blank">
+                                                <Link href={person.instagram} target="_blank" rel="me">
                                                     <FontAwesomeIcon
                                                         icon={faInstagram}
                                                         size="lg"
@@ -96,7 +97,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                 </Link>
                                             ) : null}
                                             {person.youtube ? (
-                                                <Link href={person.youtube} target="_blank">
+                                                <Link href={person.youtube} target="_blank" rel="me">
                                                     <FontAwesomeIcon
                                                         icon={faYoutube}
                                                         size="lg"
@@ -105,7 +106,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                 </Link>
                                             ) : null}
                                             {person.website ? (
-                                                <Link href={person.website} target="_blank">
+                                                <Link href={person.website} target="_blank" rel="me">
                                                     <FontAwesomeIcon
                                                         icon={faLink}
                                                         size="lg"
@@ -114,7 +115,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                 </Link>
                                             ) : null}
                                             {person.email ? (
-                                                <Link href={`mailto:${person.email}`}>
+                                                <Link href={`mailto:${person.email}`} rel="me">
                                                     <FontAwesomeIcon
                                                         icon={faEnvelope}
                                                         size="lg"
@@ -138,8 +139,11 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                     {/* Person image */}
                     <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
                         <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-                            <img
+                            <Image
                                 src={person?.imgSrc}
+                                width={0}
+                                height={0}
+                                sizes="100vw"
                                 alt={person?.imgAlt}
                                 className="w-full h-full object-center object-cover"
                             />

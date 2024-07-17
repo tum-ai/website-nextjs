@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
 import {Person} from "../data/e-lab";
+import Image from "next/image";
 
 interface PersonProps {
     person: Person;
@@ -13,8 +14,11 @@ export default function Person ({person}:PersonProps) {
       <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
           <Link href={`/e-lab/${person.id}`}>
               <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
-                  <img
+                  <Image
                       src={person?.imgSrc}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
                       alt={person?.imgAlt}
                       className="w-full h-full object-center object-cover sm:w-full sm:h-full"
                   />
