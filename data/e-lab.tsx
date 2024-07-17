@@ -125,7 +125,14 @@ export const team: Person[] = [
     firstName: "Laurenz",
     lastName: "Sommerlad",
     role: "Head of Venture",
-    description: "",
+    description: "Hey, I am Laurenz and lead the amazing team behind the AI E-LAB. My journey began at a young age, building my first software projects at 12 and founding a student-led startup at 15. These early experiences paved the way for my burning passion in AI, Robotics and Entrepreneurship.\n\n" +
+        "Here is a quick overview of my academic achievements and work:\n\n" +
+        "- Ranked in the Top 2% at TUM Department of Computer Science and achieved an Abitur GPA of 1.0\n" +
+        "- Conducting research at LMU Hospital to predict rare child diseases using federated learning-based Graph ML techniques on patient phenotypes, genes, and proteins\n" +
+        "- Developing perception and path planning software for an Autonomous Mars Rover participating in International Rover Competitions with WARR Space Robotics, while also leading Partner & Sponsors | PR & Marketing subteams \n" +
+        "- Over 2+ years of work experience as a Software Engineer in Full-Stack web-based applications (working student)\n\n" +
+        "Outside of my professional endeavors, I enjoy doing a lot of different sports like weight training, martial arts (Wing Chun), marathons, technical and cave diving, wakeboarding, snowboarding, and preparing for my first Ironman. I am also in love with traveling, exploring foreign cultures and learning languages including French, Spanish, Japanese & Arabic which continues to enrich my life.\n\n" +
+        "Driven by a desire to make the world a better place, I am committed to solving the most challenging problems with technology. Feel free to reach out — I am always up for a coffee and a good conversation! ☕",
     imgSrc: "/assets/e-lab/team/laurenz_sommerlad.jpg",
     imgAlt: "Laurenz Sommerlad",
     linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
@@ -244,9 +251,25 @@ export const team: Person[] = [
     website: "",
     email: "nagaharshith-makam.sreenivasulu@tum-ai.com"
   },
-
 ];
 
+export const alumni: Person[] = [
+  {
+    id: "abdulqadir-faruk",
+    firstName: "Abdulqadir",
+    lastName: "Faruk",
+    role: "Advisor",
+    description: "Abdul serves as an Advisor at TUM.ai, where he brings his experience and expertise in leadership, entrepreneurship, and venture development. He previously led the AI E-Lab as the Head of Venture alongside Daniil Morozov, where they envisioned and re-established the AI E-Lab as a straight-shooting startup sandbox and a genuine community designed to engineer serendipity among founders. Throughout the program, Abdul has been and will continue to be a humble sparring partner for our founders.",
+    imgSrc: "/assets/e-lab/team/abdul_faruk.jpg",
+    imgAlt: "Abdulqadir Faruk",
+    linkedin: "https://www.linkedin.com/in/abdulqadirfaruk/",
+    x: "",
+    instagram: "",
+    youtube: "",
+    website: "",
+    email: "abdul.faruk@tum-ai.com",
+  },
+];
 
 export const faq = [
   {
