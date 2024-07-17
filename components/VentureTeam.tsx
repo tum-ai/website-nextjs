@@ -14,7 +14,7 @@ export default function VentureTeam() {
                           The AI Entrepreneurship Lab is organized by passionate TUM.ai Members
                         </span>{" "}
                         who are committed to fostering the next generation of AI entrepreneurs. Our mission is to ignite
-                        your innovative spirit and equip you with the relevant know-how to build your own AI startup.
+                        your innovative spirit and equip you with the relevant know-how to build your own AI startup with the help of the Munich Entrepreneurship Ecosystem.
                     </p>
                 </div>
                 <div
