@@ -169,6 +169,21 @@ export const team: Person[] = [
     email: ""
   },
   {
+    id: "emine-hakani",
+    firstName: "Emine",
+    lastName: "Hakani",
+    role: "Partners & Sponsors",
+    description: "",
+    imgSrc: "/assets/e-lab/team/emine_hakani.png",
+    imgAlt: "Emine Hakani",
+    linkedin: "https://www.linkedin.com/in/emine-hakani-muc/",
+    x: "",
+    instagram: "",
+    youtube: "",
+    website: "",
+    email: "venture@tum-ai.com"
+  },
+  {
     id: "philip-juenemann",
     firstName: "Philip",
     lastName: "Jünemann",
@@ -229,6 +244,7 @@ export const team: Person[] = [
     website: "",
     email: "nagaharshith-makam.sreenivasulu@tum-ai.com"
   },
+
 ];
 
 
