@@ -1,7 +1,7 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faArrowLeft, faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
-import {Person, team} from "../../../data/e-lab";
+import {alumni, Person, team} from "../../../data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";
@@ -9,11 +9,14 @@ import Section from "@components/ui/Section";
 export function generateStaticParams() {
     return team.map((person) => ({
         id: person.id,
-    }));
+    })).concat(alumni.map((person) => ({id: person.id})));
 }
 
 export function generateMetadata({params: {id}}: { params: { id: string } }) {
-    const person = team.find((person: Person) => id === person.id);
+    let person = team.find((person: Person) => id === person.id);
+    if(!person) {
+        person = alumni.find((person: Person) => id === person.id);
+    }
     const name = person?.firstName + " " + person?.lastName;
     return {
         title: name + " - AI E-LAB | TUM.ai",
@@ -23,8 +26,10 @@ export function generateMetadata({params: {id}}: { params: { id: string } }) {
 }
 
 export default function Page({params: {id}}: { params: { id: string } }) {
-    const person = team.find((person: Person) => id === person.id);
-    console.log("person", person);
+    let person = team.find((person: Person) => id === person.id);
+    if (!person) {
+        person = alumni.find((person: Person) => id === person.id);
+    }
     if (!person) {
         return <NotFound />;
     }
