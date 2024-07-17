@@ -29,6 +29,14 @@ export default function Page() {
                     ))}
                 </div>
             </Section>
+            <Section className="bg-purple-950 text-center text-white">
+                <Link
+                    className="rounded-full border-2 border-yellow-500 p-4 text-center text-center font-bold text-yellow-500"
+                    href="/e-lab"
+                >
+                    Back to the AI E-LAB
+                </Link>
+            </Section>
             <Section className="bg-purple-950 text-white">
                 <h3 className="text-primary mb-2 block text-center text-lg font-semibold">
                     FAQ
