@@ -132,7 +132,7 @@ export const team: Person[] = [
     x: "https://x.com/Lauros_World",
     instagram: "https://www.instagram.com/LaurenzSommerlad/",
     youtube: "https://www.youtube.com/@LaurenzSommerlad",
-    website: "https://linktr.ee/LaurenzSommerlad",
+    website: "https://laurenzsommerlad.com",
     email: "laurenz.sommerlad@tum-ai.com"
   },
   {
@@ -158,7 +158,7 @@ export const team: Person[] = [
     firstName: "Benedikt",
     lastName: "Wieser",
     role: "Strategy & Events",
-    description: "Having a background in Business Administration from the University of St. Gallen and studies at Berkeley, I’ve worked on multiple startup projects, in venture capital, at a scale-up, and participated in the AI-Elab 2.0. Additional to my professional experience, I learnt to lead teams in high-stress situations as an officer cadet in the Austrian Armed Forces, instilling in me strong personal drive and get-things-done thinking. Besides being passionate about entrepreneurship I love outdoor adventures like whitewater rafting and hiking, and always strive to explore and feel the intensity of life. I am absolutely looking forward to accompanying you on your individual, entrepreneurial journey. Let’s build something amazing together!",
+    description: "Having a background in Business Administration from the University of St. Gallen and studies at Berkeley, I’ve worked on multiple startup projects, in venture capital, at a scale-up, and participated in the AI E-Lab 2.0 startup incubator.\n\nAdditional to my professional experience, I learnt to lead teams in high-stress situations as an officer cadet in the Austrian Armed Forces, instilling in me strong personal drive and get-things-done thinking.\n\nBesides being passionate about entrepreneurship I love outdoor adventures like whitewater rafting and hiking, and always strive to explore and feel the intensity of life. I am absolutely looking forward to accompanying you on your individual, entrepreneurial journey. Let’s build something amazing together!",
     imgSrc: "/assets/e-lab/team/benedikt_wieser.jpg",
     imgAlt: "Benedikt Wieser",
     linkedin: "https://www.linkedin.com/in/benedikt-wieser-6430a3139/",
@@ -213,6 +213,21 @@ export const team: Person[] = [
     youtube: "",
     website: "",
     email: "zaid.efraij@tum-ai.com"
+  },
+  {
+    id: "nagaharshith-makam-sreenivasulu",
+    firstName: "Nagaharshith",
+    lastName: "Makam Sreenivasulu",
+    role: "Marketing",
+    description: "Hey, I am Nagah. In addition to pursuing a bachelor's degree in Management and Technology at TUM, I also assist with marketing at TUM.ai and TEG e.V. (The Entrepreneurial Group, student startup club in Munich). With a background in business, I am interested in using AI agents to improve traditional business settings. Professionally, I work as a Business Development working student at roadsurfer GmbH.\n\nI am excited to meet you and help you with your AI startup journey!",
+    imgSrc: "/assets/e-lab/team/nagah_sreenivasulu.jpg",
+    imgAlt: "Nagah Sreenivasulu",
+    linkedin: "https://www.linkedin.com/in/nagaharshith",
+    x: "",
+    instagram: "",
+    youtube: "",
+    website: "",
+    email: "nagaharshith-makam.sreenivasulu@tum-ai.com"
   },
 ];
 
