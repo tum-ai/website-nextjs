@@ -31,6 +31,7 @@ export const Hero = () => {
             <Link
               className="min-w-[200px] max-w-lg rounded-full border-none bg-gradient-to-b from-yellow-500 to-red-500 p-4 text-center sm:min-w-[400px]"
               href="https://tally.so/r/3EWMYB"
+              target="_blank"
             >
               AI E-LAB 3.0 - Join the Waitlist!
             </Link>

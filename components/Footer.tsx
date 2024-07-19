@@ -25,21 +25,21 @@ export default function Footer() {
             />
 
             <div className="space-x-4">
-              <Link href="https://www.instagram.com/tum.ai_official/">
+              <Link href="https://www.instagram.com/tum.ai_official/" target="_blank">
                 <FontAwesomeIcon
                   icon={faInstagram}
                   size="2xl"
                   className="mb-4 text-white duration-500 hover:text-purple-300"
                 />
               </Link>
-              <Link href="https://de.linkedin.com/company/tum-ai">
+              <Link href="https://de.linkedin.com/company/tum-ai" target="_blank">
                 <FontAwesomeIcon
                   icon={faLinkedin}
                   size="2xl"
                   className="mb-4 text-white duration-500 hover:text-purple-300"
                 />
               </Link>
-              <Link href="https://join.slack.com/t/tumaipublic/shared_invite/zt-10kg0t1f9-JLRXDxY_d_vprKWgab0cVw">
+              <Link href="https://join.slack.com/t/tumaipublic/shared_invite/zt-10kg0t1f9-JLRXDxY_d_vprKWgab0cVw" target="_blank">
                 <FontAwesomeIcon
                   icon={faSlack}
                   size="2xl"

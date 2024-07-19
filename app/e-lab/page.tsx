@@ -15,16 +15,17 @@ import { faq, testimonials } from "data/e-lab";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
+import VentureTeam from "@components/VentureTeam";
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
   description:
-    "Join the AI Entrepreneurship Lab if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
+    "Join the AI Entrepreneurship Lab if you are up for a 3-month startup incubator designed to ignite your innovative spirit and equip you with the relevant know-how to build the next AI unicorn in Munich.",
   openGraph: {
     title:
       "TUM.ai's AI Entrepreneurship Lab: A Founding Journey in Artificial Intelligence",
     description:
-      "A 3-months founding journey for curious and driven individuals. We provide relevant know-how, a team, and support to lay the foundation for AI startups.",
+      "A 3-month startup incubator for curious and driven individuals. We provide relevant know-how, a team, and support to lay the foundation for AI startups in Munich.",
     images: [
       {
         url: "https://timonschramm.com/sm-preview.jpg", // Must be an absolute URL
@@ -50,7 +51,7 @@ export default function Page() {
           <div className="flex max-w-xl flex-col gap-8">
             <p className="text-center">
               Come around to see new and exciting ideas in the world of AI at
-              our AI E-Lab Final Pitch Event Friday, January 19th. An evening
+              our AI E-Lab Final Pitch Event Friday, January 19th in Munich. An evening
               where our top startups showcase their exciting developments.
               It&apos;s a great chance to see fresh ideas in action and meet
               some of the key players in the industry.{" "}
@@ -59,6 +60,7 @@ export default function Page() {
               <Link
                 className="min-w-[300px] rounded-full border-none bg-gradient-to-b from-yellow-500 to-red-500 p-4 text-center sm:min-w-[400px]"
                 href="https://www.eventbrite.de/e/ai-e-lab-final-pitch-competition-tickets-784536669297?aff=oddtdtcreator"
+                target="_blank"
               >
                 Sign up now
               </Link>
@@ -326,6 +328,17 @@ export default function Page() {
           Become a partner
         </Link>
       </Section>
+
+      <VentureTeam />
+      <Section className="bg-purple-950 text-center text-white">
+        <Link
+            className="rounded-full border-2 border-yellow-500 p-4 text-center text-center font-bold text-yellow-500"
+            href="/e-lab/team"
+        >
+          See all Team Members
+        </Link>
+      </Section>
+
 
       <Section className="bg-purple-950 text-white">
         <h3 className="text-primary mb-2 block text-center text-lg font-semibold">
