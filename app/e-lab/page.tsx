@@ -156,7 +156,7 @@ export default function Page() {
           <div className="flex flex-wrap justify-center gap-8 md:gap-24">
             <Stat description={"B2B customers"} value={"50+"} />
             <Stat description={"Funding"} value={"1M+"} />
-            <Stat description={"ARR"} value={"200K+"} />
+            <Stat description={"ARR"} value={"300K+"} />
             <Stat description={"Hired employees"} value={"30+"} />
           </div>
         </div>
@@ -231,25 +231,25 @@ export default function Page() {
             {
               title: "Formation & Ideation",
               duration: "4 Weeks",
-              date: "October 2023",
+              date: "October 2024",
               text: "You will interact with potential co-founders, explore ideas, and form teams through the AI E-Lab onboarding, co-founder matching/team building, and ideation activities. This phase will end with a relaxed informal event where you and your team will share your ideas and concepts.",
             },
             {
               title: "Idea validation",
               duration: "2 Weeks",
-              date: "November 2023",
+              date: "November 2024",
               text: "You will focus on validating and shaping your startup idea from the previous phase through market research and developing robust business models that will undergo evaluation in the first pitch event, a Litmus Test to a jury.",
             },
             {
               title: "Build-measure learn",
               duration: "4 Weeks",
-              date: "Nov - Dec 2023",
+              date: "Nov - Dec 2024",
               text: "If your team can make it through the Litmus Test with validated ideas you will start to build prototypes, measure performance, gather valuable feedback from mentors, industry experts, and customers, and continuously iterate towards achieving product-market fit. This phase will end with a Stress test (second pitch event) where a more experienced jury will rigorously test the product market fit and prototypes of your startup and determine who is fit enough to make it to the final pitch to pitch to investors in Phase 4.",
             },
             {
               title: "Refinement & Final pitch",
               duration: "4 Weeks",
-              date: "Dec - Jan 2024",
+              date: "Dec - Jan 2025",
               text: "Should your team successfully pass the Stress Test, you will continue to refine your prototypes into Minimum Viable Products (MVPs) and further refine your business models, and pitches based on the valuable feedback received from customers, mentors, industry experts, and the jury during the Stress Test. The goal of your startup in this phase will be to prepare to showcase your polished startups to real investors and a public audience in the AI E-Lab final pitch event. ",
             },
           ]}
