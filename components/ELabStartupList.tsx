@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Startup } from '../data/e-lab-startups';
 import Link from "next/link";
 import '../styles/tags.css';
+import Image from "next/image";
 
 interface StartupListProps {
   startups: Startup[];
@@ -111,7 +112,7 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
     <div className="flex flex-col md:flex-row">
 
       {/* Filter*/}
-      <div className={`fixed inset-0 z-50 flex bg-gray-800 bg-opacity-75 ${isFilterVisible ? 'block' : 'hidden'} md:static md:block`}>
+      <div className={`fixed inset-0 z-50 flex bg-opacity-75 ${isFilterVisible ? 'block' : 'hidden'} md:static md:block`}>
         <div ref={sidebarRef} className="max-w-60 flex flex-col p-4 bg-purple-950 rounded shadow-lg md:static md:flex md:flex-col md:p-4 md:border md:border-white md:rounded">
           <h4 className="text-lg font-semibold mb-4">Filters</h4>
           {filterCategories.map((category) => (
@@ -136,7 +137,7 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
             </div>
           ))}
           <div className="flex justify-center" >
-            <button onClick={resetFilters} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Reset Filters</button>
+            <button onClick={resetFilters} className="mt-4 px-4 py-2 bg-purple-500 text-white rounded">Reset Filters</button>
           </div>
         </div>
       </div>
@@ -145,7 +146,7 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
       <main className="flex-1 p-4 pt-0" style={{ maxHeight: maxHeight }}>
         {/* Filter Button for Mobile View */}
         <div className="block w-full md:hidden mb-4">
-          <button onClick={toggleFilterVisibility} className="w-full p-3 bg-blue-500 rounded">Filter</button>
+          <button onClick={toggleFilterVisibility} className="w-full p-3 bg-purple-500 rounded">Filter</button>
         </div>
         <div className="mb-4">
           <input
@@ -156,18 +157,18 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
             className="w-full px-4 py-2 border rounded text-black"
           />
         </div>
-        <div className="overflow-y-auto scrollbar-hidden scrollbar-purple pr-4" style={{ maxHeight: `calc(${maxHeight} - 50px)` }}>
+        <div className="overflow-y-auto scrollbar-hidden scrollbar-purple pr-4" style={{ maxHeight: `calc(${maxHeight} - 90px)` }}>
           {filteredStartups.map((startup) => (
             <Link key={startup.id} href={`/e-lab/startups/${startup.id}`}>
-              <div  className="mb-4 p-4 border rounded-lg shadow flex items-center">
-                <img src={startup.logo} alt={`${startup.name} logo`} className="w-16 h-16 object-contain mr-4"/>
+              <div  className="mb-4 p-4 border rounded-lg shadow flex items-center flex-col md:flex-row">
+                <Image src={startup.logo} alt={`${startup.name} logo`} className="w-16 h-16 object-contain mr-4" width={0} height={0} sizes="100vw"/>
                 <div>
                   <h5 className="text-md font-medium">{startup.name}</h5>
                   <p className="text-sm text-gray-300">{startup.description}</p>
-                  <div className="flex space-x-2 mt-2">
-                    <span className="tag">{startup.batch}</span>
-                    <span className="tag">{startup.industry}</span>
-                    <span className="tag">{startup.tag}</span>
+                  <div className="flex flex-wrap">
+                    <span className="tag mr-2 mt-2 ">{startup.batch}</span>
+                    <span className="tag mr-2 mt-2 ">{startup.industry}</span>
+                    <span className="tag mr-2 mt-2 ">{startup.tag}</span>
                   </div>
                 </div>
               </div>

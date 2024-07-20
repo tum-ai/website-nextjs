@@ -275,7 +275,7 @@ export default function Page() {
           </p>
         </div>
         <ul style={{ marginTop: '20px' }}></ul>
-        <StartupList startups={startups} maxHeight="400px" />
+        <StartupList startups={startups} maxHeight="500px" />
       </Section>
 
       <Section className="bg-purple-950 text-white">
