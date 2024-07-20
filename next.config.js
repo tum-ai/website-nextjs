@@ -20,12 +20,27 @@ const nextConfig = {
       {
         source: "/join-us",
         destination: "https://join.tum-ai.com",
-        permanent: false,
+        permanent: true,
       },
       {
         source: "/education",
         destination: "https://education.tum-ai.com",
-        permanent: false,
+        permanent: true,
+      },
+      {
+        source: "/venture",
+        destination: "/e-lab",
+        permanent: true,
+      },
+      {
+        source: "/datenschutz",
+        destination: "/data-privacy",
+        permanent: true,
+      },
+      {
+        source: "/impressum",
+        destination: "/imprint",
+        permanent: true,
       },
     ];
   },

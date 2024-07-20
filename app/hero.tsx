@@ -45,6 +45,7 @@ export const Hero = () => {
 
       <div className="flex h-full w-full items-center text-white">
         <div className="m-auto space-y-8 lg:inline-block">
+          <h1 className="hidden">TUM.ai Student Initiative</h1>
           <Image
             src={"/assets/logo_new_white_standard.png"}
             alt="Logo"
