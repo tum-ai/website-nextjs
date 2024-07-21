@@ -80,7 +80,7 @@ function Content1() {
       subtext: "Applications open in August, program starts in October",
       buttons: [
         {
-          href: "https://tally.so/r/3EWMYB",
+          href: "https://forms.tum-ai.com/stay-in-touch-ai-e-lab",
           text: "Join the Waitlist",
         },
         {
