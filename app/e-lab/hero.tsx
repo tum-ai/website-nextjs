@@ -30,7 +30,7 @@ export const Hero = () => {
           <div className="flex flex-col items-center gap-6">
             <Link
               className="min-w-[200px] max-w-lg rounded-full border-none bg-gradient-to-b from-yellow-500 to-red-500 p-4 text-center sm:min-w-[400px]"
-              href="https://tally.so/r/3EWMYB"
+              href="https://forms.tum-ai.com/stay-in-touch-ai-e-lab"
               target="_blank"
             >
               AI E-LAB 3.0 - Join the Waitlist!
