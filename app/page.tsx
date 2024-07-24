@@ -74,6 +74,23 @@ export default function Index() {
 function Content1() {
   const cards: VerticalCardsProps["cards"] = [
     {
+      img: "/assets/home_img4.jpg",
+      title: "AI Entrepreneurship Lab",
+      text: `14-week equity-free AI startup incubator, access TUM.ai's network to boost your vision and build successful ventures with the full support of the Munich Innovation Ecosystem`,
+      subtext: "Applications open in August, program starts in October",
+      buttons: [
+        {
+          href: "https://forms.tum-ai.com/stay-in-touch-ai-e-lab",
+          text: "Join the Waitlist",
+        },
+        {
+          href: "/e-lab",
+          text: "Learn more",
+          intent: "tertiary",
+        },
+      ],
+    },
+    {
       img: "/assets/home_img1.jpg",
       title: "AI Academy and educational offers",
       text: "a series of advanced AI workshops, featuring hands-on coding tutorials, provided by exciting tech companies, open for everyone!",
@@ -116,19 +133,6 @@ function Content1() {
       buttons: [
         {
           href: "https://www.notion.so/tum-ai/TUM-ai-Industry-Phase-5-0-AI-Projects-7b6e211a9a52421283e4e9833b0f7ea1",
-          text: "Learn more",
-          intent: "tertiary",
-        },
-      ],
-    },
-    {
-      img: "/assets/home_img4.jpg",
-      title: "AI E-Lab Entrepreneurship",
-      text: `Startup incubation program for anyone interested in founding AI ventures, access TUM.ai's network to boost your vision`,
-      subtext: "applications closed, starting in October",
-      buttons: [
-        {
-          href: "/e-lab",
           text: "Learn more",
           intent: "tertiary",
         },
