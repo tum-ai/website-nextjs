@@ -49,7 +49,7 @@ export default function Person ({person}:PersonProps) {
                                   icon={faXTwitter}
                                   size="lg"
                                   className="text-black duration-500 hover:text-purple-300"
-                                  title="Twitter Account"
+                                  title="X (former Twitter) Account"
                               />
                           </Link>
                       ) : null}
