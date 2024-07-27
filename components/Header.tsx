@@ -98,12 +98,12 @@ const Navigation = ({ open, setOpen }: NavigationProps) => {
 
       {!open && (
         <Dialog.Trigger>
-          <FontAwesomeIcon icon={faBars} color="white" size="xl" title="open nav bar" />
+          <FontAwesomeIcon icon={faBars} color="white" size="xl" title="open nav bar" titleId="navOpen" aria-labelledby="navOpen"/>
         </Dialog.Trigger>
       )}
       {!!open && (
         <Dialog.Close>
-          <FontAwesomeIcon icon={faXmark} color="white" size="xl" title="close nav bar" />
+          <FontAwesomeIcon icon={faXmark} color="white" size="xl" title="close nav bar" titleId="navClose" aria-labelledby="navClose"/>
         </Dialog.Close>
       )}
     </Dialog.Root>

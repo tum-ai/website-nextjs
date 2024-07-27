@@ -29,7 +29,7 @@ export const departments: Department[] = [
   {
     name: "Venture",
     description:
-      "The Venture department is mainly focused on bridging the gap between idea and building next successful venture. We are responsible for providing help in entrepreneurial activities for ALL Tum.ai members!",
+      "The Venture department is mainly focused on bridging the gap between ideas and building the next successful AI startups. We are dedicated to fostering innovation and an entrepreneurial spirit among all TUM.ai members!",
     image: "/assets/departments/venture.jpg",
     icon: faRocket,
   },
