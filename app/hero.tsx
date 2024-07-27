@@ -67,12 +67,12 @@ export const Hero = () => {
       <button
         className="absolute bottom-16 left-[50%] -translate-x-[50%]"
         onClick={() => window.scrollBy(0, 500)}
+        title="Scroll down"
       >
         <FontAwesomeIcon
           icon={faChevronDown}
           size="2xl"
           className="animate-bounce text-white"
-          title="Scroll down"
         />
       </button>
     </section>
