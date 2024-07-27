@@ -28,9 +28,6 @@
       "@components/*": [
         "./components/*"
       ],
-      "@data/*": [
-        "./data/*"
-      ],
       "@ui/*": [
         "./components/ui/*"
       ],
