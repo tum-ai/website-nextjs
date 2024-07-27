@@ -5,6 +5,7 @@ import Stat from "@components/Stat";
 import Testimonials from "@components/Testimonials";
 import Timeline from "@components/Timeline";
 import Section from "@components/ui/Section";
+import StartupList from "@components/ELabStartupList";
 import {
   faBook,
   faCircleNodes,
@@ -12,6 +13,7 @@ import {
   faHandsHoldingCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { faq, testimonials } from "data/e-lab";
+import {startups} from "data/e-lab-startups";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
@@ -252,6 +254,30 @@ export default function Page() {
             },
           ]}
         />
+      </Section>
+
+      <Section className="bg-purple-950 text-white">
+        <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
+          E-Lab Startup Directory
+        </h2>
+        <p className="mb-8 text-center text-4xl">
+          Since <span className="text-yellow-500">2022</span>, we have founded{" "} 
+          <span className="text-yellow-500">16 startups</span> within the{" "}
+          {" "}
+          <span className="text-yellow-500">E-LAB</span>
+        </p>
+        <div className="flex flex-col gap-8 lg:px-24 xl:px-44"> 
+          <p className="px-8 text-center">
+          We are proud to present the startups that have emerged from the AI
+          E-Lab program. Each of them has a unique story and a vision to
+          change the world with their AI-based solutions. We invite you to
+          explore the startups and their founders, get inspired by their
+          innovative ideas, and discover exciting job opportunities available
+          with these pioneering companies.
+          </p>
+        </div>
+        <ul style={{ marginTop: '20px' }}></ul>
+        <StartupList startups={startups} maxHeight="500px" />
       </Section>
 
       <Section className="bg-purple-950 text-white">
