@@ -85,7 +85,7 @@ function Content1() {
         },
         {
           href: "/e-lab",
-          text: "Learn more",
+          text: "AI E-Lab Program",
           intent: "tertiary",
         },
       ],
@@ -103,7 +103,7 @@ function Content1() {
         },
         {
           href: "https://education.tum-ai.com/",
-          text: "Learn more",
+          text: "AI Education",
           intent: "tertiary",
         },
       ],
@@ -112,7 +112,7 @@ function Content1() {
       img: "/assets/home_img2.png",
       title: "Makeathon Competitions",
       text: "AI product development Hackathon, 48 hours to solve challenges by our sponsors, open for tech and business students, in-person!",
-      subtext: "applications closed, currently ongoing",
+      subtext: "applications closed, stay tuned for the next Hackathon!",
       buttons: [
         // {
         //   href: "https://tally.so/r/3y9LPB",
@@ -120,7 +120,7 @@ function Content1() {
         // },
         {
           href: "https://makeathon.tum-ai.com/",
-          text: "Learn more",
+          text: "TUM.ai Makeathon",
           intent: "tertiary",
         },
       ],
@@ -132,8 +132,8 @@ function Content1() {
       subtext: "applications closed, currently ongoing",
       buttons: [
         {
-          href: "https://www.notion.so/tum-ai/TUM-ai-Industry-Phase-5-0-AI-Projects-7b6e211a9a52421283e4e9833b0f7ea1",
-          text: "Learn more",
+          href: "/industry",
+          text: "AI Industry Projects",
           intent: "tertiary",
         },
       ],
@@ -309,12 +309,12 @@ function Slack() {
           Terms & Conditions
         </Link>
         <div className="mt-6 flex space-x-4">
-          <Button>
-            <FontAwesomeIcon icon={faSlack} size="xl" className="mr-4" />
-            <Link href="https://join.slack.com/t/tumaipublic/shared_invite/zt-10kg0t1f9-JLRXDxY_d_vprKWgab0cVw">
-              TUM.ai Public Slack
-            </Link>
-          </Button>
+          <Link href="https://join.slack.com/t/tumaipublic/shared_invite/zt-10kg0t1f9-JLRXDxY_d_vprKWgab0cVw">
+            <Button>
+              <FontAwesomeIcon icon={faSlack} size="xl" className="mr-4" />
+                TUM.ai Public Slack
+            </Button>
+          </Link>
         </div>
       </div>
     </Section>

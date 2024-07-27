@@ -48,9 +48,10 @@ export const Hero = () => {
           <h1 className="hidden">TUM.ai Student Initiative</h1>
           <Image
             src={"/assets/logo_new_white_standard.png"}
-            alt="Logo"
+            alt="TUM.ai Logo"
             width={450}
             height={100}
+            priority
           />
           <div className="m-auto flex w-fit flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
             <Button asChild>
@@ -71,6 +72,7 @@ export const Hero = () => {
           icon={faChevronDown}
           size="2xl"
           className="animate-bounce text-white"
+          title="Scroll down"
         />
       </button>
     </section>
