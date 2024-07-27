@@ -23,7 +23,7 @@ const Testimonials = ({
   return (
     <div className="max-w-s 10 w-full rounded-lg p-4 text-white sm:max-w-lg sm:p-10">
       <div className="just flex h-full flex-col items-center">
-        <Link href={link} passHref>
+        <Link href={link} passHref target="_blank">
           <Image
             className="h-100 mb-3 w-36 rounded-full shadow-lg"
             src={imgSrc}
@@ -42,7 +42,7 @@ const Testimonials = ({
         <div className="mt-auto h-32">
           <div className="min-w-160 flex h-full items-center justify-center p-8">
             {logoSrc && (
-              <Link href={company} passHref>
+              <Link href={company} passHref target="_blank">
                 <Image
                   src={logoSrc}
                   alt={logoAlt}

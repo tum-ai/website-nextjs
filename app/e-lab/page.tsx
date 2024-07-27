@@ -17,16 +17,17 @@ import {startups} from "data/e-lab-startups";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
+import VentureTeam from "@components/VentureTeam";
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
   description:
-    "Join the AI Entrepreneurship Lab if you are up for a 3-month founding program designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup.",
+    "Join the AI Entrepreneurship Lab if you are up for a 3-month startup incubator designed to ignite your innovative spirit and equip you with the relevant know-how to build the next AI unicorn in Munich.",
   openGraph: {
     title:
       "TUM.ai's AI Entrepreneurship Lab: A Founding Journey in Artificial Intelligence",
     description:
-      "A 3-months founding journey for curious and driven individuals. We provide relevant know-how, a team, and support to lay the foundation for AI startups.",
+      "A 3-month startup incubator for curious and driven individuals. We provide relevant know-how, a team, and support to lay the foundation for AI startups in Munich.",
     images: [
       {
         url: "https://timonschramm.com/sm-preview.jpg", // Must be an absolute URL
@@ -52,7 +53,7 @@ export default function Page() {
           <div className="flex max-w-xl flex-col gap-8">
             <p className="text-center">
               Come around to see new and exciting ideas in the world of AI at
-              our AI E-Lab Final Pitch Event Friday, January 19th. An evening
+              our AI E-Lab Final Pitch Event Friday, January 19th in Munich. An evening
               where our top startups showcase their exciting developments.
               It&apos;s a great chance to see fresh ideas in action and meet
               some of the key players in the industry.{" "}
@@ -61,6 +62,7 @@ export default function Page() {
               <Link
                 className="min-w-[300px] rounded-full border-none bg-gradient-to-b from-yellow-500 to-red-500 p-4 text-center sm:min-w-[400px]"
                 href="https://www.eventbrite.de/e/ai-e-lab-final-pitch-competition-tickets-784536669297?aff=oddtdtcreator"
+                target="_blank"
               >
                 Sign up now
               </Link>
@@ -154,7 +156,7 @@ export default function Page() {
           <div className="flex flex-wrap justify-center gap-8 md:gap-24">
             <Stat description={"B2B customers"} value={"50+"} />
             <Stat description={"Funding"} value={"1M+"} />
-            <Stat description={"ARR"} value={"200K+"} />
+            <Stat description={"ARR"} value={"300K+"} />
             <Stat description={"Hired employees"} value={"30+"} />
           </div>
         </div>
@@ -229,25 +231,25 @@ export default function Page() {
             {
               title: "Formation & Ideation",
               duration: "4 Weeks",
-              date: "October 2023",
+              date: "October 2024",
               text: "You will interact with potential co-founders, explore ideas, and form teams through the AI E-Lab onboarding, co-founder matching/team building, and ideation activities. This phase will end with a relaxed informal event where you and your team will share your ideas and concepts.",
             },
             {
               title: "Idea validation",
               duration: "2 Weeks",
-              date: "November 2023",
+              date: "November 2024",
               text: "You will focus on validating and shaping your startup idea from the previous phase through market research and developing robust business models that will undergo evaluation in the first pitch event, a Litmus Test to a jury.",
             },
             {
               title: "Build-measure learn",
               duration: "4 Weeks",
-              date: "Nov - Dec 2023",
+              date: "Nov - Dec 2024",
               text: "If your team can make it through the Litmus Test with validated ideas you will start to build prototypes, measure performance, gather valuable feedback from mentors, industry experts, and customers, and continuously iterate towards achieving product-market fit. This phase will end with a Stress test (second pitch event) where a more experienced jury will rigorously test the product market fit and prototypes of your startup and determine who is fit enough to make it to the final pitch to pitch to investors in Phase 4.",
             },
             {
               title: "Refinement & Final pitch",
               duration: "4 Weeks",
-              date: "Dec - Jan 2024",
+              date: "Dec - Jan 2025",
               text: "Should your team successfully pass the Stress Test, you will continue to refine your prototypes into Minimum Viable Products (MVPs) and further refine your business models, and pitches based on the valuable feedback received from customers, mentors, industry experts, and the jury during the Stress Test. The goal of your startup in this phase will be to prepare to showcase your polished startups to real investors and a public audience in the AI E-Lab final pitch event. ",
             },
           ]}
@@ -352,6 +354,17 @@ export default function Page() {
           Become a partner
         </Link>
       </Section>
+
+      <VentureTeam />
+      <Section className="bg-purple-950 text-center text-white">
+        <Link
+            className="rounded-full border-2 border-yellow-500 p-4 text-center text-center font-bold text-yellow-500"
+            href="/e-lab/team"
+        >
+          See all Team Members
+        </Link>
+      </Section>
+
 
       <Section className="bg-purple-950 text-white">
         <h3 className="text-primary mb-2 block text-center text-lg font-semibold">
