@@ -27,7 +27,7 @@ export const Hero = () => {
               distort={0.3}
               wireframe={true}
               wireframeLinewidth={5}
-              color={(fullConfig.theme?.colors?.purple?.["600"] as string) ?? "#000000"}
+              color={fullConfig.theme.colors.purple["600"]}
               transparent
               opacity={0.4}
               blending={THREE.AdditiveBlending}
