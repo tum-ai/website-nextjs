@@ -76,6 +76,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                     icon={faLinkedin}
                                                     size="lg"
                                                     className="duration-500 hover:text-yellow-500"
+                                                    title="LinkedIn Profile"
                                                 />
                                             </Link>
                                             {person.x ? (
@@ -84,6 +85,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                         icon={faXTwitter}
                                                         size="lg"
                                                         className="duration-500 hover:text-yellow-500"
+                                                        title="X (former Twitter) Account"
                                                     />
                                                 </Link>
                                             ) : null}
@@ -93,6 +95,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                         icon={faInstagram}
                                                         size="lg"
                                                         className="duration-500 hover:text-yellow-500"
+                                                        title="Instagram Page"
                                                     />
                                                 </Link>
                                             ) : null}
@@ -102,6 +105,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                         icon={faYoutube}
                                                         size="lg"
                                                         className="duration-500 hover:text-yellow-500"
+                                                        title="YouTube Channel"
                                                     />
                                                 </Link>
                                             ) : null}
@@ -111,6 +115,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                         icon={faLink}
                                                         size="lg"
                                                         className="duration-500 hover:text-yellow-500"
+                                                        title="Personal Website"
                                                     />
                                                 </Link>
                                             ) : null}
@@ -120,6 +125,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                                         icon={faEnvelope}
                                                         size="lg"
                                                         className="duration-500 hover:text-yellow-500"
+                                                        title="Send E-Mail"
                                                     />
                                                 </Link>
                                             ) : null}
@@ -168,6 +174,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     icon={faLinkedin}
                                     size="lg"
                                     className="text-black duration-500 hover:text-yellow-500"
+                                    title="LinkedIn Profile"
                                 />
                             </Link>
                             {person.x ? (
@@ -176,6 +183,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                         icon={faXTwitter}
                                         size="lg"
                                         className="text-black duration-500 hover:text-yellow-500"
+                                        title="X (former Twitter) Account"
                                     />
                                 </Link>
                             ) : null}
@@ -185,6 +193,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                         icon={faInstagram}
                                         size="lg"
                                         className="text-black duration-500 hover:text-yellow-500"
+                                        title="Instagram Page"
                                     />
                                 </Link>
                             ) : null}
@@ -194,6 +203,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                         icon={faYoutube}
                                         size="lg"
                                         className="text-black duration-500 hover:text-yellow-500"
+                                        title="YouTube Channel"
                                     />
                                 </Link>
                             ) : null}
@@ -203,6 +213,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                         icon={faLink}
                                         size="lg"
                                         className="text-black duration-500 hover:text-yellow-500"
+                                        title="Personal Website"
                                     />
                                 </Link>
                             ) : null}
@@ -212,6 +223,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                         icon={faEnvelope}
                                         size="lg"
                                         className="text-black duration-500 hover:text-yellow-500"
+                                        title="Send E-Mail"
                                     />
                                 </Link>
                             ) : null}

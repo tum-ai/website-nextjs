@@ -42,6 +42,7 @@ export const Hero = () => {
       <button
         className="absolute bottom-16 left-[50%] -translate-x-[50%]"
         onClick={() => window.scrollBy({ top: 500, behavior: "smooth" })}
+        title="Scroll down"
       >
         <FontAwesomeIcon
           icon={faChevronDown}

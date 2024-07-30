@@ -48,9 +48,10 @@ export const Hero = () => {
           <h1 className="hidden">TUM.ai Student Initiative</h1>
           <Image
             src={"/assets/logo_new_white_standard.png"}
-            alt="Logo"
+            alt="TUM.ai Logo"
             width={450}
             height={100}
+            priority
           />
           <div className="m-auto flex w-fit flex-col items-center justify-center space-y-4 lg:flex-row lg:space-x-4 lg:space-y-0">
             <Button asChild>
@@ -66,6 +67,7 @@ export const Hero = () => {
       <button
         className="absolute bottom-16 left-[50%] -translate-x-[50%]"
         onClick={() => window.scrollBy(0, 500)}
+        title="Scroll down"
       >
         <FontAwesomeIcon
           icon={faChevronDown}

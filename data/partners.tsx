@@ -57,7 +57,7 @@ export const partners_collabrated_with = [
     alt: "Siemens",
   },
   {
-    href: "https://www.ryver.ai/",
+    href: "https://ryver.ai/",
     src: "/assets/partners_sponsors/ryverai.png",
     alt: "Ryver AI",
   },

@@ -30,6 +30,7 @@ export default function Footer() {
                   icon={faInstagram}
                   size="2xl"
                   className="mb-4 text-white duration-500 hover:text-purple-300"
+                  title="Instagram"
                 />
               </Link>
               <Link href="https://de.linkedin.com/company/tum-ai" target="_blank">
@@ -37,6 +38,7 @@ export default function Footer() {
                   icon={faLinkedin}
                   size="2xl"
                   className="mb-4 text-white duration-500 hover:text-purple-300"
+                  title="LinkedIn"
                 />
               </Link>
               <Link href="https://join.slack.com/t/tumaipublic/shared_invite/zt-10kg0t1f9-JLRXDxY_d_vprKWgab0cVw" target="_blank">
@@ -44,6 +46,7 @@ export default function Footer() {
                   icon={faSlack}
                   size="2xl"
                   className="mb-4 text-white duration-500 hover:text-purple-300"
+                  title="TUM.ai Public Slack Workspace"
                 />
               </Link>
             </div>

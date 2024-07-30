@@ -40,6 +40,7 @@ export default function Person ({person}:PersonProps) {
                               icon={faLinkedin}
                               size="lg"
                               className="text-black duration-500 hover:text-purple-300"
+                              title="LinkedIn Profile"
                           />
                       </Link>
                       {person.x ? (
@@ -48,6 +49,7 @@ export default function Person ({person}:PersonProps) {
                                   icon={faXTwitter}
                                   size="lg"
                                   className="text-black duration-500 hover:text-purple-300"
+                                  title="X (former Twitter) Account"
                               />
                           </Link>
                       ) : null}
@@ -57,6 +59,7 @@ export default function Person ({person}:PersonProps) {
                                   icon={faInstagram}
                                   size="lg"
                                   className="text-black duration-500 hover:text-purple-300"
+                                  title="Instagram Page"
                               />
                           </Link>
                       ) : null}
@@ -66,6 +69,7 @@ export default function Person ({person}:PersonProps) {
                                   icon={faYoutube}
                                   size="lg"
                                   className="text-black duration-500 hover:text-purple-300"
+                                  title="YouTube Channel"
                               />
                           </Link>
                       ) : null}
@@ -75,6 +79,7 @@ export default function Person ({person}:PersonProps) {
                                   icon={faLink}
                                   size="lg"
                                   className="text-black duration-500 hover:text-purple-300"
+                                  title="Personal Website"
                               />
                           </Link>
                       ) : null}
@@ -84,6 +89,7 @@ export default function Person ({person}:PersonProps) {
                                   icon={faEnvelope}
                                   size="lg"
                                   className="text-black duration-500 hover:text-purple-300"
+                                  title="Send E-Mail"
                               />
                           </Link>
                       ) : null}
