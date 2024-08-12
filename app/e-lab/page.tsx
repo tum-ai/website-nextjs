@@ -5,6 +5,9 @@ import Stat from "@components/Stat";
 import Testimonials from "@components/Testimonials";
 import Timeline from "@components/Timeline";
 import Section from "@components/ui/Section";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@components/ui/carousel";
+import Card from "@components/ui/Card";
+import { startups } from "data/e-lab-startups";
 import {
   faBook,
   faCircleNodes,
@@ -100,6 +103,38 @@ export default function Page() {
           </div>
         </div>
       </Section>
+
+      <Section className="bg-purple-950 text-white">
+                <h1 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-semibold uppercase text-transparent">
+                    MEET THE TEAM BEHIND THE AI E-LAB
+                </h1>
+
+                <p className="text-2xl">
+                    <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-semibold text-transparent">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum qui ducimus omnis consectetur, et nihil laborum,
+                    </span>{" "}
+                    commodi sint, accusamus nulla aliquam doloremque est quisquam deserunt totaam asperiores nobis deleniti aperiam.
+                </p>
+
+                <Carousel>
+                  <CarouselContent>
+                    {startups.slice(0, 4).map((startup) => (
+                      <CarouselItem key={startup.id} className="basis-1/3">
+                        <Card
+                          key={startup.id}
+                          imageSrc={startup.logo}
+                          title={startup.name}
+                          description={startup.description}
+                          detailLink={`/e-lab/startups/${startup.id}`}
+                          className="h-full"
+                        />
+                      </CarouselItem>
+                    ))}                    
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+            </Section>
 
       <Section className="bg-purple-950 text-white">
         <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
