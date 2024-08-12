@@ -28,12 +28,12 @@ export const metadata: Metadata = {
 
 
 export default function Index() {
+
   const jsonLd: WithContext<Organization> = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'TUM.ai',
     legalName: 'TUM.ai e.V.',
-
     alternateName: [
       'TUM.ai Student Initiative',
     ],
@@ -58,7 +58,8 @@ export default function Index() {
     email: 'contact@tum-ai.com',
     foundingDate: '2020',
     foundingLocation: 'Munich, Germany',
-    location: [{
+    location: [
+      {
         '@type': 'PostalAddress',
         streetAddress: 'Rosenheimer Str. 116A',
         postalCode: '81669',
