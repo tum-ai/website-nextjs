@@ -8,7 +8,7 @@ import Image from "next/image";
 
 interface StartupListProps {
   startups: Startup[];
-  maxHeight: string; // Adding height prop
+  maxHeight?: string; // Making maxHeight optional
 }
 
 type FilterOptions = Record<string, string[]>;
@@ -143,7 +143,7 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-4 pt-0" style={{ maxHeight: maxHeight }}>
+      <main className="flex-1 p-4 pt-0 mx-auto" style={{ maxHeight: maxHeight, width: '100%', maxWidth: '1200' }}>
         {/* Filter Button for Mobile View */}
         <div className="block w-full md:hidden mb-4">
           <button onClick={toggleFilterVisibility} className="w-full p-3 bg-purple-500 rounded">Filter</button>
@@ -157,11 +157,11 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
             className="w-full px-4 py-2 border rounded text-black"
           />
         </div>
-        <div className="overflow-y-auto scrollbar-hidden scrollbar-purple pr-4" style={{ maxHeight: `calc(${maxHeight} - 90px)` }}>
+        <div className={`pr-4 ${maxHeight ? "overflow-y-auto scrollbar-hidden scrollbar-purple" : ""}`} style={{ maxHeight: maxHeight ? `calc(${maxHeight} - 90px)` : 'none' }}>
           {filteredStartups.map((startup) => (
             <Link key={startup.id} href={`/e-lab/startups/${startup.id}`}>
-              <div  className="mb-4 p-4 border rounded-lg shadow flex items-center flex-col md:flex-row">
-                <Image src={startup.logo} alt={`${startup.name} logo`} className="w-16 h-16 object-contain mr-4" width={0} height={0} sizes="100vw"/>
+              <div className="mb-4 p-4 border rounded-lg shadow flex items-center flex-col md:flex-row">
+                <Image src={startup.logo} alt={`${startup.name} logo`} className="w-16 h-16 object-contain mr-4" width={0} height={0} sizes="100vw" />
                 <div>
                   <h5 className="text-md font-medium">{startup.name}</h5>
                   <p className="text-sm text-gray-300">{startup.description}</p>

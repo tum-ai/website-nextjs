@@ -46,7 +46,7 @@ export default function Page() {
           </p>
         </div>
         <ul style={{ marginTop: '20px' }}></ul>
-        <StartupList startups={startups} maxHeight="500px" />
+        <StartupList startups={startups} />
       </Section>
 
       {/* Back Link Section */}
