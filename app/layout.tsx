@@ -13,17 +13,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Google Analytics Component */}
       <GoogleAnalytics GA_MEASUREMENT_ID="G-X80DYJS6SW" />
       <body>
         <Providers>
           <div className={inter.className}>
             <Header />
-            <main>{children}</main>
+            <main>
+              {children}
+              <CookieBanner />
+            </main>
             <Footer />
           </div>
-          {/* Cookie Banner Component */}
-          <CookieBanner />
         </Providers>
       </body>
     </html>
