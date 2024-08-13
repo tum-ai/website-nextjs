@@ -5,7 +5,6 @@
 import Link from "next/link";
 import { getLocalStorage, setLocalStorage } from "./lib/cookieStorage";
 import { useState, useEffect } from "react";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 export default function CookieBanner() {
   const [cookieConsent, setCookieConsent] = useState(undefined);
