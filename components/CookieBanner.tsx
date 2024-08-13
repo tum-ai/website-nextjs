@@ -36,8 +36,7 @@ export default function CookieBanner() {
       <div className="text-cente text-white-200">
         <Link href="/info/cookies">
           <p>
-            We use <span className="font-bold text-sky-400">cookies</span> on
-            our site.
+            Tum.ai uses cookies to enhance your experience, including essential functions like logging in, saving preferences, and personalizing content. We also use Google Analytics to monitor site usage and improve our services. If you continue to use this site, you agree that we can place these types of cookies on your device. You can manage your cookie preferences at any time in your browser settings.
           </p>
         </Link>
       </div>
