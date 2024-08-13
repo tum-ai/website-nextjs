@@ -137,7 +137,7 @@ export const team: Person[] = [
     imgAlt: "Laurenz Sommerlad",
     linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
     x: "https://x.com/Lauros_World",
-    instagram: "https://www.instagram.com/LaurenzSommerlad/",
+    instagram: "https://www.instagram.com/laurenzsommerlad/",
     youtube: "https://www.youtube.com/@LaurenzSommerlad",
     website: "https://laurenzsommerlad.com",
     email: "laurenz.sommerlad@tum-ai.com"
