@@ -7,7 +7,7 @@ import { getLocalStorage, setLocalStorage } from "./lib/cookieStorage";
 import { useState, useEffect } from "react";
 
 export default function CookieBanner() {
-  const [cookieConsent, setCookieConsent] = useState(undefined);
+  const [cookieConsent, setCookieConsent] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
     const storedCookieConsent = getLocalStorage("cookie_consent", null);
