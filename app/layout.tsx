@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Google Analytics Component */}
-      <GoogleAnalytics GA_MEASUREMENT_ID="G-xxxxxxxxxx" />
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-X80DYJS6SW" />
       <body>
         <Providers>
           <div className={inter.className}>
