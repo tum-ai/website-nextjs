@@ -16,11 +16,13 @@ export default function CookieBanner() {
   }, [setCookieConsent]);
   
   useEffect(() => {
-    const newValue = cookieConsent ? "granted" : "denied";
-    
-    window.gtag("consent", "update", {
-      analytics_storage: newValue,
-    });
+    if (typeof window.gtag === "function") {
+      console.log("gtag is a function");
+      const newValue = cookieConsent ? "granted" : "denied";
+      window.gtag("consent", "update", {
+        analytics_storage: newValue,
+      });
+    }
     
     if (cookieConsent === undefined) return;
     setLocalStorage("cookie_consent", cookieConsent);
@@ -30,11 +32,12 @@ export default function CookieBanner() {
       className={`my-10 mx-auto max-w-max md:max-w-screen-sm
                   fixed bottom-0 left-0 right-0 
                   flex px-3 md:px-4 py-3 justify-between items-center flex-col sm:flex-row gap-4  
-                  bg-gray-700 rounded-lg shadow z-50
+                 bg-gray-700 rounded-lg shadow z-50
                   ${(cookieConsent === undefined || cookieConsent !== null) ? "hidden" : "flex"}`}
     >
-      <div className="text-cente text-white-200">
+      <div className="text-cente text-white">
         <Link href="/info/cookies">
+          <h3 className="text-lg font-semibold mb-2">Cookie Policy</h3>
           <p>
             Tum.ai uses cookies to enhance your experience, including essential functions like logging in, saving preferences, and personalizing content. We also use Google Analytics to monitor site usage and improve our services. If you continue to use this site, you agree that we can place these types of cookies on your device. You can manage your cookie preferences at any time in your browser settings.
           </p>
@@ -49,10 +52,10 @@ export default function CookieBanner() {
           Decline
         </button>
         <button
-          className="bg-gray-900 px-5 py-2 text-white-200 rounded-lg"
+          className="bg-gray-900 px-5 py-2 text-white rounded-lg"
           onClick={() => setCookieConsent(true)}
         >
-          Allow Cookies
+          <p>Allow Cookies</p>
         </button>
       </div>
     </div>
