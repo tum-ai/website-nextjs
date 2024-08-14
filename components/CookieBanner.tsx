@@ -17,7 +17,6 @@ export default function CookieBanner() {
   
   useEffect(() => {
     if (typeof window.gtag === "function") {
-      console.log("gtag is a function");
       const newValue = cookieConsent ? "granted" : "denied";
       window.gtag("consent", "update", {
         analytics_storage: newValue,
