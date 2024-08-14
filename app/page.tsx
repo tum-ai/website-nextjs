@@ -213,12 +213,12 @@ function Content1() {
       subtext: "Applications open in August, program starts in October",
       buttons: [
         {
-          href: "https://forms.tum-ai.com/stay-in-touch-ai-e-lab",
-          text: "Join the Waitlist",
+          href: "https://forms.tum-ai.com/ai-e-lab-3.0-application",
+          text: "Apply",
         },
         {
           href: "/e-lab",
-          text: "AI E-Lab Program",
+          text: "AI E-Lab",
           intent: "tertiary",
         },
       ],
@@ -230,10 +230,13 @@ function Content1() {
       subtext:
         "sponsored online course certificates and company visits are exclusive to TUM.ai members",
       buttons: [
+        /*
         {
           href: "https://lu.ma/ai-academy",
           text: "Apply now",
         },
+
+         */
         {
           href: "https://education.tum-ai.com/",
           text: "AI Education",
