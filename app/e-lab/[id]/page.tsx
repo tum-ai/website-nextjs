@@ -1,11 +1,11 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {faArrowLeft, faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
-import {alumni, Person, team} from "../../../data/e-lab";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {alumni, Person, team} from "@data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";
 import Image from "next/image";
+import SocialMediaLinks from "@components/SocialMediaLinks";
 
 export function generateStaticParams() {
     return team.map((person) => ({
@@ -37,7 +37,8 @@ export default function Page({params: {id}}: { params: { id: string } }) {
     return(
         <Section className="bg-purple-950 text-white">
             <div>
-                <div className="mt-4 sm:mt-0 max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+                <div
+                    className="mt-4 sm:mt-0 max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
                     <div className="lg:max-w-lg lg:self-end">
                         <Link href={"/e-lab/team"}>
                             <button
@@ -71,58 +72,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     <h2 className="sr-only">Social Media Links</h2>
                                     <div className="flex items-center">
                                         <div className="space-x-4">
-                                            <Link href={person?.linkedin} target="_blank" rel="me">
-                                                <FontAwesomeIcon
-                                                    icon={faLinkedin}
-                                                    size="lg"
-                                                    className="duration-500 hover:text-yellow-500"
-                                                />
-                                            </Link>
-                                            {person.x ? (
-                                                <Link href={person.x} target="_blank" rel="me">
-                                                    <FontAwesomeIcon
-                                                        icon={faXTwitter}
-                                                        size="lg"
-                                                        className="duration-500 hover:text-yellow-500"
-                                                    />
-                                                </Link>
-                                            ) : null}
-                                            {person.instagram ? (
-                                                <Link href={person.instagram} target="_blank" rel="me">
-                                                    <FontAwesomeIcon
-                                                        icon={faInstagram}
-                                                        size="lg"
-                                                        className="duration-500 hover:text-yellow-500"
-                                                    />
-                                                </Link>
-                                            ) : null}
-                                            {person.youtube ? (
-                                                <Link href={person.youtube} target="_blank" rel="me">
-                                                    <FontAwesomeIcon
-                                                        icon={faYoutube}
-                                                        size="lg"
-                                                        className="duration-500 hover:text-yellow-500"
-                                                    />
-                                                </Link>
-                                            ) : null}
-                                            {person.website ? (
-                                                <Link href={person.website} target="_blank" rel="me">
-                                                    <FontAwesomeIcon
-                                                        icon={faLink}
-                                                        size="lg"
-                                                        className="duration-500 hover:text-yellow-500"
-                                                    />
-                                                </Link>
-                                            ) : null}
-                                            {person.email ? (
-                                                <Link href={`mailto:${person.email}`} rel="me">
-                                                    <FontAwesomeIcon
-                                                        icon={faEnvelope}
-                                                        size="lg"
-                                                        className="duration-500 hover:text-yellow-500"
-                                                    />
-                                                </Link>
-                                            ) : null}
+                                            <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"duration-500 hover:text-yellow-500"}/>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +101,8 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                     </div>
                 </div>
             </div>
-            <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden mt-4 max-w-2xl mx-auto lg:max-w-7xl">
+            <div
+                className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden mt-4 max-w-2xl mx-auto lg:max-w-7xl">
                 <div className="flex-1 p-4 space-y-2 flex flex-col">
                     <div className="flex flex-col md:flex-row md:justify-between">
                         <div>
@@ -163,58 +114,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                             </p>
                         </div>
                         <div className="space-x-4 mt-2 md:mt-0">
-                            <Link href={person?.linkedin} target="_blank">
-                                <FontAwesomeIcon
-                                    icon={faLinkedin}
-                                    size="lg"
-                                    className="text-black duration-500 hover:text-yellow-500"
-                                />
-                            </Link>
-                            {person.x ? (
-                                <Link href={person.x} target="_blank">
-                                    <FontAwesomeIcon
-                                        icon={faXTwitter}
-                                        size="lg"
-                                        className="text-black duration-500 hover:text-yellow-500"
-                                    />
-                                </Link>
-                            ) : null}
-                            {person.instagram ? (
-                                <Link href={person.instagram} target="_blank">
-                                    <FontAwesomeIcon
-                                        icon={faInstagram}
-                                        size="lg"
-                                        className="text-black duration-500 hover:text-yellow-500"
-                                    />
-                                </Link>
-                            ) : null}
-                            {person.youtube ? (
-                                <Link href={person.youtube} target="_blank">
-                                    <FontAwesomeIcon
-                                        icon={faYoutube}
-                                        size="lg"
-                                        className="text-black duration-500 hover:text-yellow-500"
-                                    />
-                                </Link>
-                            ) : null}
-                            {person.website ? (
-                                <Link href={person.website} target="_blank">
-                                    <FontAwesomeIcon
-                                        icon={faLink}
-                                        size="lg"
-                                        className="text-black duration-500 hover:text-yellow-500"
-                                    />
-                                </Link>
-                            ) : null}
-                            {person.email ? (
-                                <Link href={`mailto:${person.email}`}>
-                                    <FontAwesomeIcon
-                                        icon={faEnvelope}
-                                        size="lg"
-                                        className="text-black duration-500 hover:text-yellow-500"
-                                    />
-                                </Link>
-                            ) : null}
+                            <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"text-black duration-500 hover:text-yellow-500"} />
                         </div>
                     </div>
                 </div>

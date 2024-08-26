@@ -111,12 +111,17 @@ export interface Person {
     description?: string;
     imgSrc: string;
     imgAlt: string;
+    socialMedia: SocialMedia;
+}
+
+export interface SocialMedia {
     linkedin: string;
     x?: string;
     instagram?: string;
     youtube?: string;
     website?: string;
     email?: string;
+
 }
 
 export const team: Person[] = [
@@ -135,12 +140,14 @@ export const team: Person[] = [
         "Driven by a desire to make the world a better place, I am committed to solving the most challenging problems with technology. Feel free to reach out — I am always up for a coffee and a good conversation! ☕",
     imgSrc: "/assets/e-lab/team/laurenz_sommerlad.jpg",
     imgAlt: "Laurenz Sommerlad",
-    linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
-    x: "https://x.com/Lauros_World",
-    instagram: "https://www.instagram.com/LaurenzSommerlad/",
-    youtube: "https://www.youtube.com/@LaurenzSommerlad",
-    website: "https://laurenzsommerlad.com",
-    email: "laurenz.sommerlad@tum-ai.com"
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/laurenzsommerlad/",
+      x: "https://x.com/Lauros_World",
+      instagram: "https://www.instagram.com/LaurenzSommerlad/",
+      youtube: "https://www.youtube.com/@LaurenzSommerlad",
+      website: "https://laurenzsommerlad.com",
+      email: "laurenz.sommerlad@tum-ai.com"
+    }
   },
   {
     id: "jan-christopher-michalczik",
@@ -153,12 +160,14 @@ export const team: Person[] = [
     "If you need more info than is presented on our website, sign up for our newsletter, go to one of our info events, or just reach out directly.",
     imgSrc: "/assets/e-lab/team/jan_michalczik.png",
     imgAlt: "Jan-Christopher Michalczik",
-    linkedin: "https://www.linkedin.com/in/jan-michalczik/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "jan-christopher.michalczik@tum-ai.com"
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/jan-michalczik/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "jan-christopher.michalczik@tum-ai.com"
+    }
   },
   {
     id: "benedikt-wieser",
@@ -168,12 +177,14 @@ export const team: Person[] = [
     description: "Having a background in Business Administration from the University of St. Gallen and studies at Berkeley, I’ve worked on multiple startup projects, in venture capital, at a scale-up, and participated in the AI E-Lab 2.0 startup incubator.\n\nAdditional to my professional experience, I learnt to lead teams in high-stress situations as an officer cadet in the Austrian Armed Forces, instilling in me strong personal drive and get-things-done thinking.\n\nBesides being passionate about entrepreneurship I love outdoor adventures like whitewater rafting and hiking, and always strive to explore and feel the intensity of life. I am absolutely looking forward to accompanying you on your individual, entrepreneurial journey. Let’s build something amazing together!",
     imgSrc: "/assets/e-lab/team/benedikt_wieser.jpg",
     imgAlt: "Benedikt Wieser",
-    linkedin: "https://www.linkedin.com/in/benedikt-wieser-6430a3139/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: ""
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/benedikt-wieser-6430a3139/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: ""
+    }
   },
   {
     id: "emine-hakani",
@@ -183,12 +194,14 @@ export const team: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/emine_hakani.png",
     imgAlt: "Emine Hakani",
-    linkedin: "https://www.linkedin.com/in/emine-hakani-muc/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "venture@tum-ai.com"
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/emine-hakani-muc/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "venture@tum-ai.com"
+    }
   },
   {
     id: "philip-juenemann",
@@ -198,12 +211,14 @@ export const team: Person[] = [
     description: "Passionate about Entrepreneurship, Tech and AI!",
     imgSrc: "/assets/e-lab/team/philip_juenemann.jpg",
     imgAlt: "Philip Jünemann",
-    linkedin: "https://www.linkedin.com/in/philip-louis-j%C3%BCnemann/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "philip.juenemann@tum-ai.com"
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/philip-louis-j%C3%BCnemann/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "philip.juenemann@tum-ai.com"
+    }
 },
   {
     id: "david-reyes",
@@ -214,12 +229,14 @@ export const team: Person[] = [
     "Innovation drives me, and I have found a fitting place within the Munich entrepreneurial ecosystem. I am dedicated to ensuring you become part of an amazing batch of smart, diverse, and driven individuals who are passionate about developing solutions and maintaining a thriving sense of community. I look forward to working together to take your startup idea to the moon.",
     imgSrc: "/assets/e-lab/team/david_reyes.png",
     imgAlt: "David Reyes",
-    linkedin: "https://www.linkedin.com/in/davidreyesj/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "david.reyes@tum-ai.com"
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/davidreyesj/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "david.reyes@tum-ai.com"
+    }
 },
   {
     id: "zaid-efraij",
@@ -229,12 +246,14 @@ export const team: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/zaid_efraij.jpg",
     imgAlt: "Zaid Efraij",
-    linkedin: "https://www.linkedin.com/in/zaid-efraij-b6630722a/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "zaid.efraij@tum-ai.com"
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/zaid-efraij-b6630722a/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "zaid.efraij@tum-ai.com"
+    }
   },
   {
     id: "nagaharshith-makam-sreenivasulu",
@@ -244,12 +263,14 @@ export const team: Person[] = [
     description: "Hey, I am Nagah. In addition to pursuing a bachelor's degree in Management and Technology at TUM, I also assist with marketing at TUM.ai and TEG e.V. (The Entrepreneurial Group, student startup club in Munich). With a background in business, I am interested in using AI agents to improve traditional business settings. Professionally, I work as a Business Development working student at roadsurfer GmbH.\n\nI am excited to meet you and help you with your AI startup journey!",
     imgSrc: "/assets/e-lab/team/nagah_sreenivasulu.jpg",
     imgAlt: "Nagah Sreenivasulu",
-    linkedin: "https://www.linkedin.com/in/nagaharshith",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "nagaharshith-makam.sreenivasulu@tum-ai.com"
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/nagaharshith",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "nagaharshith-makam.sreenivasulu@tum-ai.com"
+    }
   },
 ];
 
@@ -262,12 +283,14 @@ export const alumni: Person[] = [
     description: "Abdul serves as an Advisor at TUM.ai, where he brings his experience and expertise in leadership, entrepreneurship, and venture development. He previously led the AI E-Lab as the Head of Venture alongside Daniil Morozov, where they envisioned and re-established the AI E-Lab as a straight-shooting startup sandbox and a genuine community designed to engineer serendipity among founders. Throughout the program, Abdul has been and will continue to be a humble sparring partner for our founders.",
     imgSrc: "/assets/e-lab/team/abdul_faruk.jpg",
     imgAlt: "Abdulqadir Faruk",
-    linkedin: "https://www.linkedin.com/in/abdulqadirfaruk/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "abdul.faruk@tum-ai.com",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/abdulqadirfaruk/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "abdul.faruk@tum-ai.com",
+    }
   },
   {
     id: "daniil-morozov",
@@ -277,12 +300,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/daniil_morozov.png",
     imgAlt: "Daniil Morozov",
-    linkedin: "https://www.linkedin.com/in/daniil-morozov-912490252/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/daniil-morozov-912490252/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "",
+    }
   },
   {
     id: "nektarios-totikos",
@@ -292,12 +317,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/nektarios_totikos.jpeg",
     imgAlt: "Nektarios Totikos",
-    linkedin: "https://www.linkedin.com/in/nektarios-totikos/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/nektarios-totikos/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "",
+    }
   },
   {
     id: "ian-tolan",
@@ -307,12 +334,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/ian_tolan.png",
     imgAlt: "Ian Tolan",
-    linkedin: "https://www.linkedin.com/in/ian-tolan-a85b0a107/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/ian-tolan-a85b0a107/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "",
+    }
   },
   {
     id: "david-podolskyi",
@@ -322,12 +351,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/david_podolskyi.png",
     imgAlt: "David Podolskyi",
-    linkedin: "https://www.linkedin.com/in/davidpodolsky/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/davidpodolsky/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "",
+    }
   },
   {
     id: "luca-dombetzki",
@@ -337,12 +368,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/luca_dombetzki.png",
     imgAlt: "Luca Dombetzki",
-    linkedin: "https://www.linkedin.com/in/luca-dombetzki/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/luca-dombetzki/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "",
+    }
   },
   {
     id: "yarhy-flores",
@@ -352,12 +385,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/yarhy_flores.png",
     imgAlt: "Yarhy Flores",
-    linkedin: "https://www.linkedin.com/in/yarhy-flores/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/yarhy-flores/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "",
+    }
   },
   {
     id: "sebastian-wilhelm",
@@ -367,12 +402,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/sebastian_wilhelm.png",
     imgAlt: "Sebastian Wilhelm",
-    linkedin: "https://www.linkedin.com/in/sebastian-wilhelm/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+      linkedin: "https://www.linkedin.com/in/sebastian-wilhelm/",
+      x: "",
+      instagram: "",
+      youtube: "",
+      website: "",
+      email: "",
+    }
   },
   {
     id: "can-kayalan",
@@ -382,12 +419,14 @@ export const alumni: Person[] = [
     description: "",
     imgSrc: "/assets/e-lab/team/can_kayalan.png",
     imgAlt: "Can Kayalan",
-    linkedin: "https://www.linkedin.com/in/can-kayalan/",
-    x: "",
-    instagram: "",
-    youtube: "",
-    website: "",
-    email: "",
+    socialMedia: {
+        linkedin: "https://www.linkedin.com/in/can-kayalan/",
+        x: "",
+        instagram: "",
+        youtube: "",
+        website: "",
+        email: "",
+    }
   },
 ];
 
@@ -443,21 +482,3 @@ export const faq = [
       "The AI E-Lab is a part-time program. Keep in mind that the more you commit, the more you get out of this program.",
   },
 ];
-
-export interface Founder {
-  name: string;
-  role: string;
-}
-
-export type Metrics = Record<string, string>;
-
-export interface Startup {
-  id: string;
-  name: string;
-  description: string;
-  founders: Founder[];
-  metrics: Metrics;
-  website: string;
-  logo: string;
-  about?: string;
-}
