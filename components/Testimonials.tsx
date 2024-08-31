@@ -27,13 +27,13 @@ const Testimonials = ({
           <Image
             className="h-100 mb-3 w-36 rounded-full shadow-lg"
             src={imgSrc}
-            alt={name}
+            alt={name + " profile picture"}
             width={96}
             height={96}
           />
-          <h5 className="my-8 text-center text-xl font-bold text-white">
+          <h3 className="my-8 text-center text-xl font-bold text-white">
             {name}
-          </h5>
+          </h3>
         </Link>
 
         <p className="sm:text-md text-center leading-8 text-white sm:p-4">
