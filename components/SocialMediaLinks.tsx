@@ -11,6 +11,7 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                 icon={faLinkedin}
                 size="lg"
                 className={props.iconClassNames}
+                title="LinkedIn Profile"
             />
         </Link>
         {props.socialMedia.x ? (
@@ -19,6 +20,7 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     icon={faXTwitter}
                     size="lg"
                     className={props.iconClassNames}
+                    title="X (former Twitter) Account"
                 />
             </Link>
         ) : null}
@@ -28,6 +30,7 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     icon={faInstagram}
                     size="lg"
                     className={props.iconClassNames}
+                    title="Instagram Page"
                 />
             </Link>
         ) : null}
@@ -37,6 +40,7 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     icon={faYoutube}
                     size="lg"
                     className={props.iconClassNames}
+                    title="YouTube Channel"
                 />
             </Link>
         ) : null}
@@ -46,6 +50,7 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     icon={faLink}
                     size="lg"
                     className={props.iconClassNames}
+                    title="Website"
                 />
             </Link>
         ) : null}
@@ -55,6 +60,7 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     icon={faEnvelope}
                     size="lg"
                     className={props.iconClassNames}
+                    title="Send E-Mail"
                 />
             </Link>
         ) : null}

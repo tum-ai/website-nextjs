@@ -47,7 +47,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
             familyName: person.lastName,
             description: person.description,
             image: 'https://www.tum-ai.com' + person.imgSrc,
-            email: person.email,
+            email: person.socialMedia.email,
             worksFor: {
                 '@type': 'EmployeeRole',
                 roleName: person.role,
@@ -67,11 +67,11 @@ export default function Page({params: {id}}: { params: { id: string } }) {
             },
             url: 'https://www.tum-ai.com/e-lab/' + person.id,
             sameAs: [
-                person.linkedin,
-                person.x ? person.x : "",
-                person.instagram ? person.instagram : "",
-                person.youtube ? person.youtube : "",
-                person.website ? person.website : "",
+                person.socialMedia.linkedin,
+                person.socialMedia.x ? person.socialMedia.x : "",
+                person.socialMedia.instagram ? person.socialMedia.instagram : "",
+                person.socialMedia.youtube ? person.socialMedia.youtube : "",
+                person.socialMedia.website ? person.socialMedia.website : "",
             ],
         },
     }
@@ -170,6 +170,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                 </div>
             </div>
         </Section>
+        </div>
     );
 }
 
