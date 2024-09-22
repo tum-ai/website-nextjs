@@ -197,13 +197,14 @@ CarouselItem.displayName = "CarouselItem"
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
   return (
     <Button
       ref={ref}
+      variant={variant}
+      size={size}
       className={cn(
         "absolute  h-8 w-8 rounded-full",
         orientation === "horizontal"
