@@ -169,14 +169,14 @@ export default function Page() {
 
       <Section className="bg-purple-950 text-white">
                 <h1 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-semibold uppercase text-transparent">
-                    MEET THE TEAM BEHIND THE AI E-LAB
+                    MEET AI E-LAB STARTUPS
                 </h1>
 
-                <p className="text-2xl">
+                <p className="mb-12 text-2xl">
                     <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-semibold text-transparent">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum qui ducimus omnis consectetur, et nihil laborum,
+                        Have a look at the startups that have been part of the AI E-Lab
                     </span>{" "}
-                    commodi sint, accusamus nulla aliquam doloremque est quisquam deserunt totaam asperiores nobis deleniti aperiam.
+                    and see what they have achieved so far. We are proud of their progress and are excited to see what the future holds for them.
                 </p>
 
                 <Carousel>

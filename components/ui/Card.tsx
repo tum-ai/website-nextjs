@@ -34,7 +34,7 @@ export default function Card({
         <div className={`group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden cursor-pointer ${className}`}>
           
 
-          <div className="p-5 h-full">
+          <div className="p-5 h-full flex flex-col">
               <div>
                 <h5 className="text-μ font-bold tracking-tight text-gray-900 dark:text-black">{title}</h5>
                 <Image
@@ -45,11 +45,11 @@ export default function Card({
                   className="rounded-full"
                 />
               </div>
-              <div className="h-max">
+              <div className="flex-grow">
                 <p className="text-μ font-bold tracking-tight text-gray-900 dark:text-black">{description}</p>
               </div>
               <div className="h-2"></div>
-              <div className="flex space-x-3 items-center justify-end">
+              <div className="mt-auto flex space-x-3 items-center justify-end">
                 <Button asChild>
                   <Link href={dlink}>Details</Link>
                 </Button>
