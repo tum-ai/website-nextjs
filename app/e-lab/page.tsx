@@ -182,7 +182,7 @@ export default function Page() {
                 <Carousel>
                   <CarouselContent>
                     {startups.slice(0, 4).map((startup) => (
-                      <CarouselItem key={startup.id} className="basis-1/3">
+                      <CarouselItem key={startup.id}>
                         <Card
                           key={startup.id}
                           imageSrc={startup.logo}
