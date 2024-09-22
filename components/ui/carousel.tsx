@@ -14,7 +14,7 @@ type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
 type CarouselPlugin = UseCarouselParameters[1]
 
-type CarouselProps = {
+interface CarouselProps {
   opts?: CarouselOptions
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
@@ -197,6 +197,7 @@ CarouselItem.displayName = "CarouselItem"
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
   const { orientation, scrollPrev, canScrollPrev } = useCarousel()
 
