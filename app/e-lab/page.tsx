@@ -167,37 +167,45 @@ export default function Page() {
           </div>
         </Section>
 
-      <Section className="bg-purple-950 text-white">
-                <h1 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-semibold uppercase text-transparent">
-                    MEET AI E-LAB STARTUPS
-                </h1>
+        <Section className="bg-purple-950 text-white">
+            <h1 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-semibold uppercase text-transparent">
+                MEET AI E-LAB STARTUPS
+            </h1>
 
-                <p className="mb-12 text-2xl">
-                    <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-semibold text-transparent">
-                        Have a look at the startups that have been part of the AI E-Lab
-                    </span>{" "}
-                    and see what they have achieved so far. We are proud of their progress and are excited to see what the future holds for them.
-                </p>
+            <p className="mb-12 text-2xl">
+                <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-semibold text-transparent">
+                    Have a look at the startups that have been part of the AI E-Lab
+                </span>{" "}
+                and see what they have achieved so far. We are proud of their progress and are excited to see what the future holds for them.
+            </p>
 
-                <Carousel>
-                  <CarouselContent>
-                    {startups.slice(0, 4).map((startup) => (
-                      <CarouselItem key={startup.id}>
-                        <Card
-                          key={startup.id}
-                          imageSrc={startup.logo}
-                          title={startup.name}
-                          description={startup.description}
-                          detailLink={`/e-lab/startups/${startup.id}`}
-                          className="h-full"
-                        />
-                      </CarouselItem>
-                    ))}                    
-                  </CarouselContent>
-                  <CarouselPrevious />
-                  <CarouselNext />
-                </Carousel>
+            <Carousel>
+              <CarouselContent>
+                {startups.slice(0, 4).map((startup) => (
+                  <CarouselItem key={startup.id}>
+                  <Card
+                      key={startup.id}
+                      imageSrc={startup.logo}
+                      title={startup.name}
+                      description={startup.description}
+                      detailLink={`/e-lab/startups/${startup.id}`}
+                      className="h-full"
+                  />
+                  </CarouselItem>
+                ))}                    
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+            <Section className="bg-purple-950 text-center text-white">
+              <Link
+                  className="rounded-full border-2 border-yellow-500 p-4 text-center text-center font-bold text-yellow-500"
+                  href="e-lab/startups/"
+              >
+                See all Startups
+              </Link>
             </Section>
+          </Section>
 
         <Section className="bg-purple-950 text-white">
           <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
@@ -427,7 +435,7 @@ export default function Page() {
           </Link>
         </Section>
 
-        <VentureTeam/>
+      <VentureTeam/>
 
         <Section className="bg-purple-950 text-white">
           <h3 className="text-primary mb-2 block text-center text-lg font-semibold">

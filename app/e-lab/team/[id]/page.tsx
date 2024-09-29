@@ -1,7 +1,7 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faArrowLeft, faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
-import {alumni, Person, team} from "../../../data/e-lab";
+import {alumni, Person, team} from "../../../../data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";

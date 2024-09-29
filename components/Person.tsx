@@ -2,7 +2,7 @@ import Link from "next/link";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
-import {Person} from "../data/e-lab";
+import {Person} from "data/e-lab";
 import Image from "next/image";
 
 interface PersonProps {
@@ -12,7 +12,7 @@ interface PersonProps {
 export default function Person ({person}:PersonProps) {
   return (
       <div className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden">
-          <Link href={`/e-lab/${person.id}`}>
+          <Link href={`/e-lab/team/${person.id}`}>
               <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
                   <Image
                       src={person?.imgSrc}
