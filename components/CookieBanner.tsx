@@ -35,10 +35,12 @@ export default function CookieBanner() {
                   ${(cookieConsent === undefined || cookieConsent !== null) ? "hidden" : "flex"}`}
     >
       <div className="text-cente text-white">
-        <h3 className="text-lg font-semibold mb-2">Cookie Policy</h3>
-        <p>
-          Tum.ai uses cookies to enhance your experience, including essential functions like logging in, saving preferences, and personalizing content. We also use Google Analytics to monitor site usage and improve our services. If you continue to use this site, you agree that we can place these types of cookies on your device. For more information, please review our <Link href="https://www.tum-ai.com/data-privacy" className="text-blue-300">Data Privacy Policy</Link>.
-        </p>
+        <Link href="/info/cookies">
+          <h3 className="text-lg font-semibold mb-2">Cookie Policy</h3>
+          <p>
+            Tum.ai uses cookies to enhance your experience, including essential functions like logging in, saving preferences, and personalizing content. We also use Google Analytics to monitor site usage and improve our services. If you continue to use this site, you agree that we can place these types of cookies on your device. You can manage your cookie preferences at any time in your browser settings.
+          </p>
+        </Link>
       </div>
 
       <div className="flex gap-2">

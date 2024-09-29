@@ -1,7 +1,6 @@
 import Hero from "@components/Hero";
 import Section from "@components/ui/Section";
 import { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "TUM.ai - Data privacy",
@@ -10,361 +9,309 @@ export const metadata: Metadata = {
 export default function DataPrivacy() {
   return (
     <>
-      <Hero imageSrc={"/assets/tu_cropped.jpg"} title="Datenschutzerklärung TUM.ai e.V." />
+      <Hero imageSrc={"/assets/tu_cropped.jpg"} title="Datenschutz" />
       <Section>
         <div className="space-y-12">
-          {/* Section 1 */}
           <div>
-            <h2 className="mb-4 text-xl font-bold">1. Name und Kontaktdaten des für die Verarbeitung Verantwortlichen</h2>
+            <h2 className="mb-4 text-xl font-bold">
+              1. Datenschutz auf einen Blick
+            </h2>
             <p>
-              Diese Datenschutz-Information gilt für die Datenverarbeitung durch die
-              <br />
-              <strong>TUM e.V.</strong>
-              <br />
-              Arcistrasse 21
-              <br />
-              80333 München
-              <br />
-              E-Mail: <Link href="mailto:invoice@tum-ai.com">invoice@tum-ai.com</Link>
+              Allgemeine Hinweise Die folgenden Hinweise geben einen einfachen
+              Überblick darüber, was mit Ihren personenbezogenen Daten passiert,
+              wenn Sie diese Website besuchen. Personenbezogene Daten sind alle
+              Daten, mit denen Sie persönlich identifiziert werden können.
+              Ausführliche Informationen zum Thema Datenschutz entnehmen Sie
+              unserer unter diesem Text aufgeführten Datenschutzerklärung.
+              Datenerfassung auf dieser Website Wer ist verantwortlich für die
+              Datenerfassung auf dieser Website? Die Datenverarbeitung auf
+              dieser Website erfolgt durch den Websitebetreiber. Dessen
+              Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
+              Wie erfassen wir Ihre Daten? Ihre Daten werden zum einen dadurch
+              erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B.
+              um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere
+              Daten werden automatisch beim Besuch der Website durch unsere
+              IT-Systeme erfasst. Das sind vor allem technische Daten (z. B.
+              Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
+              Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese
+              Website betreten. Wofür nutzen wir Ihre Daten? Ein Teil der Daten
+              wird erhoben, um eine fehlerfreie Bereitstellung der Website zu
+              gewährleisten. Andere Daten können zur Analyse Ihres
+              Nutzerverhaltens verwendet werden. Welche Rechte haben Sie
+              bezüglich Ihrer Daten? Sie haben jederzeit das Recht unentgeltlich
+              Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten
+              personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht,
+              die Berichtigung oder Löschung dieser Daten zu verlangen. Hierzu
+              sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich
+              jederzeit unter der im Impressum angegebenen Adresse an uns
+              wenden. Des Weiteren steht Ihnen ein Beschwerderecht bei der
+              zuständigen Aufsichtsbehörde zu. Außerdem haben Sie das Recht,
+              unter bestimmten Umständen die Einschränkung der Verarbeitung
+              Ihrer personenbezogenen Daten zu verlangen. Details hierzu
+              entnehmen Sie der Datenschutzerklärung unter „Recht auf
+              Einschränkung der Verarbeitung.
             </p>
           </div>
           <div>
-            <h2 className="mb-4 text-xl font-bold">2. Erhebung und Speicherung personenbezogener Daten sowie Art und Zweck deren Verwendung</h2>
-            
-            {/* Sub-section a */}
-            <h3 className="mb-4 text-lg font-bold">a) Beim Besuch der Website</h3>
+            <h2 className="mb-4 text-xl font-bold">
+              2. Hosting und Externes Hosting
+            </h2>
             <p>
-              Beim Aufrufen der Website <Link href="https://www.tum-ai.com/">https://www.tum-ai.com/</Link> (kurz: „TUM.ai Website“) werden durch 
-              den auf Ihrem Endgerät zum Einsatz kommenden Browser automatisch Informationen an 
-              den Server unserer Website gesendet. Diese Informationen werden temporär in einem sog. 
-              Logfile gespeichert. Folgende Informationen werden dabei ohne Ihr Zutun erfasst und bis zur
-              automatisierten Löschung gespeichert:
-            </p>
-            <ul>
-              <li> - IP-Adresse des anfragenden Rechners,</li>
-              <li> - Geographische und technische Daten des Rechners,</li>
-              <li> - Datum und Uhrzeit des Zugriffs,</li>
-              <li> - Name und URL der abgerufenen Datei,</li>
-              <li> - Referrer-URL,</li>
-              <li> - Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners sowie der Name Ihres Access-Providers,</li>
-              <li> - Daten über das Userverhalten,</li>
-              <li> - Benutzerflussdaten.</li>
-            </ul>
-            <p>Die genannten Daten werden durch uns zu folgenden Zwecken verarbeitet:</p>
-            <ul>
-              <li> - Gewährleistung eines reibungslosen Verbindungsaufbaus der Website,</li>
-              <li> - Gewährleistung einer komfortablen Nutzung unserer Website,</li>
-              <li> - Auswertung der Systemsicherheit und -stabilität sowie</li>
-              <li> - zu weiteren administrativen Zwecken.</li>
-            </ul>
-            <p>
-              Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs. 1 S. 1 f) DSGVO. Unser 
-              berechtigtes Interesse folgt aus oben aufgelisteten Zwecken zur Datenerhebung. In keinem 
-              Fall verwenden wir die erhobenen Daten zu dem Zweck, Rückschlüsse auf Ihre Person zu 
-              ziehen.
-            </p>
-            <b />
-            <h3 className="mb-4 text-lg font-bold">b) Bei Nutzung unseres Bewerbungsformulars</h3>
-            <p>
-              Für die Bewerbung auf eine Mitgliedschaft ist das Ausfüllen eines Kontaktformulars 
-              notwendig, <Link href="https://apply.tum-ai.com/">https://apply.tum-ai.com/</Link>.
-            </p>
-            <p>
-              Dabei ist die Angabe Ihres Namens und einer gültigen E-Mail-Adresse erforderlich, damit wir 
-              wissen, von wem die Anfrage stammt und um diese beantworten zu können. Weitere 
-              Angaben können freiwillig getätigt werden.
-            </p>
-            <p>
-              Die Datenverarbeitung zum Zwecke der Kontaktaufnahme mit uns erfolgt nach Art. 6 Abs. 1 
-              S. 1 a) DSGVO auf Grundlage Ihrer freiwillig erteilten Einwilligung, nach Art. 6 Abs. 1 S. 1 b) 
-              DSGVO zur Erfüllung eines Vertrags oder zur Durchführung vorvertraglicher Maßnahmen 
-              und nach Art. 6 Abs. 1 S. 1 f) DSGVO auch zur Wahrung unserer berechtigten Interessen 
-              sowie derer Dritter.
-            </p>
-            <p>
-              Die für die Benutzung des Kontaktformulars von uns erhobenen personenbezogenen Daten 
-              werden nach Erledigung der von Ihnen gestellten Anfrage gelöscht.
-            </p>
-            <br />
-            <h3 className="mb-4 text-lg font-bold">c) Bei Nutzung unseres Newsletters</h3>
-            <p>
-              Für die fortlaufende Information über unseren Verein, dessen Aktivität sowie seine verfolgten 
-              Ziele besteht die Möglichkeit, sich bei einem von uns eingerichteten und auf unseren Servern
-              betriebenen Newsletter anzumelden.
-            </p>
-            <p>
-              Dabei ist die Angabe einer gültigen E-Mail-Adresse erforderlich, um die Zustellung zu 
-              gewährleisten.
-            </p>
-            <p>
-              Die Datenverarbeitung zum Zwecke Ihrer Information erfolgt nach Art. 6 Abs. 1 S. 1 a) 
-              DSGVO auf Grundlage Ihrer freiwillig erteilten Einwilligung.
-            </p>
-            <br />
-            <h3 className="mb-4 text-lg font-bold">d) Bei Anmeldung zu Veranstaltungen und Projekten</h3>
-            <p>
-              Für die Anmeldung zu Veranstaltungen oder Projekten unseres Vereins stellen wir ein 
-              Antragsformular zur Verfügung. Verlangt wird die Angabe Ihres Namens, Ihres Wohnortes, 
-              Ihres Geburtstages, Ihres Geschlechts, Ihrer Mailadresse, Ihrer Nationalität, Ihres 
-              akademischen Hintergrundes und z.T. auch das Hochladen Ihres Lebenslaufes. Weitere 
-              Angaben können freiwillig getätigt werden.
-            </p>
-            <p>
-              Diese Angaben sind erforderlich, damit wir unsere Veranstaltungen angemessen vorbereiten 
-              und verlässlich sowie interessengerecht durchführen können. Wir verwenden die 
-              angegebenen Daten nur im Zusammenhang mit der Vorbereitung und Durchführung der 
-              jeweiligen Veranstaltung.
-            </p>
-            <p>
-              Die Datenverarbeitung zum Zwecke der Anmeldung zu Veranstaltungen bei uns erfolgt nach 
-              Art. 6 Abs. 1 S. 1 a) DSGVO auf Grundlage Ihrer freiwillig erteilten Einwilligung, nach Art. 6 
-              Abs. 1 S. 1 b) DSGVO zur Erfüllung eines Vertrags oder zur Durchführung vorvertraglicher 
-              Maßnahmen und nach Art. 6 Abs. 1 S. 1 f) DSGVO auch zur Wahrung unserer berechtigten 
-              Interessen sowie derer Dritter.
+              Diese Website wird bei einem externen Dienstleister gehostet
+              (Hoster). Personenbezogenen Daten, die auf dieser Website erfasst
+              werden, werden auf den Servern des Hosters gespeichert. Hierbei
+              kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und
+              Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen,
+              Webseitenzugriffe und sonstige Daten, die über eine Website
+              generiert werden, handeln. Der Einsatz des Hosters erfolgt zum
+              Zwecke der Vertragserfüllung gegenüber unseren potenziellen und
+              bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse
+              einer sicheren, schnellen und effizienten Bereitstellung unseres
+              Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs.
+              1 lit. f DSGVO). Unser Hoster wird Ihre Daten nur insoweit
+              verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten
+              erforderlich ist und unsere Weisungen in Bezug auf diese Daten
+              befolgen.
             </p>
           </div>
-          <br />
           <div>
-            <h2 className="mb-4 text-xl font-bold">3. Erhebung und Speicherung anonymisierter Daten sowie Art und Zweck deren Verwendung</h2>
+            <h2 className="mb-4 text-xl font-bold">
+              3. Allgemeine Hinweise und Pflichtinformationen Datenschutz
+            </h2>
             <p>
-              Wir verwenden Google Analytics zur Analyse und statistischen Auswertung der Nutzung der 
-              Website. Hierzu werden eingesetzt. Die dadurch erhaltenen Informationen über die 
-              Websitenutzung werden ausschließlich an unsere Server übertragen und in pseudonymen 
-              Nutzungsprofilen zusammengefasst. Die Daten verwenden wir zur Auswertung der Nutzung 
-              der Website. Eine Weitergabe der erfassten Daten an Dritte erfolgt nicht.
-            </p>
-            <p>
-              Die IP-Adressen werden anonymisiert (IPMasking), sodass eine Zuordnung zu einzelnen 
-              Nutzern nicht möglich ist.
-            </p>
-            <p>
-              Die Datenverarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 S. 1 lit. f) DSGVO. Wir 
-              verfolgen damit unser berechtigtes Interesse an der Optimierung unserer Webseite für 
-              unsere Außendarstellung.
+              Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen
+              Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten
+              vertraulich und entsprechend der gesetzlichen
+              Datenschutzvorschriften sowie dieser Datenschutzerklärung. Wenn
+              Sie diese Website benutzen, werden verschiedene personenbezogene
+              Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie
+              persönlich identifiziert werden können. Die vorliegende
+              Datenschutzerklärung erläutert, welche Daten wir erheben und wofür
+              wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das
+              geschieht. Wir weisen darauf hin, dass die Datenübertragung im
+              Internet (z. B. bei der Kommunikation per E-Mail)
+              Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten
+              vor dem Zugriff durch Dritte ist nicht möglich. Hinweis zur
+              verantwortlichen Stelle Die verantwortliche Stelle für die
+              Datenverarbeitung auf dieser Website ist: TUM.ai e.V. Arcistrasse
+              21 80333, München E-Mail: contact@tum-ai.com Verantwortliche
+              Stelle ist die natürliche oder juristische Person, die allein oder
+              gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung
+              von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.)
+              entscheidet.Widerruf Ihrer Einwilligung zur DatenverarbeitungViele
+              Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen
+              Einwilligung möglich. Sie können eine bereits erteilte
+              Einwilligung jederzeit widerrufen. Dazu reicht eine formlose
+              Mitteilung per E-Mail an uns. Die Rechtmäßigkeit der bis zum
+              Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf
+              unberührt. Widerspruchsrecht gegen die Datenerhebung in besonderen
+              Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)WENN DIE
+              DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F
+              DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE
+              SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE
+              VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN;
+              DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES
+              PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE
+              VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG.
+              WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN
+              PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR
+              KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG
+              NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN
+              ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER
+              VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1
+              DSGVO). WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM
+              DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT
+              WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER
+              PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN;
+              DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER
+              DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN
+              IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE
+              DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2
+              DSGVO). Beschwerderecht bei der zuständigen Aufsichtsbehörde Im
+              Falle von Verstößen gegen die DSGVO steht den Betroffenen ein
+              Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem
+              Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes
+              oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht
+              besteht unbeschadet anderweitiger verwaltungsrechtlicher oder
+              gerichtlicher Rechtsbehelfe.Recht auf DatenübertragbarkeitSie
+              haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung
+              oder in Erfüllung eines Vertrags automatisiert verarbeiten, an
+              sich oder an einen Dritten in einem gängigen, maschinenlesbaren
+              Format aushändigen zu lassen. Sofern Sie die direkte Übertragung
+              der Daten an einen anderen Verantwortlichen verlangen, erfolgt
+              dies nur, soweit es technisch machbar ist.SSL- bzw.
+              TLS-VerschlüsselungDiese Seite nutzt aus Sicherheitsgründen und
+              zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel
+              Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber
+              senden, eine SSL- bzw. TLS- Verschlüsselung. Eine verschlüsselte
+              Verbindung erkennen Sie daran, dass die Adresszeile des Browsers
+              von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in
+              Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung
+              aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht
+              von Dritten mitgelesen werden.Auskunft, Löschung und
+              BerichtigungSie haben im Rahmen der geltenden gesetzlichen
+              Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über
+              Ihre gespeicherten personenbezogenen Daten, deren Herkunft und
+              Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht
+              auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu
+              weiteren Fragen zum Thema personenbezogene Daten können Sie sich
+              jederzeit unter der im Impressum angegebenen Adresse an uns
+              wenden.Recht auf Einschränkung der VerarbeitungSie haben das
+              Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen
+              Daten zu verlangen. Hierzu können Sie sich jederzeit unter der im
+              Impressum angegebenen Adresse an uns wenden. Das Recht auf
+              Einschränkung der Verarbeitung besteht in folgenden Fällen: Wenn
+              Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen
+              Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu
+              überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die
+              Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu
+              verlangen. Wenn die Verarbeitung Ihrer personenbezogenen Daten
+              unrechtmäßig geschah/geschieht, können Sie statt der Löschung die
+              Einschränkung der Datenverarbeitung verlangen. Wenn wir Ihre
+              personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur
+              Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen
+              benötigen, haben Sie das Recht, statt der Löschung die
+              Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu
+              verlangen. Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO
+              eingelegt haben, muss eine Abwägung zwischen Ihren und unseren
+              Interessen vorgenommen werden. Solange noch nicht feststeht,
+              wessen Interessen überwiegen, haben Sie das Recht, die
+              Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu
+              verlangen. Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten
+              eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung
+              abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung,
+              Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz
+              der Rechte einer anderen natürlichen oder juristischen Person oder
+              aus Gründen eines wichtigen öffentlichen Interesses der
+              Europäischen Union oder eines Mitgliedstaats verarbeitet werden.
             </p>
           </div>
-          <br />
           <div>
-            <h2 className="mb-4 text-xl font-bold">4. Weitergabe von Daten</h2>
+            <h2 className="mb-4 text-xl font-bold">
+              4. Datenerfassung auf dieser Website Cookies{" "}
+            </h2>
             <p>
-              Eine Übermittlung Ihrer persönlichen Daten an Dritte zu anderen als den im Folgenden 
-              aufgeführten Zwecken findet nicht statt.
-            </p>
-            <p>
-              Wir geben Ihre persönlichen Daten nur an Dritte weiter, wenn:
-            </p>
-            <ul>
-              <li>Sie nach Art. 6 Abs. 1 S. 1 a) DSGVO ihre ausdrückliche Einwilligung dazu erteilt haben,</li>
-              <li>die Weitergabe nach Art. 6 Abs. 1 S. 1 f) DSGVO zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist und kein Grund zur Annahme besteht, dass Sie ein überwiegendes schutzwürdiges Interesse an der Nichtweitergabe Ihrer Daten haben,</li>
-              <li>für den Fall, dass für die Weitergabe nach Art. 6 Abs. 1 S. 1 c) DSGVO eine gesetzliche Verpflichtung besteht, sowie</li>
-              <li>dies gesetzlich zulässig und nach Art. 6 Abs. 1 S. 1 b) DSGVO für die Abwicklung von Vertragsverhältnissen mit Ihnen erforderlich ist.</li>
-            </ul>
-          </div>
-          <br />
-          <div>
-            <h2 className="mb-4 text-xl font-bold">5. Drittanbieter</h2>
-
-            {/* Sub-section a */}
-            <h3 className="mb-4 text-lg font-bold">a) Social Media Buttons</h3>
-            <p>
-              Auf unserer Website befinden sich Schaltflächen mit Links zu unseren Social Media Seiten. 
-              Diese übermitteln Ihre Daten nicht schon beim Besuch unserer Website, sondern erst mit 
-              Betätigung der entsprechenden Schaltfläche ggf. an das jeweilige soziale Netzwerk.
-            </p>
-            <p>
-              Wir weisen Sie darauf hin, dass hierbei auch Nutzungsdaten an einen Server in einem 
-              Drittland übermittelt werden und somit außerhalb der Europäischen Union verarbeitet werden
-              können. Sofern Sie auf dem verwendeten Endgerät in Ihrem persönlichen Benutzerkonto des
-              jeweiligen Netzwerks eingeloggt sind, kann der Netzwerkbetreiber den Besuch auch Ihrem 
-              Konto zuordnen.
-            </p>
-            <p>
-              Die erhobenen personenbezogenen Daten, ihre Verarbeitung sowie die Zwecke der 
-              Verarbeitung und Ihre Betroffenenrechte können Sie den vom jeweiligen Betreiber 
-              bereitgestellten Informationen entnehmen:
-            </p>
-            <ul>
-              <li>
-                Für Instagram:
-                <br />
-                Meta Platforms Ireland Limited
-                <br />
-                4 Grand Canal Square
-                <br />
-                Grand Canal Harbour, Dublin 2
-                <br />
-                Irland
-                <br />
-                <Link href="https://privacycenter.instagram.com/policy">https://privacycenter.instagram.com/policy</Link>
-              </li>
-              <li>
-                Für LinkedIn:
-                <br />
-                LinkedIn Ireland Unlimited Company, Attn: Legal Dept. (Privacy Policy and User 
-                Agreement),
-                <br />
-                Wilton Plaza
-                <br />
-                Wilton Place, Dublin 2
-                <br />
-                Irland
-                <br />
-                <Link href="https://de.linkedin.com/legal/privacy-policy">https://de.linkedin.com/legal/privacy-policy</Link>
-              </li>
-            </ul>
-            <br />
-            <h3 className="mb-4 text-lg font-bold">b) Für Mitglieder</h3>
-            <p>
-              Die interne Organisation und Kommunikation erfolgt über die Salesforce Applikation Slack 
-              Technologies LLC („Slack“). Diese erfüllt europäische Datenschutzstandards. Die Daten 
-              werden ausschließlich in den in Europa befindlichen Rechenzentren von Salesforce 
-              gespeichert und die Daten werden nicht für Werbezwecke verwendet.
-            </p>
-            <p>
-              Wir weisen darauf hin, dass die US-Regierung aufgrund des US Cloud Act grundsätzlich von 
-              Salesforce Zugriff auf Daten verlangen kann, die auf Salesforce Servern abgelegt sind.
-            </p>
-            <p>
-              Das Ausfüllen von Online-Formularen erfolgt über den belgischen Anbieter Tally B.V. („Tally 
-              Forms) und unterliegt der Europäischen Datenschutz-Grundverordnung (DSGVO).
-            </p>
-            <p>
-              Mit Ausfüllen des Mitgliedsantrags willigen Sie gem. Art. 6 Abs. 1 S. 1 a) DSGVO in die 
-              Speicherung Ihrer Daten durch Salesforce und Tally ein. Die Einwilligung kann jederzeit 
-              widerrufen werden, wobei dann eine reibungslose Teilnahme am Vereinsleben nicht 
-              gewährleistet werden kann.
-            </p>
-            <br />
-            <h3 className="mb-4 text-lg font-bold">c) Für Nichtmitglieder</h3>
-            <p>
-              Das Ausfüllen von Online-Formularen erfolgt über den belgischen Anbieter Tally B.V. („Tally 
-              Forms) und unterliegt der Europäischen Datenschutz-Grundverordnung (DSGVO). 
-              Grundlage der Datenverarbeitung ist einerseits Ihre konkludente Einwilligung durch das 
-              Ausfüllen des Formulars gem. Art. 6 Abs. 1 S. 1 a) DSGVO und Art. 6 Abs. 1 S. 1 f) DSGVO.
+              Die Internetseiten verwenden teilweise so genannte Cookies.
+              Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten
+              keine Viren. Cookies dienen dazu, unser Angebot
+              nutzerfreundlicher, effektiver und sicherer zu machen. Cookies
+              sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und
+              die Ihr Browser speichert. Die meisten der von uns verwendeten
+              Cookies sind so genannte „Session-Cookies“. Sie werden nach Ende
+              Ihres Besuchs automatisch gelöscht. Andere Cookies bleiben auf
+              Ihrem Endgerät gespeichert bis Sie diese löschen. Diese Cookies
+              ermöglichen es uns, Ihren Browser beim nächsten Besuch
+              wiederzuerkennen. Sie können Ihren Browser so einstellen, dass Sie
+              über das Setzen von Cookies informiert werden und Cookies nur im
+              Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle
+              oder generell ausschließen sowie das automatische Löschen der
+              Cookies beim Schließen des Browsers aktivieren. Bei der
+              Deaktivierung von Cookies kann die Funktionalität dieser Website
+              eingeschränkt sein. Cookies, die zur Durchführung des
+              elektronischen Kommunikationsvorgangs oder zur Bereitstellung
+              bestimmter, von Ihnen erwünschter Funktionen (z. B.
+              Warenkorbfunktion) erforderlich sind, werden auf Grundlage von
+              Art. 6 Abs. 1 lit. f DSGVO gespeichert. Der Websitebetreiber hat
+              ein berechtigtes Interesse an der Speicherung von Cookies zur
+              technisch fehlerfreien und optimierten Bereitstellung seiner
+              Dienste. Sofern eine entsprechende Einwilligung abgefragt wurde
+              (z. B. eine Einwilligung zur Speicherung von Cookies), erfolgt die
+              Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a
+              DSGVO; die Einwilligung ist jederzeit widerrufbar. Soweit andere
+              Cookies (z. B. Cookies zur Analyse Ihres Surfverhaltens)
+              gespeichert werden, werden diese in dieser Datenschutzerklärung
+              gesondert behandelt.Server-Log-DateienDer Provider der Seiten
+              erhebt und speichert automatisch Informationen in so genannten
+              Server-Log- Dateien, die Ihr Browser automatisch an uns
+              übermittelt. Dies sind: Browsertyp und Browserversion verwendetes
+              Betriebssystem Referrer URL Hostname des zugreifenden Rechners
+              Uhrzeit der Serveranfrage IP-Adresse Eine Zusammenführung dieser
+              Daten mit anderen Datenquellen wird nicht vorgenommen. Die
+              Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1
+              lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse
+              an der technisch fehlerfreien Darstellung und der Optimierung
+              seiner Website – hierzu müssen die Server-Log-Files erfasst
+              werden.Anfrage per E-Mail, Telefon oder TelefaxWenn Sie uns per
+              E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage
+              inklusive aller daraus hervorgehenden personenbezogenen Daten
+              (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns
+              gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre
+              Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf
+              Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit
+              der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung
+              vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen
+              Fällen beruht die Verarbeitung auf Ihrer Einwilligung (Art. 6 Abs.
+              1 lit. a DSGVO) und/oder auf unseren berechtigten Interessen (Art.
+              6 Abs. 1 lit. f DSGVO), da wir ein berechtigtes Interesse an der
+              effektiven Bearbeitung der an uns gerichteten Anfragen haben. Die
+              von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben
+              bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung
+              zur Speicherung widerrufen oder der Zweck für die Datenspeicherung
+              entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens).
+              Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche
+              Aufbewahrungsfristen – bleiben unberührt.
             </p>
           </div>
-          <br />
           <div>
-            <h2 className="mb-4 text-xl font-bold">6. Cookies</h2>
+            <h2 className="mb-4 text-xl font-bold">5. Plugins und Tools</h2>
             <p>
-              Wir verwenden auf einigen unserer Internetseiten ggf. sog. Cookies, u.a. um Ihnen 
-              websitespezifische Leistungen anbieten zu können, Sie bei einem wiederholten Besuch auf 
-              unserer Website wiedererkennen zu können, und/oder um unser Angebot an Ihre 
-              persönlichen Vorlieben anpassen zu können.
-            </p>
-            <p>
-              Cookies sind kleine Textdateien, die auf dem Computer eines Besuchers gespeichert werden
-              und Daten zum jeweiligen Nutzer enthalten, um diesem Zugang zu verschiedenen 
-              Funktionen zu ermöglichen. Auf unserer Website werden sowohl Session Cookies als auch 
-              dauerhafte Cookies verwendet. Ein Session Cookie wird vorübergehend auf dem von Ihnen 
-              genutzten Computer gespeichert, während Sie durch die Website navigieren. Ein Session 
-              Cookie wird gelöscht, sobald Sie Ihren Internet-Browser schließen oder sobald nach einer 
-              bestimmten Zeit Ihre Session abgelaufen ist. Ein dauerhaftes Cookie bleibt auf Ihrem 
-              Computer bis es gelöscht wird. Durch die Speicherung eines Cookies ist gewährleistet, dass 
-              Sie nicht bei jedem Besuch Ihre persönlichen Einstellungen und Vorlieben wiederholt 
-              eingeben müssen. Das erspart Ihnen Zeit und macht die Nutzung unserer Website 
-              komfortabler für Sie.
-            </p>
-            <p>
-              Wir arbeiten unter Umständen bei einigen unserer Internetseiten mit Dritten zusammen, und 
-              daher werden bei Ihrem Besuch einer solchen Internetseite ggf. auch Cookies von 
-              Partnerunternehmen auf Ihrer Festplatte gespeichert (Cookies von Drittanbietern). Wir 
-              informieren Sie nachfolgend über den Einsatz derartiger Cookies und den Umfang der 
-              jeweils erhobenen Daten.
-            </p>
-            <p>
-              Sie können dauerhaft installierte Cookies über die Einstellungen Ihres Browsers löschen. Die
-              meisten Browser akzeptieren Cookies automatisch – falls Sie also den Einsatz von Cookies 
-              unterdrücken möchten, müssen Sie möglicherweise Cookies aktiv löschen oder blockieren 
-              oder die Speicherung der Cookies durch eine Einstellung Ihrer Browser-Software verhindern.
-              Beachten Sie jedoch, dass Sie, wenn Sie die Verwendung von Cookies ablehnen, unsere 
-              Website zwar weiter besuchen können, einige Funktionen jedoch in ihrer Arbeitsweise 
-              beeinträchtigt sein könnten.
-            </p>
-            <p>
-              Wir verwenden notwendige Cookies, die erforderlich sind, um die Erbringung der von uns 
-              geschuldeten Leistungen zu ermöglichen oder, um die Funktionalität unserer Dienste zu 
-              gewährleisten. Die diesbezügliche Datenverarbeitung erfolgt sodann auf Grundlage des Art. 
-              6 Abs. 1 S. 1 lit. b DSGVO, der die Verarbeitung von Daten zur Erfüllung eines Vertrags oder 
-              vorvertraglicher Maßnahmen gestattet oder nach Art. 6 Abs. 1 S. 1 lit. f DSGVO, der die 
-              Datenbearbeitung zur Wahrung der berechtigten Interessen des Verantwortlichen erlaubt, 
-              sofern nicht die Interessen oder die Grundrechte und Grundfreiheiten der betroffenen Person
-              das Interesse des Verantwortlichen an der Datenverarbeitung überwiegen. Unser Interesse 
-              liegt dann in der Gewährleistung der Funktionalität unserer Website.
-            </p>
-            <p>
-              Für die Verwendung anderer, nicht erforderlicher Cookies holen wir gegebenenfalls Ihre 
-              Zustimmung ein. Die Datenverarbeitung erfolgt dann auf der Grundlage Ihrer Einwilligung 
-              gemäß Art. 6 Abs. 1 S. 1 lit. a DSGVO. Sie können Ihre Einwilligung jederzeit widerrufen. Die
-              Rechtmäßigkeit der bereits durchgeführten Datenverarbeitungen bleibt von dem Widerruf 
-              unberührt.
-            </p>
-          </div>
-          <br />
-          <div>
-            <h2 className="mb-4 text-xl font-bold">7. Betroffenenrechte</h2>
-            <p>
-              Sie haben das Recht:
-            </p>
-            <ul>
-              <li>gemäß Art. 15 DSGVO Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen. Insbesondere können Sie Auskunft über die Verarbeitungszwecke, die Kategorie der personenbezogenen Daten, die Kategorien von Empfängern, gegenüber denen Ihre Daten offengelegt wurden oder werden, die geplante Speicherdauer, das Bestehen eines Rechts auf Berichtigung, Löschung, Einschränkung der Verarbeitung oder Widerspruch, das Bestehen eines Beschwerderechts, die Herkunft ihrer Daten, sofern diese nicht bei uns erhoben wurden, sowie über das Bestehen einer automatisierten Entscheidungsfindung einschließlich Profiling und ggf. aussagekräftigen Informationen zu deren Einzelheiten verlangen;</li>
-              <li>gemäß Art. 16 DSGVO unverzüglich die Berichtigung unrichtiger oder Vervollständigung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen;</li>
-              <li>gemäß Art. 17 DSGVO die Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen, soweit nicht die Verarbeitung zur Ausübung des Rechts auf freie Meinungsäußerung und Information, zur Erfüllung einer rechtlichen Verpflichtung, aus Gründen des öffentlichen Interesses oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist;</li>
-              <li>gemäß Art. 18 DSGVO die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen, soweit die Richtigkeit der Daten von Ihnen bestritten wird, die Verarbeitung unrechtmäßig ist, Sie aber deren Löschung ablehnen und wir die Daten nicht mehr benötigen, Sie jedoch diese zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen benötigen oder Sie gemäß Art. 21 DSGVO Widerspruch gegen die Verarbeitung eingelegt haben;</li>
-              <li>gemäß Art. 20 DSGVO Ihre personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, gängigen und maschinenlesebaren Format zu erhalten oder die Übermittlung an einen anderen Verantwortlichen zu verlangen;</li>
-              <li>gemäß Art. 7 Abs. 3 DSGVO Ihre einmal erteilte Einwilligung jederzeit gegenüber uns zu widerrufen. Dies hat zur Folge, dass wir die Datenverarbeitung, die auf dieser Einwilligung beruhte, für die Zukunft nicht mehr fortführen dürfen und</li>
-              <li>gemäß Art. 77 DSGVO sich bei einer Aufsichtsbehörde zu beschweren. In der Regel können Sie sich hierfür an die Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder Arbeitsplatzes oder unseres Vereinssitzes wenden.</li>
-            </ul>
-          </div>
-          <br />
-          <div>
-            <h2 className="mb-4 text-xl font-bold">8. Widerspruchsrecht</h2>
-            <p>
-              Sofern Ihre personenbezogenen Daten auf Grundlage von berechtigten Interessen gemäß 
-              Art. 6 Abs. 1 S. 1 f) DSGVO verarbeitet werden, haben Sie das Recht, gemäß Art. 21 
-              DSGVO Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten einzulegen, 
-              soweit dafür Gründe vorliegen, die sich aus Ihrer besonderen Situation ergeben oder sich 
-              der Widerspruch gegen Direktwerbung richtet. Im letzteren Fall haben Sie ein generelles 
-              Widerspruchsrecht, das ohne Angabe einer besonderen Situation von uns umgesetzt wird.
-            </p>
-            <p>
-              Möchten Sie von Ihrem Widerrufs- oder Widerspruchsrecht Gebrauch machen, genügt eine 
-              E-Mail an <Link href="mailto:invoice@tum-ai.com">invoice@tum-ai.com</Link>
-            </p>
-          </div>
-          <br />
-          <div>
-            <h2 className="mb-4 text-xl font-bold">9. Datensicherheit</h2>
-            <p>
-              Wir verwenden innerhalb des Website-Besuchs das verbreitete SSL-Verfahren (Secure 
-              Socket Layer) in Verbindung mit der jeweils höchsten Verschlüsselungsstufe, die von Ihrem 
-              Browser unterstützt wird. In der Regel handelt es sich dabei um eine 256 Bit 
-              Verschlüsselung. Falls Ihr Browser keine 256 Bit Verschlüsselung unterstützt, greifen wir 
-              stattdessen auf 128 Bit v3 Technologie zurück. Ob eine einzelne Seite unseres 
-              Internetauftritts verschlüsselt übertragen wird, erkennen Sie an der geschlossenen 
-              Darstellung des Schüssel- beziehungsweise Schloss-Symbols in der Statusleiste Ihres 
-              Browsers.
-            </p>
-            <p>
-              Wir bedienen uns im Übrigen geeigneter technischer und organisatorischer 
-              Sicherheitsmaßnahmen, um Ihre Daten gegen zufällige oder vorsätzliche Manipulationen, 
-              teilweisen oder vollständigen Verlust, Zerstörung oder gegen den unbefugten Zugriff Dritter 
-              zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen 
-              Entwicklung fortlaufend verbessert.
-            </p>
-          </div>
-          <br /> 
-          <div>
-            <h2 className="mb-4 text-xl font-bold">10. Aktualität und Änderung dieser Datenschutzerklärung</h2>
-            <p>
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand August 2024.
-            </p>
-            <p>
-              Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund 
-              geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden,
-              diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann 
-              jederzeit auf unserer Website unter <Link href="https://www.tum-ai.com/data-privacy">https://www.tum-ai.com/data-privacy</Link> von Ihnen 
-              abgerufen und ausgedruckt werden.
+              YouTube: Diese Website bindet Videos der Website YouTube ein.
+              Betreiber der Website ist die Google Ireland Limited („Google“),
+              Gordon House, Barrow Street, Dublin 4, Irland. Wenn Sie eine
+              unserer Webseiten besuchen, auf denen YouTube eingebunden ist,
+              wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei
+              wird dem YouTube-Server mitgeteilt, welche unserer Seiten Sie
+              besucht haben. Des Weiteren kann YouTube verschiedene Cookies auf
+              Ihrem Endgerät speichern. Mit Hilfe dieser Cookies kann YouTube
+              Informationen über Besucher dieser Website erhalten. Diese
+              Informationen werden u. a. verwendet, um Videostatistiken zu
+              erfassen, die Anwenderfreundlichkeit zu verbessern und
+              Betrugsversuchen vorzubeugen. Die Cookies verbleiben auf Ihrem
+              Endgerät, bis Sie sie löschen. Wenn Sie in Ihrem YouTube-Account
+              eingeloggt sind, ermöglichen Sie YouTube, Ihr Surfverhalten direkt
+              Ihrem persönlichen Profil zuzuordnen. Dies können Sie verhindern,
+              indem Sie sich aus Ihrem YouTube- Account ausloggen. Die Nutzung
+              von YouTube erfolgt im Interesse einer ansprechenden Darstellung
+              unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im
+              Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine
+              entsprechende Einwilligung abgefragt wurde (z. B. eine
+              Einwilligung zur Speicherung von Cookies), erfolgt die
+              Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a
+              DSGVO; die Einwilligung ist jederzeit widerrufbar. Weitere
+              Informationen zum Umgang mit Nutzerdaten finden Sie in der
+              Datenschutzerklärung von YouTube unter:
+              https://policies.google.com/privacy?hl=de.Google Web FontsDiese
+              Seite nutzt zur einheitlichen Darstellung von Schriftarten so
+              genannte Web Fonts, die von Google bereitgestellt werden. Beim
+              Aufruf einer Seite lädt Ihr Browser die benötigten Web Fonts in
+              ihren Browsercache, um Texte und Schriftarten korrekt anzuzeigen.
+              Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung
+              zu den Servern von Google aufnehmen. Hierdurch erlangt Google
+              Kenntnis darüber, dass über Ihre IP-Adresse diese Website
+              aufgerufen wurde. Die Nutzung von Google Web Fonts erfolgt im
+              Interesse einer einheitlichen und ansprechenden Darstellung
+              unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im
+              Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Wenn Ihr Browser Web
+              Fonts nicht unterstützt, wird eine Standardschrift von Ihrem
+              Computer genutzt. Weitere Informationen zu Google Web Fonts finden
+              Sie unter https://developers.google.com/fonts/faq und in der
+              Datenschutzerklärung von Google:
+              https://policies.google.com/privacy?hl=de.Google MapsDiese Seite
+              nutzt über eine API den Kartendienst Google Maps. Anbieter ist die
+              Google Ireland Limited („Google“), Gordon House, Barrow Street,
+              Dublin 4, Irland. Zur Nutzung der Funktionen von Google Maps ist
+              es notwendig, Ihre IP Adresse zu speichern. Diese Informationen
+              werden in der Regel an einen Server von Google in den USA
+              übertragen und dort gespeichert. Der Anbieter dieser Seite hat
+              keinen Einfluss auf diese Datenübertragung. Die Nutzung von Google
+              Maps erfolgt im Interesse einer ansprechenden Darstellung unserer
+              Online- Angebote und an einer leichten Auffindbarkeit der von uns
+              auf der Website angegebenen Orte. Dies stellt ein berechtigtes
+              Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Mehr
+              Informationen zum Umgang mit Nutzerdaten finden Sie in der
+              Datenschutzerklärung von Google:
+              https://policies.google.com/privacy?hl=de. Quelle:
+              https://www.e-recht24.de/muster-datenschutzerklaerung.html
             </p>
           </div>
         </div>
