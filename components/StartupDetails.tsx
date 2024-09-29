@@ -34,7 +34,7 @@ const StartupDetails = ({ startup }: { startup: Startup }) => {
             {startup.socialMedia && (
                   <div className="flex space-x-4">
                     <SocialMediaLinks socialMedia={startup.socialMedia}
-                                        iconClassNames={"duration-500 hover:text-yellow-500"}/>
+                    iconClassNames={"duration-500 hover:text-yellow-500"}/>
                   </div>
             )}
             </div>
