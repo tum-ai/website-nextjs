@@ -5,6 +5,9 @@ import Stat from "@components/Stat";
 import Testimonials from "@components/Testimonials";
 import Timeline from "@components/Timeline";
 import Section from "@components/ui/Section";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@components/ui/carousel";
+import Card from "@components/ui/Card";
+import { startups } from "data/e-lab-startups";
 import {
   faBook,
   faCircleNodes,
@@ -165,23 +168,45 @@ export default function Page() {
       </Section>
 
       <Section className="bg-purple-950 text-white">
-        <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
-          How founders experience the E-Lab
-        </h2>
-        <p className="flex flex-col justify-start gap-2 text-3xl font-semibold text-yellow-500 sm:text-4xl">
-          <span>you.</span>
-          <span>yes you.</span>
-          <span>you can build something great!</span>
-        </p>
+                <h1 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-5xl font-semibold uppercase text-transparent">
+                    MEET AI E-LAB STARTUPS
+                </h1>
 
-        <div className="my-12 grid gap-16 md:grid-cols-2">
-          <p>
-            Entrepreneurship means change and we believe that everyone is
-            qualified to become an{" "}
-            <span className="text-red-500">entrepreneur</span>. Think about your
-            last big achievement, your perseverance over hurdles and what it
-            took to succeed - you already proved that you are a real
-            changemaker.
+                <p className="mb-12 text-2xl">
+                    <span className="bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text font-semibold text-transparent">
+                        Have a look at the startups that have been part of the AI E-Lab
+                    </span>{" "}
+                    and see what they have achieved so far. We are proud of their progress and are excited to see what the future holds for them.
+                </p>
+
+                <Carousel>
+                  <CarouselContent>
+                    {startups.slice(0, 4).map((startup) => (
+                      <CarouselItem key={startup.id}>
+                        <Card
+                          key={startup.id}
+                          imageSrc={startup.logo}
+                          title={startup.name}
+                          description={startup.description}
+                          detailLink={`/e-lab/startups/${startup.id}`}
+                          className="h-full"
+                        />
+                      </CarouselItem>
+                    ))}                    
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+            </Section>
+
+        <Section className="bg-purple-950 text-white">
+          <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
+            How founders experience the E-Lab
+          </h2>
+          <p className="flex flex-col justify-start gap-2 text-3xl font-semibold text-yellow-500 sm:text-4xl">
+            <span>you.</span>
+            <span>yes you.</span>
+            <span>you can build something great!</span>
           </p>
 
           <p>
@@ -392,15 +417,7 @@ export default function Page() {
         </Link>
       </Section>
 
-      <VentureTeam />
-      <Section className="bg-purple-950 text-center text-white">
-        <Link
-            className="rounded-full border-2 border-yellow-500 p-4 text-center text-center font-bold text-yellow-500"
-            href="/e-lab/team"
-        >
-          See all Team Members
-        </Link>
-      </Section>
+      <VentureTeam/>
 
 
       <Section className="bg-purple-950 text-white">

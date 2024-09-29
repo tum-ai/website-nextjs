@@ -1,7 +1,3 @@
-
-import {Person, SocialMedia} from "@data/e-lab";
-
-
 export interface Startup {
     id: string;
     name: string;
@@ -43,7 +39,7 @@ export const startups: Startup[] = [
     {
         id: "airbnb",
         name: "Airbnb",
-        description: "Airbnb is an online marketplace for short-term homestays and experiences.",
+        description: "Tesla, Inc. is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses. Founded in 2003 by a group of engineers who wanted to prove that people didn’t need to compromise to drive electric – that electric vehicles can be better, quicker and more fun to drive than gasoline cars.",
         founders: [
             {
             name: "Brian Chesky",
@@ -164,6 +160,11 @@ export const startups: Startup[] = [
     },
 
     {
+        id: "tesla2",
+        name: "Tesla2",
+        description: "Tesla, Inc. is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses. Founded in 2003 by a group of engineers who wanted to prove that people didn’t need to compromise to drive electric – that electric vehicles can be better, quicker and more fun to drive than gasoline cars.",
+        founders: [
+            {
                 name: "Elon Musk",
                 role: "CEO"
             },
