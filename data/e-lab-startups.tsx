@@ -162,37 +162,4 @@ export const startups: Startup[] = [
             date: "May 20, 2023",
         }],
     },
-
-    {
-                name: "Elon Musk",
-                role: "CEO"
-            },
-        ],
-        metrics: {
-            "Year Founded": "2008",
-            "Valuation": "$113 billion",
-            "Funding Raised": "$6.4 billion",
-            "Employees": "6,132"
-        },
-        website: "http://tesla2.com",
-        logo: "/assets/e-lab/startups/Tesla_Motors.svg.png",
-        industry: "Automotive",
-        batch: "S10",
-        tag: "Is Hiring",
-        jobs: [{
-            name: "Senior Autopilot Software Engineer",
-            location: "Palo Alto, CA",
-            salary: "$180,000 - $230,000 a year",
-            experience: "4+ years",
-        }],
-        latest_news: [{
-            message: "Tesla is looking for a Senior Autopilot Software Engineer in Palo Alto, CA. The salary range is $180,000 - $230,000 a year with a requirement of 4+ years of experience.",
-            link: "https://www.tesla.com/blog/autopilot-future-of-driving",
-            date: "April 15, 2023",
-        }, {
-            message: "Tesla announces a new project to expand its energy storage solutions, aiming to revolutionize the electric grid.",
-            link: "https://www.tesla.com/blog/energy-storage-solutions",
-            date: "May 20, 2023",
-        }],
-    },
 ];
