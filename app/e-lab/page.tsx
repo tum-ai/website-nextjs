@@ -197,6 +197,14 @@ export default function Page() {
                   <CarouselPrevious />
                   <CarouselNext />
                 </Carousel>
+                <div className="mt-16 text-center">
+                <Link
+                    className="inline-block rounded-full border-2 border-yellow-500 p-4 text-center font-bold text-yellow-500 transition-colors duration-300 hover:bg-yellow-500 hover:text-purple-950"
+                    href="/e-lab/startuplist"
+                >
+                    See all E-Lab Startups
+                </Link>
+            </div>
             </Section>
 
         <Section className="bg-purple-950 text-white">
