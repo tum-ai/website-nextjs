@@ -6,16 +6,18 @@ import {SocialMedia} from "@data/e-lab";
 
 function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: string}) {
     return <>
-        <Link href={props.socialMedia?.linkedin} target="_blank" rel="me">
-            <FontAwesomeIcon
-                icon={faLinkedin}
-                size="lg"
-                className={props.iconClassNames}
-                title="LinkedIn Profile"
-            />
-        </Link>
-        {props.socialMedia.x ? (
-            <Link href={props.socialMedia.x} target="_blank" rel="me">
+        {props.socialMedia?.linkedin && (
+            <Link key="linkedin" href={props.socialMedia.linkedin} target="_blank" rel="me">
+                <FontAwesomeIcon
+                    icon={faLinkedin}
+                    size="lg"
+                    className={props.iconClassNames}
+                    title="LinkedIn Profile"
+                />
+            </Link>
+        )}
+        {props.socialMedia?.x && (
+            <Link key="x" href={props.socialMedia.x} target="_blank" rel="me">
                 <FontAwesomeIcon
                     icon={faXTwitter}
                     size="lg"
@@ -23,9 +25,9 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     title="X (former Twitter) Account"
                 />
             </Link>
-        ) : null}
-        {props.socialMedia.instagram ? (
-            <Link href={props.socialMedia.instagram} target="_blank" rel="me">
+        )}
+        {props.socialMedia?.instagram && (
+            <Link key="instagram" href={props.socialMedia.instagram} target="_blank" rel="me">
                 <FontAwesomeIcon
                     icon={faInstagram}
                     size="lg"
@@ -33,9 +35,9 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     title="Instagram Page"
                 />
             </Link>
-        ) : null}
-        {props.socialMedia.youtube ? (
-            <Link href={props.socialMedia.youtube} target="_blank" rel="me">
+        )}
+        {props.socialMedia?.youtube && (
+            <Link key="youtube" href={props.socialMedia.youtube} target="_blank" rel="me">
                 <FontAwesomeIcon
                     icon={faYoutube}
                     size="lg"
@@ -43,9 +45,9 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     title="YouTube Channel"
                 />
             </Link>
-        ) : null}
-        {props.socialMedia.website ? (
-            <Link href={props.socialMedia.website} target="_blank" rel="me">
+        )}
+        {props.socialMedia?.website && (
+            <Link key="website" href={props.socialMedia.website} target="_blank" rel="me">
                 <FontAwesomeIcon
                     icon={faLink}
                     size="lg"
@@ -53,9 +55,9 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     title="Website"
                 />
             </Link>
-        ) : null}
-        {props.socialMedia.email ? (
-            <Link href={`mailto:${props.socialMedia.email}`} rel="me">
+        )}
+        {props.socialMedia?.email && (
+            <Link key="email" href={`mailto:${props.socialMedia.email}`} rel="me">
                 <FontAwesomeIcon
                     icon={faEnvelope}
                     size="lg"
@@ -63,7 +65,7 @@ function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: str
                     title="Send E-Mail"
                 />
             </Link>
-        ) : null}
+        )}
     </>;
 }
 
