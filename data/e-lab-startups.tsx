@@ -6,9 +6,10 @@ export interface Startup {
     id: string;
     name: string;
     description: string;
-    founders: Founder[];
+    founders: Person[];
     metrics: Metrics;
     website: string;
+    socialMedia?: SocialMedia;
     logo: string;
     about?: string;
 
