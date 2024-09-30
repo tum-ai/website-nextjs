@@ -1,12 +1,12 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {faArrowLeft, faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
-import {alumni, Person, team} from "../../../data/e-lab";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {alumni, Person, team} from "@data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";
 import Image from "next/image";
 import {ProfilePage, WithContext} from "schema-dts";
+import SocialMediaLinks from "@components/SocialMediaLinks";
 
 export function generateStaticParams() {
     return team.map((person) => ({
@@ -47,7 +47,7 @@ export default function Page({params: {id}}: { params: { id: string } }) {
             familyName: person.lastName,
             description: person.description,
             image: 'https://www.tum-ai.com' + person.imgSrc,
-            email: person.email,
+            email: person.socialMedia.email,
             worksFor: {
                 '@type': 'EmployeeRole',
                 roleName: person.role,
@@ -67,11 +67,11 @@ export default function Page({params: {id}}: { params: { id: string } }) {
             },
             url: 'https://www.tum-ai.com/e-lab/' + person.id,
             sameAs: [
-                person.linkedin,
-                person.x ? person.x : "",
-                person.instagram ? person.instagram : "",
-                person.youtube ? person.youtube : "",
-                person.website ? person.website : "",
+                person.socialMedia.linkedin,
+                person.socialMedia.x ? person.socialMedia.x : "",
+                person.socialMedia.instagram ? person.socialMedia.instagram : "",
+                person.socialMedia.youtube ? person.socialMedia.youtube : "",
+                person.socialMedia.website ? person.socialMedia.website : "",
             ],
         },
     }
@@ -118,72 +118,15 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                         {person?.role}
                                     </p>
 
-                                    <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-300 mt-4 sm:mt-0">
-                                        <h2 className="sr-only">Social Media Links</h2>
-                                        <div className="flex items-center">
-                                            <div className="space-x-4">
-                                                <Link href={person?.linkedin} target="_blank" rel="me">
-                                                    <FontAwesomeIcon
-                                                        icon={faLinkedin}
-                                                        size="lg"
-                                                        className="duration-500 hover:text-yellow-500"
-                                                        title="LinkedIn Profile"
-                                                    />
-                                                </Link>
-                                                {person.x ? (
-                                                    <Link href={person.x} target="_blank" rel="me">
-                                                        <FontAwesomeIcon
-                                                            icon={faXTwitter}
-                                                            size="lg"
-                                                            className="duration-500 hover:text-yellow-500"
-                                                            title="X (former Twitter) Account"
-                                                        />
-                                                    </Link>
-                                                ) : null}
-                                                {person.instagram ? (
-                                                    <Link href={person.instagram} target="_blank" rel="me">
-                                                        <FontAwesomeIcon
-                                                            icon={faInstagram}
-                                                            size="lg"
-                                                            className="duration-500 hover:text-yellow-500"
-                                                            title="Instagram Page"
-                                                        />
-                                                    </Link>
-                                                ) : null}
-                                                {person.youtube ? (
-                                                    <Link href={person.youtube} target="_blank" rel="me">
-                                                        <FontAwesomeIcon
-                                                            icon={faYoutube}
-                                                            size="lg"
-                                                            className="duration-500 hover:text-yellow-500"
-                                                            title="YouTube Channel"
-                                                        />
-                                                    </Link>
-                                                ) : null}
-                                                {person.website ? (
-                                                    <Link href={person.website} target="_blank" rel="me">
-                                                        <FontAwesomeIcon
-                                                            icon={faLink}
-                                                            size="lg"
-                                                            className="duration-500 hover:text-yellow-500"
-                                                            title="Personal Website"
-                                                        />
-                                                    </Link>
-                                                ) : null}
-                                                {person.email ? (
-                                                    <Link href={`mailto:${person.email}`} rel="me">
-                                                        <FontAwesomeIcon
-                                                            icon={faEnvelope}
-                                                            size="lg"
-                                                            className="duration-500 hover:text-yellow-500"
-                                                            title="Send E-Mail"
-                                                        />
-                                                    </Link>
-                                                ) : null}
-                                            </div>
+                                <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-300 mt-4 sm:mt-0">
+                                    <h2 className="sr-only">Social Media Links</h2>
+                                    <div className="flex items-center">
+                                        <div className="space-x-4">
+                                            <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"duration-500 hover:text-yellow-500"}/>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
                                 <div className="mt-4 space-y-6">
                                     <p className="text-base whitespace-pre-wrap">
@@ -193,97 +136,40 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                             </section>
                         </div>
 
-                        {/* Person image */}
-                        <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
-                            <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-                                <Image
-                                    src={person?.imgSrc}
-                                    width={0}
-                                    height={0}
-                                    sizes="100vw"
-                                    alt={person?.imgAlt}
-                                    className="w-full h-full object-center object-cover"
-                                />
-                            </div>
+                    {/* Person image */}
+                    <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
+                        <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
+                            <Image
+                                src={person?.imgSrc}
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                alt={person?.imgAlt}
+                                className="w-full h-full object-center object-cover"
+                            />
                         </div>
                     </div>
                 </div>
-                <div
-                    className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden mt-4 max-w-2xl mx-auto lg:max-w-7xl">
-                    <div className="flex-1 p-4 space-y-2 flex flex-col">
-                        <div className="flex flex-col md:flex-row md:justify-between">
-                            <div>
-                                <h3 className="text-m font-medium text-gray-900">
-                                    {person.firstName} {person.lastName}
-                                </h3>
-                                <p className="text-sm text-gray-500">
-                                    {person.role}
-                                </p>
-                            </div>
-                            <div className="space-x-4 mt-2 md:mt-0">
-                                <Link href={person?.linkedin} target="_blank">
-                                    <FontAwesomeIcon
-                                        icon={faLinkedin}
-                                        size="lg"
-                                        className="text-black duration-500 hover:text-yellow-500"
-                                        title="LinkedIn Profile"
-                                    />
-                                </Link>
-                                {person.x ? (
-                                    <Link href={person.x} target="_blank">
-                                        <FontAwesomeIcon
-                                            icon={faXTwitter}
-                                            size="lg"
-                                            className="text-black duration-500 hover:text-yellow-500"
-                                            title="X (former Twitter) Account"
-                                        />
-                                    </Link>
-                                ) : null}
-                                {person.instagram ? (
-                                    <Link href={person.instagram} target="_blank">
-                                        <FontAwesomeIcon
-                                            icon={faInstagram}
-                                            size="lg"
-                                            className="text-black duration-500 hover:text-yellow-500"
-                                            title="Instagram Page"
-                                        />
-                                    </Link>
-                                ) : null}
-                                {person.youtube ? (
-                                    <Link href={person.youtube} target="_blank">
-                                        <FontAwesomeIcon
-                                            icon={faYoutube}
-                                            size="lg"
-                                            className="text-black duration-500 hover:text-yellow-500"
-                                            title="YouTube Channel"
-                                        />
-                                    </Link>
-                                ) : null}
-                                {person.website ? (
-                                    <Link href={person.website} target="_blank">
-                                        <FontAwesomeIcon
-                                            icon={faLink}
-                                            size="lg"
-                                            className="text-black duration-500 hover:text-yellow-500"
-                                            title="Personal Website"
-                                        />
-                                    </Link>
-                                ) : null}
-                                {person.email ? (
-                                    <Link href={`mailto:${person.email}`}>
-                                        <FontAwesomeIcon
-                                            icon={faEnvelope}
-                                            size="lg"
-                                            className="text-black duration-500 hover:text-yellow-500"
-                                            title="Send E-Mail"
-                                        />
-                                    </Link>
-                                ) : null}
-                            </div>
+            </div>
+            <div
+                className="group relative bg-white border border-gray-200 rounded-lg flex flex-col overflow-hidden mt-4 max-w-2xl mx-auto lg:max-w-7xl">
+                <div className="flex-1 p-4 space-y-2 flex flex-col">
+                    <div className="flex flex-col md:flex-row md:justify-between">
+                        <div>
+                            <h3 className="text-m font-medium text-gray-900">
+                                {person.firstName} {person.lastName}
+                            </h3>
+                            <p className="text-sm text-gray-500">
+                                {person.role}
+                            </p>
+                        </div>
+                        <div className="space-x-4 mt-2 md:mt-0">
+                            <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"text-black duration-500 hover:text-yellow-500"} />
                         </div>
                     </div>
                 </div>
-            </Section>
+            </div>
+        </Section>
         </div>
     );
 }

@@ -1,10 +1,15 @@
+
+import {Person, SocialMedia} from "@data/e-lab";
+
+
 export interface Startup {
     id: string;
     name: string;
     description: string;
-    founders: Founder[];
+    founders: Person[];
     metrics: Metrics;
     website: string;
+    socialMedia?: SocialMedia;
     logo: string;
     about?: string;
 
@@ -42,17 +47,17 @@ export const startups: Startup[] = [
         description: "Airbnb is an online marketplace for short-term homestays and experiences.",
         founders: [
             {
-            name: "Brian Chesky",
-            role: "CEO, Co-founder"
-            },
-            {
-            name: "Joe Gebbia",
-            role: "Co-founder"
-            },
-            {
-            name: "Nathan Blecharczyk",
-            role: "Chief Strategy Officer, Co-founder"
+            id: "brian-chesky",
+            firstName: "Brian",
+            lastName: "Chesky",
+            role: "CEO, Co-founder",
+            imgSrc: "",
+            imgAlt: "Brian Chesky",
+            socialMedia: {
+                x: "https://twitter.com/bchesky",
+                linkedin: "https://www.linkedin.com/in/brian-chesky-5b695b",
             }
+            },
         ],
         metrics: {
             "Year Founded": "2008",
@@ -88,10 +93,6 @@ export const startups: Startup[] = [
         name: "Tesla",
         description: "Tesla, Inc. is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses. Founded in 2003 by a group of engineers who wanted to prove that people didn’t need to compromise to drive electric – that electric vehicles can be better, quicker and more fun to drive than gasoline cars.",
         founders: [
-            {
-                name: "Elon Musk",
-                role: "CEO"
-            },
         ],
         metrics: {
             "Year Founded": "2008",
@@ -126,10 +127,6 @@ export const startups: Startup[] = [
         name: "Tesla1",
         description: "Tesla, Inc. is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses. Founded in 2003 by a group of engineers who wanted to prove that people didn’t need to compromise to drive electric – that electric vehicles can be better, quicker and more fun to drive than gasoline cars.",
         founders: [
-            {
-                name: "Elon Musk",
-                role: "CEO"
-            },
         ],
         metrics: {
             "Year Founded": "2008",
@@ -138,44 +135,6 @@ export const startups: Startup[] = [
             "Employees": "6,132"
         },
         website: "http://tesla1.com",
-        logo: "/assets/e-lab/startups/Tesla_Motors.svg.png",
-        industry: "Automotive",
-        batch: "S10",
-        tag: "Is Hiring",
-        jobs: [{
-            name: "Senior Autopilot Software Engineer",
-            location: "Palo Alto, CA",
-            salary: "$180,000 - $230,000 a year",
-            experience: "4+ years",
-        }],
-        latest_news: [{
-            message: "Tesla is looking for a Senior Autopilot Software Engineer in Palo Alto, CA. The salary range is $180,000 - $230,000 a year with a requirement of 4+ years of experience.",
-            link: "https://www.tesla.com/blog/autopilot-future-of-driving",
-            date: "April 15, 2023",
-        }, {
-            message: "Tesla announces a new project to expand its energy storage solutions, aiming to revolutionize the electric grid.",
-            link: "https://www.tesla.com/blog/energy-storage-solutions",
-            date: "May 20, 2023",
-        }],
-    },
-
-    {
-        id: "tesla2",
-        name: "Tesla2",
-        description: "Tesla, Inc. is accelerating the world's transition to sustainable energy with electric cars, solar and integrated renewable energy solutions for homes and businesses. Founded in 2003 by a group of engineers who wanted to prove that people didn’t need to compromise to drive electric – that electric vehicles can be better, quicker and more fun to drive than gasoline cars.",
-        founders: [
-            {
-                name: "Elon Musk",
-                role: "CEO"
-            },
-        ],
-        metrics: {
-            "Year Founded": "2008",
-            "Valuation": "$113 billion",
-            "Funding Raised": "$6.4 billion",
-            "Employees": "6,132"
-        },
-        website: "http://tesla2.com",
         logo: "/assets/e-lab/startups/Tesla_Motors.svg.png",
         industry: "Automotive",
         batch: "S10",

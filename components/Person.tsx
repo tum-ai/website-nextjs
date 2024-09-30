@@ -1,9 +1,7 @@
 import Link from "next/link";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
-import {Person} from "../data/e-lab";
+import {Person} from "@data/e-lab";
 import Image from "next/image";
+import SocialMediaLinks from "@components/SocialMediaLinks";
 
 interface PersonProps {
     person: Person;
@@ -35,64 +33,7 @@ export default function Person ({person}:PersonProps) {
                       </p>
                   </div>
                   <div className="space-x-4 mt-2 xl:mt-0">
-                      <Link href={person.linkedin} target="_blank">
-                          <FontAwesomeIcon
-                              icon={faLinkedin}
-                              size="lg"
-                              className="text-black duration-500 hover:text-purple-300"
-                              title="LinkedIn Profile"
-                          />
-                      </Link>
-                      {person.x ? (
-                          <Link href={person.x} target="_blank">
-                              <FontAwesomeIcon
-                                  icon={faXTwitter}
-                                  size="lg"
-                                  className="text-black duration-500 hover:text-purple-300"
-                                  title="X (former Twitter) Account"
-                              />
-                          </Link>
-                      ) : null}
-                      {person.instagram ? (
-                          <Link href={person.instagram} target="_blank">
-                              <FontAwesomeIcon
-                                  icon={faInstagram}
-                                  size="lg"
-                                  className="text-black duration-500 hover:text-purple-300"
-                                  title="Instagram Page"
-                              />
-                          </Link>
-                      ) : null}
-                      {person.youtube ? (
-                          <Link href={person.youtube} target="_blank">
-                              <FontAwesomeIcon
-                                  icon={faYoutube}
-                                  size="lg"
-                                  className="text-black duration-500 hover:text-purple-300"
-                                  title="YouTube Channel"
-                              />
-                          </Link>
-                      ) : null}
-                      {person.website ? (
-                          <Link href={person.website} target="_blank">
-                              <FontAwesomeIcon
-                                  icon={faLink}
-                                  size="lg"
-                                  className="text-black duration-500 hover:text-purple-300"
-                                  title="Personal Website"
-                              />
-                          </Link>
-                      ) : null}
-                      {person.email ? (
-                          <Link href={`mailto:${person.email}`}>
-                              <FontAwesomeIcon
-                                  icon={faEnvelope}
-                                  size="lg"
-                                  className="text-black duration-500 hover:text-purple-300"
-                                  title="Send E-Mail"
-                              />
-                          </Link>
-                      ) : null}
+                      <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"text-black duration-500 hover:text-purple-300"}/>
                   </div>
               </div>
           </div>
