@@ -22,7 +22,7 @@ const steps = [
     name: "Growth Opportunities",
     gradient: "bg-gradient-to-b from-purple-500 via-purple-400 to-purple-300",
     description:
-      "After completing a semester, you aren’t limited to your initial project. You can shape tum.ai by creating or joining a strategic task force. Either helping out with Makeathon or developing your own applicactions with other enthusiastic members - everything is possible.",
+      "After completing a semester, you aren’t limited to your initial project. You can shape tum.ai by creating or joining a strategic task force. Either helping out with Makeathon or developing your own applications with other enthusiastic members - everything is possible.",
   },
   {
     step: "04",
@@ -49,10 +49,10 @@ const MemberFlipCardComponent = () => {
             {steps.map((step) => (
               <div
                 key={step.name}
-                className="group h-200 w-[700px] transform transition-all duration-300 hover:scale-105"
+                className="group w-[700px] transform transition-all duration-300 hover:scale-105"
               >
                 <div
-                  className={`h-full w-full rounded-xl shadow-xl ${step.gradient} flex flex-col items-center justify-center text-white px-6 py-4 text-center`}
+                  className={`min-h-[250px] h-full w-full rounded-xl shadow-xl ${step.gradient} flex flex-col items-center justify-center text-white px-6 py-4 text-center`}
                 >
                   <p className="text-2xl font-bold mb-4">{step.name}</p>
                   <p className="text-base">{step.description}</p>
