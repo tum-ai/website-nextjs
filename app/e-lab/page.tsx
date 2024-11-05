@@ -7,19 +7,18 @@ import Timeline from "@components/Timeline";
 import Section from "@components/ui/Section";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@components/ui/carousel";
 import Card from "@components/ui/Card";
-import { startups } from "data/e-lab-startups";
 import {
   faBook,
   faCircleNodes,
   faHandshakeSimple,
   faHandsHoldingCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { faq, testimonials } from "data/e-lab";
 import Link from "next/link";
 import { Hero } from "./hero";
 import type { Metadata } from "next";
 import VentureTeam from "@components/VentureTeam";
 import {Organization, WithContext} from "schema-dts";
+import prisma from "../../lib/db";
 
 export const metadata: Metadata = {
   title: "TUM.ai - AI Entrepreneurship Lab",
@@ -41,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
     const jsonLd: WithContext<Organization> = {
         '@context': 'https://schema.org',
         '@type': 'Organization',
@@ -95,6 +94,15 @@ export default function Page() {
             },
         },
     }
+
+    const testimonials = await prisma.testimonial.findMany();
+    const faq = await prisma.fAQ.findMany();
+    const startups = await prisma.startup.findMany();
+    const venture_team = await prisma.person.findMany({
+        where: {
+            type: "elab-team"
+        }
+    });
 
 
   return (
@@ -192,7 +200,7 @@ export default function Page() {
                           className="h-full"
                         />
                       </CarouselItem>
-                    ))}                    
+                    ))}
                   </CarouselContent>
                   <CarouselPrevious />
                   <CarouselNext />
@@ -424,7 +432,7 @@ export default function Page() {
         </Link>
       </Section>
 
-      <VentureTeam/>
+      <VentureTeam team={venture_team}/>
 
 
       <Section className="bg-purple-950 text-white">

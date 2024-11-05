@@ -4,12 +4,14 @@ import { cx } from "class-variance-authority";
 import Hero from "@components/Hero";
 import { DepartmentList } from "./departments";
 import type { Metadata } from "next";
+import prisma from "../../lib/db";
 
 export const metadata: Metadata = {
   title: "TUM.ai - Members",
 };
 
-export default function Members() {
+export default async function Members() {
+  const departments = await prisma.department.findMany();
   return (
     <>
       <Hero
@@ -57,7 +59,7 @@ export default function Members() {
           </p>
         </div>
 
-        <DepartmentList />
+        <DepartmentList departments={departments} />
       </Section>
     </>
   );

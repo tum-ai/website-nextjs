@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Startup } from '../data/e-lab-startups';
+import { Startup } from "@prisma/client"
 import Link from "next/link";
 import '../styles/tags.css';
 import Image from "next/image";
@@ -27,8 +27,8 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
   // Filter startups
   const filterOptions = startups.reduce((acc, startup) => {
     filterCategories.forEach((category) => {
-      if (startup[category] && !acc[category]?.includes(startup[category] as string)) {
-        acc[category]?.push(startup[category] as string);
+      if (startup[category] && !acc[category]?.includes(startup[category]!)) {
+        acc[category]?.push(startup[category]!);
       }
     });
     return acc;
@@ -44,7 +44,7 @@ export default function StartupList({ startups, maxHeight }: StartupListProps) {
 
         const matchesFilters = Object.entries(selectedFilters).every(([key, values]) => {
           if (!values.length) return true;
-          return values.includes(startup[key as keyof Startup] as string);
+          return values.includes(startup[key as keyof Startup]!);
         });
 
         return matchesFilters && matchesSearchQuery;

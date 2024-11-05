@@ -1,0 +1,119 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Department {
+  id          String @id @default(cuid())
+  name        String
+  description String
+  image       String
+  icon        String
+}
+
+model Testimonial {
+  id      String @id @default(cuid())
+  imgSrc  String
+  name    String
+  text    String
+  logoSrc String
+  logoAlt String
+  link    String
+  company String
+}
+
+model FAQ {
+  id       String @id @default(cuid())
+  question String
+  answer   String
+  type     String
+}
+
+model Person {
+  id          String    @id
+  firstName   String
+  lastName    String
+  role        String?
+  description String?
+  imgSrc      String?
+  imgAlt      String?
+  linkedin    String?
+  x           String?
+  instagram   String?
+  youtube     String?
+  website     String?
+  email       String?
+  type        String
+  startups    Startup[] @relation("StartupFounders")
+}
+
+model Startup {
+  id          String       @id
+  name        String
+  description String
+  website     String
+  logo        String
+  about       String?
+  tag         String?
+  batch       String?
+  industry    String
+  linkedin    String?
+  x           String?
+  instagram   String?
+  youtube     String?
+  email       String?
+  jobs        Job[]
+  latestNews  LatestNews[]
+  metrics     Metric[]
+  founders    Person[]     @relation("StartupFounders")
+}
+
+model Job {
+  id         String  @id @default(cuid())
+  startupId  String
+  name       String
+  location   String
+  salary     String
+  experience String
+  startup    Startup @relation(fields: [startupId], references: [id])
+}
+
+model LatestNews {
+  id        String   @id @default(cuid())
+  startupId String
+  message   String
+  link      String
+  date      DateTime
+  startup   Startup  @relation(fields: [startupId], references: [id])
+}
+
+model Metric {
+  id        String  @id @default(cuid())
+  startupId String
+  key       String
+  value     String
+  startup   Startup @relation(fields: [startupId], references: [id])
+}
+
+model Partner {
+  id    String @id @default(cuid())
+  href  String
+  src   String
+  alt   String
+  width Int?
+  type  String
+}
+
+model Project {
+  id               String @id @default(cuid())
+  title            String
+  image            String
+  description      String
+  organization     String
+  organizationLink String
+  time             String
+}

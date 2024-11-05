@@ -1,10 +1,11 @@
 import Section from "@ui/Section";
-import { team } from "../data/e-lab";
 import Person from "@components/Person";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@components/ui/carousel";
 import Link from "next/link";
+import { Person as PersonType} from "@prisma/client";
 
-export default function VentureTeam() {
+export default function VentureTeam({ team }: { team: PersonType[] }) {
+
     return (
         <Section className="bg-purple-950 text-white">
             <div className="mt-8 sm:mt-0 mb-8 md:w-3/5 lg:mb-16">

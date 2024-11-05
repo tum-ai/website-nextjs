@@ -1,37 +1,50 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
-import {alumni, Person, team} from "@data/e-lab";
 import Link from "next/link";
 import NotFound from "next/dist/client/components/not-found-error";
 import Section from "@components/ui/Section";
 import Image from "next/image";
 import {ProfilePage, WithContext} from "schema-dts";
 import SocialMediaLinks from "@components/SocialMediaLinks";
+import prisma from "../../../lib/db";
 
-export function generateStaticParams() {
-    return team.map((person) => ({
+export async function generateStaticParams() {
+    // get all persons from prisma which type is elab-team or elab-alumni
+    const team_or_alumni = await prisma.person.findMany();
+
+    return team_or_alumni.map((person) => ({
         id: person.id,
-    })).concat(alumni.map((person) => ({id: person.id})));
+    }));
 }
 
-export function generateMetadata({params: {id}}: { params: { id: string } }) {
-    let person = team.find((person: Person) => id === person.id);
-    if(!person) {
-        person = alumni.find((person: Person) => id === person.id);
+export async function generateMetadata({params: {id}}: { params: { id: string } }) {
+    const person = await prisma.person.findUnique({
+        where: {
+            id: id
+        }
+    })
+    if (!person) {
+        return {
+            title: "Person Not Found",
+            description: "This person does not exist.",
+        };
     }
-    const name = person?.firstName + " " + person?.lastName;
+
+    const name = person.firstName + " " + person.lastName;
+
     return {
-        title: name + " - AI E-LAB | TUM.ai",
-        description:
-            "Meet " + name + " from the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding journey designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup in Munich.",
+        title: `${name} - AI E-LAB | TUM.ai`,
+        description: `Meet ${name} from the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding journey designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup in Munich.`,
     };
 }
 
-export default function Page({params: {id}}: { params: { id: string } }) {
-    let person = team.find((person: Person) => id === person.id);
-    if (!person) {
-        person = alumni.find((person: Person) => id === person.id);
-    }
+export default async function Page({params: {id}}: { params: { id: string } }) {
+    const person = await prisma.person.findUnique({
+        where: {
+            id: id
+        }
+    })
+
     if (!person) {
         return <NotFound />;
     }
@@ -45,12 +58,12 @@ export default function Page({params: {id}}: { params: { id: string } }) {
             name: person.firstName + ' ' + person.lastName,
             givenName: person.firstName,
             familyName: person.lastName,
-            description: person.description,
+            description: person.description ?? '',
             image: 'https://www.tum-ai.com' + person.imgSrc,
-            email: person.socialMedia.email,
+            email: person.email ?? '',
             worksFor: {
                 '@type': 'EmployeeRole',
-                roleName: person.role,
+                roleName: person.role ?? '',
                 worksFor: {
                     '@type': 'Organization',
                     name: 'Venture Department',
@@ -67,11 +80,11 @@ export default function Page({params: {id}}: { params: { id: string } }) {
             },
             url: 'https://www.tum-ai.com/e-lab/' + person.id,
             sameAs: [
-                person.socialMedia.linkedin,
-                person.socialMedia.x ? person.socialMedia.x : "",
-                person.socialMedia.instagram ? person.socialMedia.instagram : "",
-                person.socialMedia.youtube ? person.socialMedia.youtube : "",
-                person.socialMedia.website ? person.socialMedia.website : "",
+                person.linkedin ?? '',
+                person.x ?? '',
+                person.instagram ?? '',
+                person.youtube ?? '',
+                person.website ?? '',
             ],
         },
     }
@@ -122,7 +135,14 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                                     <h2 className="sr-only">Social Media Links</h2>
                                     <div className="flex items-center">
                                         <div className="space-x-4">
-                                            <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"duration-500 hover:text-yellow-500"}/>
+                                            <SocialMediaLinks socialMedia={{
+                                                linkedin: person.linkedin,
+                                                x: person.x,
+                                                instagram: person.instagram,
+                                                youtube: person.youtube,
+                                                website: person.website,
+                                                email: person.email
+                                            }} iconClassNames={"duration-500 hover:text-yellow-500"}/>
                                         </div>
                                     </div>
                                 </div>
@@ -140,11 +160,11 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                     <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
                         <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
                             <Image
-                                src={person?.imgSrc}
+                                src={person?.imgSrc ?? ""}
                                 width={0}
                                 height={0}
                                 sizes="100vw"
-                                alt={person?.imgAlt}
+                                alt={person?.imgAlt ?? ""}
                                 className="w-full h-full object-center object-cover"
                             />
                         </div>
@@ -164,7 +184,14 @@ export default function Page({params: {id}}: { params: { id: string } }) {
                             </p>
                         </div>
                         <div className="space-x-4 mt-2 md:mt-0">
-                            <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"text-black duration-500 hover:text-yellow-500"} />
+                            <SocialMediaLinks socialMedia={{
+                                linkedin: person.linkedin,
+                                x: person.x,
+                                instagram: person.instagram,
+                                youtube: person.youtube,
+                                website: person.website,
+                                email: person.email
+                            }} iconClassNames={"text-black duration-500 hover:text-yellow-500"} />
                         </div>
                     </div>
                 </div>

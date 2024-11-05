@@ -2,7 +2,16 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faInstagram, faLinkedin, faXTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
 import {faEnvelope, faLink} from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import {SocialMedia} from "@data/e-lab";
+
+export interface SocialMedia {
+    linkedin?: string | null;
+    x?: string | null;
+    instagram?: string | null;
+    youtube?: string | null;
+    website?: string | null;
+    email?: string | null;
+
+}
 
 function SocialMediaLinks(props: { socialMedia: SocialMedia, iconClassNames: string}) {
     return <>

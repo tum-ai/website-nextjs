@@ -1,10 +1,11 @@
 "use client";
 
+import { Department } from '@prisma/client';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Department, departments } from "data/departments";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
+import {iconMap} from "../../lib/utils";
 
 interface DepartmentCardProps {
   department: Department;
@@ -19,7 +20,9 @@ const DepartmentCard = ({
   setOpen,
   index,
 }: DepartmentCardProps) => {
-  return (
+
+    const icon = iconMap[department.icon]!;
+    return (
     <article>
       <div
         className="relative h-80 cursor-pointer overflow-hidden rounded shadow-md duration-500 hover:shadow-xl"
@@ -38,7 +41,7 @@ const DepartmentCard = ({
           className="object-cover"
         />
         <div className="absolute flex h-full w-full flex-col items-center justify-center rounded text-white backdrop-brightness-50">
-          <FontAwesomeIcon icon={department.icon} size="4x" className="mb-4" />
+          <FontAwesomeIcon icon={icon} size="4x" className="mb-4" />
           <h2 className="text-4xl font-bold">{department.name}</h2>
         </div>
 
@@ -59,7 +62,7 @@ const DepartmentCard = ({
   );
 };
 
-export const DepartmentList = () => {
+export const DepartmentList = ({ departments }: { departments: Department[] }) => {
   const [open, setOpen] = useState<number>();
 
   return (

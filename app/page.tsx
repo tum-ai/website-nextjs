@@ -8,16 +8,13 @@ import { cx } from "class-variance-authority";
 import VerticalCards, {
   type Props as VerticalCardsProps,
 } from "components/VerticalCards";
-import {
-  initiatives_collabrated_with,
-  partners_collabrated_with,
-} from "data/partners";
 import Image from "next/image";
 import Link from "next/link";
 import MartinTalk from "@public/assets/partners/martin_talk.jpg";
 import type { Metadata } from "next";
 import { Hero } from "./hero";
 import { Organization, WithContext } from 'schema-dts'
+import prisma from "../lib/db";
 
 export const metadata: Metadata = {
   title: "TUM.ai - Student Initiative focused on Artificial Intelligence",
@@ -27,7 +24,7 @@ export const metadata: Metadata = {
 
 
 
-export default function Index() {
+export default async function Index() {
 
   const jsonLd: WithContext<Organization> = {
     '@context': 'https://schema.org',
@@ -151,6 +148,17 @@ export default function Index() {
     },
   }
 
+  const initiatives_collaborated_with = await prisma.partner.findMany({
+    where: {
+      type: "initiatives_collaborated_with"
+    }
+  })
+  const partners_collaborated_with = await prisma.partner.findMany({
+    where: {
+      type: "partners_collaborated_with"
+    }
+  })
+
   return (
       <>
         <section>
@@ -184,7 +192,7 @@ export default function Index() {
             Partners <span className="text-purple-500">we have collaborated</span>{" "}
             with
           </h2>
-          <Logos logos={partners_collabrated_with}/>
+          <Logos logos={partners_collaborated_with}/>
         </Section>
 
         <Section>
@@ -196,7 +204,7 @@ export default function Index() {
           >
             Partner Initiatives
           </h2>
-          <Logos logos={initiatives_collabrated_with}/>
+          <Logos logos={initiatives_collaborated_with}/>
         </Section>
 
         <Slack/>

@@ -1,13 +1,18 @@
-import { startups, Startup} from '@data/e-lab-startups';
 import StartupDetails from '@components/StartupDetails';
+import prisma from "../../../../lib/db";
 
-export default function StartupPage({ params }: { params: { id: string } }) {
+export default async function StartupPage({ params }: { params: { id: string } }) {
 
-    const startup: Startup | undefined = startups.find((startup: Startup) => {
-        if (startup && startup.id === params.id) {
-            return startup;
-        }
-        return undefined;
+    const startup = await prisma.startup.findUnique({
+        where: {
+            id: params.id
+        },
+        include: {
+            metrics: true,
+            founders: true,
+            jobs: true,
+            latestNews: true
+        },
     });
 
     if (!startup) {
