@@ -1,14 +1,85 @@
 "use client";
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import Person from "@components/Person";
-import {Startup} from "@data/e-lab-startups";
+import {Person as PersonType} from "@prisma/client";
 import SocialMediaLinks from "@components/SocialMediaLinks";
+
+export interface Metric {
+    id: string;
+    startupId: string;
+    key: string;
+    value: string;
+}
+
+export interface Job {
+    id: string;
+    startupId: string;
+    name: string;
+    location: string;
+    salary: string;
+    experience: string;
+
+}
+
+export interface LatestNews {
+    id: string;
+    startupId: string;
+    message: string;
+    link: string;
+    date : string;
+}
+
+/*export interface PersonType {
+    id: string;
+    firstName: string;
+    lastName: string;
+    role?: string;
+    description?: string;
+    imgSrc?: string;
+    imgAlt?: string;
+    linkedin?: string;
+    x?: string;
+    instagram?: string;
+    youtube?: string;
+    website?: string;
+    email?: string;
+    type: string;
+}*/
+
+export interface Startup {
+    id: string;
+    name: string;
+    description: string;
+    website: string;
+    logo: string;
+    about?: string;
+    tag?: string;
+    batch?: string;
+    industry: string;
+    linkedin?: string;
+    x?: string;
+    instagram?: string;
+    youtube?: string;
+    email?: string;
+    jobs?: Job[];
+    latestNews: LatestNews[];
+    metrics: Metric[];
+    founders: PersonType[];
+}
 
 const StartupDetails = ({ startup }: { startup: Startup }) => {
   const [imageError, setImageError] = useState(false);
+  const socialMedia = {
+        linkedin: startup.linkedin,
+        x: startup.x,
+        instagram: startup.instagram,
+        youtube: startup.youtube,
+        website: startup.website,
+        email: startup.email
+  }
+  const has_any_social_media = Object.values(socialMedia).some((value) => value !== null);
 
   return (
       <div className="bg-purple-950 text-white min-h-screen pt-16 p-8">
@@ -31,9 +102,9 @@ const StartupDetails = ({ startup }: { startup: Startup }) => {
 
             <div className="sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-300 mt-4 sm:mt-0 flex flex-row">
               <h2 className="sr-only">Social Media Links</h2>
-            {startup.socialMedia && (
+            {has_any_social_media && (
                   <div className="flex space-x-4">
-                    <SocialMediaLinks socialMedia={startup.socialMedia}
+                    <SocialMediaLinks socialMedia={socialMedia}
                     iconClassNames={"duration-500 hover:text-yellow-500"}/>
                   </div>
             )}
@@ -45,9 +116,9 @@ const StartupDetails = ({ startup }: { startup: Startup }) => {
 
         <h2 className="text-2xl font-semibold mb-4">Metrics</h2>
           <ul className="mb-8">
-            {Object.entries(startup.metrics).map(([key, value]) => (
-                <li key={key} className="mb-2">
-                  <span className="font-bold">{key}:</span> {String(value)}
+            {startup.metrics.map((metric) => (
+                <li key={metric.key} className="mb-2">
+                  <span className="font-bold">{metric.key}:</span> {String(metric.value)}
                 </li>
             ))}
           </ul>

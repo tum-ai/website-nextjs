@@ -14,12 +14,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Benefits from "@components/Benefit";
 import Logos from "@components/Logos";
-import {
-  enablers_supporters,
-  project_partners,
-  strategic_partnerts,
-} from "data/partners";
 import { Metadata } from "next";
+import prisma from "../../lib/db";
 
 export const metadata: Metadata = {
   title: "TUM.ai - Partners",
@@ -27,7 +23,7 @@ export const metadata: Metadata = {
     "Is your company currently facing challenges with data-driven technologies or you are looking for the greatest talent in artificial intelligence? If one of the answers is yes, become a partners.",
 };
 
-export default function Partners() {
+export default async function Partners() {
   const benefits = [
     {
       title: "AI Talent Pool",
@@ -51,6 +47,29 @@ export default function Partners() {
     },
   ];
 
+  const strategic_partners = await prisma.partner.findMany({
+    where: {
+      type: "strategic_partners"
+    }
+  })
+  const enablers_supporters = await prisma.partner.findMany({
+    where: {
+      type: "enablers_supporters"
+    }
+  })
+  const project_partners = await prisma.partner.findMany({
+    // type in project_partners, partners_ip4, partners_ip5, but element alt != HVB
+      where: {
+          type: {
+              in: ["project_partners", "partners_ip4", "partners_ip5"]
+          },
+          alt: {
+              not: "HVB"
+          }
+      }
+  })
+
+
   return (
     <>
       <Hero
@@ -63,7 +82,7 @@ export default function Partners() {
         <h2 className={cx("mb-8 text-4xl font-semibold", bitter.className)}>
           Strategic Partners
         </h2>
-        <Logos logos={strategic_partnerts} />
+        <Logos logos={strategic_partners} />
         <h2
           className={cx("mb-8 mt-32 text-4xl font-semibold", bitter.className)}
         >

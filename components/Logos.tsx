@@ -6,7 +6,7 @@ export interface LogosProps {
     src: string;
     alt: string;
     href: string;
-    width?: number;
+    width?: number | null;
   }[];
 }
 

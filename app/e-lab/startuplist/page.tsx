@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Section from "@ui/Section";
 import Link from "next/link";
 import StartupList from "@components/ELabStartupList";
-import { startups } from "data/e-lab-startups";
+import prisma from "../../../lib/db";
 
 // Define the metadata for the page
 export const metadata: Metadata = {
@@ -10,7 +10,16 @@ export const metadata: Metadata = {
   description: "Registry of all E-Lab based Startups.",
 };
 
-export default function Page() {
+export default async function Page() {
+  const startups = await prisma.startup.findMany({
+    include: {
+      metrics: true,
+      founders: true,
+      jobs: true,
+      latestNews: true
+    },
+  });
+
   return (
     <>
       {/* Hidden Title for Accessibility */}

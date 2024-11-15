@@ -1,7 +1,7 @@
 import Link from "next/link";
-import {Person} from "@data/e-lab";
 import Image from "next/image";
 import SocialMediaLinks from "@components/SocialMediaLinks";
+import {Person} from "@prisma/client";
 
 interface PersonProps {
     person: Person;
@@ -13,11 +13,11 @@ export default function Person ({person}:PersonProps) {
           <Link href={`/e-lab/${person.id}`}>
               <div className="aspect-w-3 aspect-h-4 bg-gray-200 group-hover:opacity-75 sm:aspect-none sm:h-96">
                   <Image
-                      src={person?.imgSrc}
+                      src={person?.imgSrc ?? ""}
                       width={0}
                       height={0}
                       sizes="100vw"
-                      alt={person?.imgAlt}
+                      alt={person?.imgAlt ?? ""}
                       className="w-full h-full object-center object-cover sm:w-full sm:h-full"
                   />
               </div>
@@ -33,7 +33,14 @@ export default function Person ({person}:PersonProps) {
                       </p>
                   </div>
                   <div className="space-x-4 mt-2 xl:mt-0">
-                      <SocialMediaLinks socialMedia={person.socialMedia} iconClassNames={"text-black duration-500 hover:text-purple-300"}/>
+                      <SocialMediaLinks socialMedia={{
+                          linkedin: person.linkedin,
+                          x: person.x,
+                          instagram: person.instagram,
+                          youtube: person.youtube,
+                          website: person.website,
+                          email: person.email
+                      }} iconClassNames={"text-black duration-500 hover:text-purple-300"}/>
                   </div>
               </div>
           </div>

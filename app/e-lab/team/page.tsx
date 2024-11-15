@@ -1,9 +1,9 @@
 import type {Metadata} from "next";
 import Section from "@ui/Section";
 import Link from "next/link";
-import {alumni, faq, team} from "../../../data/e-lab";
 import FAQ from "@components/FAQ";
 import Person from "@components/Person";
+import prisma from "../../../lib/db";
 
 export const metadata: Metadata = {
     title: "Team - AI E-LAB | TUM.ai",
@@ -11,7 +11,19 @@ export const metadata: Metadata = {
         "Meet the Team behind the AI Entrepreneurship Lab. Join us if you are up for a 3-month founding journey designed to ignite your innovative spirit and equip you with the relevant know-how to build your own AI startup in Munich.",
 };
 
-export default function Page() {
+export default async function Page() {
+    const team = await prisma.person.findMany({
+        where: {
+            type: "elab-team"
+        }
+    });
+    const alumni = await prisma.person.findMany({
+        where: {
+            type: "elab-alumni"
+        }
+    });
+    const faq = await prisma.fAQ.findMany();
+
     return (
         <>
             <h1 className="hidden">Meet the Team behind the AI E-LAB | Venture Department Members</h1>

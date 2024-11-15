@@ -3,7 +3,6 @@ import Button from "@components/ui/Button";
 import Dialog from "@components/ui/Dialog";
 import Tabs from "@components/ui/Tabs";
 import Section from "@ui/Section";
-import { partners_ip5, projects } from "data/industry";
 import Image from "next/image";
 import Link from "next/link";
 import PictureHero from "@components/BannerHero";
@@ -11,6 +10,7 @@ import { bitter } from "@styles/fonts";
 import { cx } from "class-variance-authority";
 import { StudentsSection } from "./studentsSection";
 import { Metadata } from "next";
+import prisma from "../../lib/db";
 
 export const metadata: Metadata = {
   title: "TUM.ai - Industry",
@@ -18,7 +18,54 @@ export const metadata: Metadata = {
     "Work on real-world AI and Data solutions! 2250€ total compensation, 10 week working student arrangements, September 15th - end of November",
 };
 
-export default function Industry() {
+function parseTextWithLinks(text: string) {
+  const linkRegex = /<LINK\s+url=(https?:\/\/[^\s]+)\s+text=([^>]+)>/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  // Find all LINK tags in the text and extract their details
+  while ((match = linkRegex.exec(text)) !== null) {
+    const [fullMatch, url, displayText] = match;
+
+    // Add the text before the link as a normal text node
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+
+    // Add the link element
+    parts.push(
+        <a
+            key={url}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-700 underline"
+        >
+          {displayText}
+        </a>
+    );
+
+    // Update the lastIndex to the end of the current match
+    lastIndex = match.index + fullMatch.length;
+  }
+
+  // Add any remaining text after the last link
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
+}
+
+export default async function Industry() {
+  const projects = await prisma.project.findMany()
+  const partners_ip5 = await prisma.partner.findMany({
+    where: {
+      type: "partners_ip5"
+    }
+  })
+
   return (
     <>
       <PictureHero
@@ -78,28 +125,9 @@ export default function Industry() {
                       {project.title}
                     </h1>
                     <p className="mb-2 flex-grow text-sm">
-                      {project.description.map((section, index) => (
-                        <span key={index}>
-                          {section.text && `${section.text} `}
-
-                          {!!section.link &&
-                            section.link.map((link, i) => (
-                              <>
-                                <a
-                                  key={i}
-                                  href={link.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-purple-700 underline"
-                                >
-                                  {link.displayText}
-                                </a>
-                                {i < section.link!.length - 1 && ", "}
-                              </>
-                            ))}
-                          {section.moreText && ` ${section.moreText}`}
-                        </span>
-                      ))}
+                      {project.description && (
+                            <>{parseTextWithLinks(project.description)}</>
+                      )}
                     </p>
                   </div>
                   <div className="mt-auto flex flex-col items-center justify-center space-y-3 px-6 pb-6 sm:flex-row sm:justify-start sm:space-y-0 md:space-x-2">
