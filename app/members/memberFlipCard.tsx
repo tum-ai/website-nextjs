@@ -1,5 +1,3 @@
-// Source: https://github.com/mematthew123/3dFlipCards-demo
-
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -10,6 +8,8 @@ interface Step {
   gradient: string;
   description: string;
 }
+
+// Source: https://github.com/mematthew123/3dFlipCards-demo
 
 const steps: Step[] = [
   {
