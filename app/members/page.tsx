@@ -2,15 +2,12 @@ import { bitter } from "@styles/fonts";
 import Section from "@ui/Section";
 import { cx } from "class-variance-authority";
 import Hero from "@components/Hero";
-import { DepartmentList } from "./departments";
 import type { Metadata } from "next";
 import MemberFlipCardComponent from "./memberFlipCard";
 
 export const metadata: Metadata = {
   title: "TUM.ai - Members",
 };
-
-//TODO: add member journey (with implact projects and more)
 
 export default function Members() {
   return (

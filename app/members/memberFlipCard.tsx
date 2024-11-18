@@ -80,12 +80,6 @@ const ArrowPurple600 = () => (
   </div>
 );
 
-const ArrowPurple500 = () => (
-  <div className="flex justify-center items-center my-2">
-    <FontAwesomeIcon icon={faArrowDown} className="text-purple-500 text-4xl" />
-  </div>
-);
-
 const MemberFlipCardComponent = () => {
   return (
     <section className="py-10 mx-auto sm:py-14">
