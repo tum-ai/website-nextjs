@@ -7,7 +7,7 @@ import Link from "next/link";
 import PictureHero from "@components/BannerHero";
 import { bitter } from "@styles/fonts";
 import { cx } from "class-variance-authority";
-import { StudentsSection } from "./studentsSection";
+import { StudentsSection } from "./StudentsSection";
 import { IndustrySection } from "./IndustrySection";
 import { Metadata } from "next";
 
