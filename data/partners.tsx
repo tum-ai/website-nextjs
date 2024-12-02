@@ -249,9 +249,14 @@ export const enablers_supporters = [
     alt: "ministry_for_digital_affairs",
   },
   {
-    href: "https://www.10xfounders.com/",
-    src: "/assets/partners_sponsors/10xfounderslogo.png",
-    alt: "10x Founders",
+    src: "/assets/e-lab/partners/uvc_b.png",
+    alt: "UVC Partners",
+    href: "https://www.uvcpartners.com/",
+  },
+  {
+    href: "https://www.cherry.vc/",
+    src: "/assets/e-lab/partners/cherry.png",
+    alt: "Cherry VC",
   },
   {
     href: "https://www.burda.com/",
