@@ -110,7 +110,7 @@ export const projects: Project[] = [
     image: "/assets/industry/project_cards/recogni_white_bg.png",
     description: [
       {
-        text: "Recogni is building a custom chip for perception in autonomous driving. In this project, the team will work on bringing a set of state of the art models to Recogni’s custom hardware.",
+        text: "Recogni is building a custom chip for perception in autonomous driving. In this project, the team worked on bringing a set of state of the art models to Recogni’s custom hardware.",
       },
     ],
     organization: "Recogni",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     image: "/assets/industry/project_cards/airbus_white_bg.png",
     description: [
       {
-        text: "Building a dynamic mission simulator for the Airbus Aircraft-as-a-Sensor initiative. This simulator will help Airbus to explore and simulate a wide range of Aircraft-as-a-Sensor opportunities. ",
+        text: "Built a dynamic mission simulator for the Airbus Aircraft-as-a-Sensor initiative. This simulator will help Airbus to explore and simulate a wide range of Aircraft-as-a-Sensor opportunities. ",
       },
     ],
     organization: "Airbus",
@@ -134,23 +134,7 @@ export const projects: Project[] = [
     image: "/assets/industry/project_cards/rolandberger_industry.png",
     description: [
       {
-        text: "Implementation of cloud-based web services, containing NLP Machine Learning models -",
-        link: [
-          {
-            url: "https://www.linkedin.com/in/stefanrmmr/",
-            displayText: "Stefan Rummer",
-          },
-          {
-            url: "https://www.linkedin.com/in/robin-mittas-a29a11201/",
-            displayText: "Robin Mittas",
-          },
-          {
-            url: "https://www.linkedin.com/in/vtq/",
-            displayText: "Tuan-Quang Vuong",
-          },
-        ],
-        moreText:
-          "built scalable APIs that were deployed to production globally. These enabled Roland Berger to automatically enrich their CRM systems with financial market insights and LinkedIn company data.",
+        text: "Implementation of cloud-based web services, containing NLP Machine Learning models - the team built scalable APIs that were deployed to production globally. These enabled Roland Berger to automatically enrich their CRM systems with financial market insights and LinkedIn company data.",
       },
     ],
     organization: "Roland Berger",
@@ -162,19 +146,7 @@ export const projects: Project[] = [
     image: "/assets/industry/project_cards/quantco.jpeg",
     description: [
       {
-        text: "4x stellar students supported QuantCo in their mission to revolutionize the way prostate cancer is detected leveraging ML-based virtual biopsy.",
-        link: [
-          {
-            url: "https://www.linkedin.com/in/richardgaus/",
-            displayText: "Richard Gaus",
-          },
-          {
-            url: "https://www.linkedin.com/in/cedrik-laue-770682203/",
-            displayText: "Cedrik Laue",
-          },
-        ],
-        moreText:
-          "Implemented algorithms for medical image processing, ranging from pre-processing, registration, all the way to the segmentation of MRI data.",
+        text: "4x stellar students supported QuantCo in their mission to revolutionize the way prostate cancer is detected leveraging ML-based virtual biopsy. Implemented algorithms for medical image processing, ranging from pre-processing, registration, all the way to the segmentation of MRI data.",
       },
     ],
     organization: "QuantCo",
@@ -204,7 +176,7 @@ export const projects: Project[] = [
     ],
     organization: "TURTLE",
     organizationLink:
-      "https://www.linkedin.com/company/turtle-gmbh/?originalSubdomain=de",
+      "https://www.go-turtle.com/",
     time: "spring 2022",
   },
   {
@@ -240,7 +212,7 @@ export const projects: Project[] = [
       },
     ],
     organization: "presize.ai",
-    organizationLink: "https://www.presize.ai/",
+    organizationLink: "https://www.linkedin.com/company/presizeai",
     time: "fall 2021",
   },
   {
