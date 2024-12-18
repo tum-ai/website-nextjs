@@ -13,12 +13,12 @@ export const StudentsSection = () => {
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-2 xl:gap-16">
           <div className="space-y-4">
             <h2 className={cx("mb-8 text-4xl font-semibold", bitter.className)}>
-              Applications for Industry Phase 6.0 are currently open. Apply now!
+              Applications for Industry Phase 7.0 are closed now!
             </h2>
             <p>
               Push ML boundaries and progress your career with our AI projects!{" "}
               <span className="text-purple-600">Leverage your skills</span> and
-              take on real AI projects to test your abilities. Join us now!
+              take on real AI projects to test your abilities.
             </p>
             <p>
               Work in a{" "}
@@ -34,7 +34,7 @@ export const StudentsSection = () => {
               <span className="textpurple-600">
                 for-profit companies, startups, and non-profits,
               </span>{" "}
-              in our upcoming Industry Phase 6.0 starting in April 2024.
+              in our upcoming Industry Phases.
             </p>
           </div>
           <div className="relative flex flex-col items-center space-y-8 text-center">
@@ -54,7 +54,7 @@ export const StudentsSection = () => {
                   "https://tum-ai.notion.site/TUM-ai-Industry-Phase-6-0-AI-Projects-d285a612b00b414ebe81458ef118e155";
               }}
             >
-              Apply here!
+              Come back later!
             </Button>
           </div>
         </div>
