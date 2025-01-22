@@ -319,7 +319,7 @@ export default function Page() {
 
         <Section className="bg-purple-950 text-white">
           <h2 className="mb-12 bg-gradient-to-r from-yellow-500 to-red-500 bg-clip-text text-center text-3xl font-semibold uppercase tracking-widest text-transparent sm:text-5xl">
-            Meet our Partners and Sponsors
+            Meet our previous Partners and Sponsors
           </h2>
 
           <div className="mb-24">
